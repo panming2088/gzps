@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_local_problem"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_background_color"
+  >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:background="@color/agmobile_white_dark"-->
+            <!--android:elevation="6dp">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/search_tv_tips"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:gravity="center"-->
+                <!--android:text="项目选择" />-->
+
+        <!--</LinearLayout>-->
+        <include layout="@layout/common_patrol_toolbar"/>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

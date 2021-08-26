@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="@dimen/map_location_icon_size"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/iv_location"
+            android:layout_width="@dimen/map_location_icon_size"
+            android:layout_height="@dimen/map_location_icon_size"
+            android:layout_alignParentBottom="true"
+            android:src="@mipmap/ic_select_location" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/map_location_icon_size"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="-4dp">
+
+        <ImageView
+            android:id="@+id/iv_shadow"
+            android:layout_width="22dp"
+            android:layout_height="4dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_location_shadow_2" />
+    </RelativeLayout>
+</LinearLayout>

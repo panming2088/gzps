@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:background="@color/dark_white"
+    android:orientation="vertical"
+    android:paddingBottom="4dp">
+
+    <LinearLayout style="@style/MainFragmentTitleLinearLayout">
+
+        <ImageView
+            style="@style/MainFragmentTitleImageView"
+            android:src="@mipmap/ic_special_column"
+            />
+
+        <TextView
+            style="@style/MainFragmentTitleTextView"
+            android:text="专栏" />
+        <!--<ImageView-->
+        <!--style="@style/MainFragmentImageViewBesideTitle"-->
+        <!--android:src="@mipmap/ic_special_column" />-->
+    </LinearLayout>
+
+    <include layout="@layout/include_home_divide" />
+
+    <LinearLayout
+        style="@style/MainFragmentLinearlayout"
+        android:weightSum="5">
+
+        <LinearLayout
+            style="@style/MainFragmentImageViewOuterContainer"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_recent_news"
+                style="@style/MainFragmentImageView"
+                android:src="@mipmap/ic_recent_news" />
+
+            <TextView
+                style="@style/MainFragmentTextView"
+                android:text="新闻动态" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MainFragmentImageViewOuterContainer"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_notifications"
+                style="@style/MainFragmentImageView"
+                android:src="@mipmap/ic_notifications" />
+
+            <TextView
+                style="@style/MainFragmentTextView"
+                android:text="通知公告" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MainFragmentImageViewOuterContainer"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_experiment_share"
+                style="@style/MainFragmentImageView"
+                android:src="@mipmap/ic_share_experience" />
+
+            <TextView
+                style="@style/MainFragmentTextView"
+                android:text="经验交流" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MainFragmentImageViewOuterContainer"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_laws_and_regulations"
+                style="@style/MainFragmentImageView"
+                android:src="@mipmap/ic_laws_and_regulations" />
+
+            <TextView
+                style="@style/MainFragmentTextView"
+                android:text="政策法规" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MainFragmentImageViewOuterContainer"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_billboard"
+                style="@style/MainFragmentImageView"
+                android:src="@mipmap/home_ic_billboard" />
+
+            <TextView
+                style="@style/MainFragmentTextView"
+                android:text="红黑榜" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/MainFragmentLinearlayout"
+        android:weightSum="5">
+
+        <LinearLayout
+            android:id="@+id/ll_operate"
+            style="@style/MainFragmentImageViewOuterContainer"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_operate"
+                style="@style/MainFragmentImageView"
+                android:src="@mipmap/operate" />
+
+            <TextView
+                style="@style/MainFragmentTextView"
+                android:text="操作须知" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_event_affair"
+            style="@style/MainFragmentImageViewOuterContainer"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_facility_affair"
+                style="@style/MainFragmentImageView"
+                android:src="@mipmap/ic_public_affair" />
+
+            <TextView
+                style="@style/MainFragmentTextView"
+                android:text="事务公开" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MainFragmentImageViewOuterContainer"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MainFragmentImageViewOuterContainer"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MainFragmentImageViewOuterContainer"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="1dp">
+
+    <FrameLayout
+        android:id="@+id/tabTotal"
+        style="@style/JbjPsdySewerageUserListHeaderTab.Frame">
+
+        <com.augurit.agmobile.gzps.jbjpsdy.CustomTextView
+            style="@style/JbjPsdySewerageUserListHeaderTab.Text"
+            android:text="总数"
+            android:textColor="@drawable/drainage_selector_jbjpsdy_swewrage_user_list_header_tab_total_text" />
+
+        <com.augurit.agmobile.gzps.jbjpsdy.CustomTextView
+            android:id="@+id/tabTotalValue"
+            style="@style/JbjPsdySewerageUserListHeaderTab.Text2"
+            android:textColor="@drawable/drainage_selector_jbjpsdy_swewrage_user_list_header_tab_total_text"
+            tools:text="22" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/tabCateringTrade"
+        style="@style/JbjPsdySewerageUserListHeaderTab.Frame">
+
+        <com.augurit.agmobile.gzps.jbjpsdy.CustomTextView
+            style="@style/JbjPsdySewerageUserListHeaderTab.Text"
+            android:text="餐饮"
+            android:textColor="@drawable/drainage_selector_jbjpsdy_swewrage_user_list_header_tab_catering_trade_text" />
+
+        <com.augurit.agmobile.gzps.jbjpsdy.CustomTextView
+            android:id="@+id/tabCateringTradeValue"
+            style="@style/JbjPsdySewerageUserListHeaderTab.Text2"
+            android:textColor="@drawable/drainage_selector_jbjpsdy_swewrage_user_list_header_tab_catering_trade_text"
+            tools:text="6" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/tabPrecipitate"
+        style="@style/JbjPsdySewerageUserListHeaderTab.Frame">
+
+        <com.augurit.agmobile.gzps.jbjpsdy.CustomTextView
+            style="@style/JbjPsdySewerageUserListHeaderTab.Text"
+            android:text="沉淀物"
+            android:textColor="@drawable/drainage_selector_jbjpsdy_swewrage_user_list_header_tab_precipitate_text" />
+
+        <com.augurit.agmobile.gzps.jbjpsdy.CustomTextView
+            android:id="@+id/tabPrecipitateValue"
+            style="@style/JbjPsdySewerageUserListHeaderTab.Text2"
+            android:textColor="@drawable/drainage_selector_jbjpsdy_swewrage_user_list_header_tab_precipitate_text"
+            tools:text="2" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/tabDanger"
+        style="@style/JbjPsdySewerageUserListHeaderTab.Frame">
+
+        <com.augurit.agmobile.gzps.jbjpsdy.CustomTextView
+            android:text="有毒有害"
+            style="@style/JbjPsdySewerageUserListHeaderTab.Text"
+            android:textColor="@drawable/drainage_selector_jbjpsdy_swewrage_user_list_header_tab_danger_text" />
+
+        <com.augurit.agmobile.gzps.jbjpsdy.CustomTextView
+            android:id="@+id/tabDangerValue"
+            style="@style/JbjPsdySewerageUserListHeaderTab.Text2"
+            android:textColor="@drawable/drainage_selector_jbjpsdy_swewrage_user_list_header_tab_danger_text"
+            tools:text="2" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/tabLife"
+        style="@style/JbjPsdySewerageUserListHeaderTab.Frame">
+
+        <com.augurit.agmobile.gzps.jbjpsdy.CustomTextView
+            style="@style/JbjPsdySewerageUserListHeaderTab.Text"
+            android:text="生活"
+            android:textColor="@drawable/drainage_selector_jbjpsdy_swewrage_user_list_header_tab_life_text" />
+
+        <com.augurit.agmobile.gzps.jbjpsdy.CustomTextView
+            android:id="@+id/tabLifeValue"
+            style="@style/JbjPsdySewerageUserListHeaderTab.Text2"
+            android:textColor="@drawable/drainage_selector_jbjpsdy_swewrage_user_list_header_tab_life_text"
+            tools:text="12" />
+    </FrameLayout>
+
+</LinearLayout>

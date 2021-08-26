@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="com.augurit.agmobile.gzps.TableSewerageOneData">
+
+        <variable
+            name="tablesewerageoneonclick"
+            type="android.view.View.OnClickListener"/>
+
+        <variable
+            name="checkchangelistener"
+            type="android.widget.RadioGroup.OnCheckedChangeListener"/>
+
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:fitsSystemWindows="false"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/sv_tab1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:id="@+id/ll_tab1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:id="@+id/ll_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/common_rectangle_with_shadow"
+                    android:visibility="visible">
+
+
+                    <TextView
+                        android:id="@+id/tv_approve"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:text="审核状态："
+                        />
+
+                    <EditText
+                        android:id="@+id/tv_approve_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/tv_approve"
+                        android:enabled="false"
+                        android:text="未审核"
+                        android:textSize="14sp"/>
+
+                    <Button
+                        android:id="@+id/approve_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/sel_btn_upload"
+                        android:text="审核信息"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"/>
+                </RelativeLayout>
+                //现场相片
+                <com.augurit.agmobile.gzps.common.MultiTakePhotoTableItem
+                    android:id="@+id/photo_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:photoText="现场照片"/>
+                //排水户名称、街路巷、排水单元
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/common_rectangle_with_shadow"
+                    android:orientation="vertical">
+
+                    <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                        android:id="@+id/tv_table_sewerageone_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textViewName="排水户名称"/>
+
+                    <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                        android:id="@+id/tv_table_sewerageone_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textViewName="所属镇(街)"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="5dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="排水单元编号"
+                            android:textColor="#FF666666"
+                            android:textSize="@dimen/partrol_upload_text_size"/>
+
+                        <EditText
+                            android:id="@+id/edt_unit_name"
+                            style="@style/PatrolUploadKeyTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_select_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/sel_btn_select_location"
+                            android:clickable="true"
+                            android:onClick="@{tablesewerageoneonclick::onClick}"
+                            android:paddingRight="10dp">
+
+                            <ImageView
+                                android:id="@+id/iv"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:src="@mipmap/ic_select_location"/>
+
+                            <TextView
+                                android:id="@+id/tv_select_or_check_location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/iv"
+                                android:text="关联单元"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                        android:id="@+id/tv_table_sewerageone_three"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:textViewName="排水单元名称"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                            android:id="@+id/tv_table_sewerageone_four"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_weight="4"
+                            app:editTextHint="xx路xxx号"
+                            app:textViewName="门牌号"/>
+
+                        <LinearLayout
+                            android:id="@+id/btn_map"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="6dp"
+                            android:background="@drawable/sel_btn_select_location"
+                            android:clickable="true"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="4dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@mipmap/ic_select_location"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="位置"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                        android:id="@+id/tv_table_sewerageone_waterno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textViewName="水表号"/>
+
+                    <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                        android:id="@+id/tv_table_sewerageone_five"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textViewName="月用水量(吨)"/>
+
+                    <CheckBox
+                        android:id="@+id/cb_sygypsh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:textColor="#000000"
+                        android:text="属于工业类排水户" />
+                </LinearLayout>
+                //详细地址、产权人、经营人、电话
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/common_rectangle_with_shadow"
+                    android:orientation="vertical"
+                    android:paddingBottom="13dp"
+                    android:paddingTop="13dp">
+
+                    <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                        android:id="@+id/tv_table_sewerageone_six"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:editTextHint="xx区xx街道xx村xx路xx号"
+                        app:textViewName="详细地址"/>
+
+                    <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                        android:id="@+id/tv_table_sewerageone_seven"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textViewName="产权人姓名"/>
+
+                    <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                        android:id="@+id/tv_table_sewerageone_eight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textViewName="产权人联系电话"/>
+
+
+                    <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                        android:id="@+id/tv_table_sewerageone_nine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textViewName="经营人(法人)姓名"/>
+
+                    <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                        android:id="@+id/tv_table_sewerageone_ten"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textViewName="经营人(法人)联系电话"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/common_rectangle_with_shadow"
+                    android:clickable="false"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <!--文本框 -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:paddingTop="4dp"
+                                android:text="附件(排水户管网图、现场检查表等)"
+                                android:textColor="#FF666666"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/tv_tv_notice5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:layout_marginTop="-4dp"
+                                android:text="*"
+                                android:textColor="@android:color/holo_red_light"
+                                android:textSize="@dimen/text_size_third"
+                                android:visibility="gone"/>
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/rg_table_sewerageone_five"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rb_table_sewerageone_five_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="无"/>
+
+                            <RadioButton
+                                android:id="@+id/rb_table_sewerageone_five_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="有"/>
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                    <com.augurit.agmobile.gzps.common.MultiTakePhotoTableItem
+                        android:id="@+id/takephoto_sewerageone_five"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:photoText="附件(排水户管网图、现场检查表等)"/>
+                    <com.augurit.agmobile.gzps.common.widget.AgFilePicker
+                        android:id="@+id/file_picker"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </LinearLayout>
+
+                <!--登记表图片-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/common_rectangle_with_shadow"
+                    android:clickable="false"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <!--文本框 -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:paddingTop="4dp"
+                                android:text="排水户登记表"
+                                android:textColor="#FF666666"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/tv_notice7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:layout_marginTop="-4dp"
+                                android:text="*"
+                                android:textColor="@android:color/holo_red_light"
+                                android:textSize="@dimen/text_size_third"
+                                android:visibility="gone"/>
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/rg_table_sewerageone_seven"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rb_table_sewerageone_seven_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="无"/>
+
+                            <RadioButton
+                                android:id="@+id/rb_table_sewerageone_seven_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="有"/>
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                    <com.augurit.agmobile.gzps.common.MultiTakePhotoTableItem
+                        android:id="@+id/takephoto_sewerageone_seven"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:photoText="排水户登记表图片"/>
+
+                </LinearLayout>
+
+
+                <!--工商营业执照-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/common_rectangle_with_shadow"
+                    android:clickable="false"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        android:orientation="horizontal">
+                        <!--文本框 -->
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:paddingTop="4dp"
+                                android:text="工商营业执照"
+                                android:textColor="#FF666666"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/tv_notice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:layout_marginTop="-4dp"
+                                android:text="*"
+                                android:textColor="@android:color/holo_red_light"
+                                android:textSize="@dimen/text_size_third"
+                                android:visibility="gone"/>
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/rg_table_sewerageone_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rb_table_sewerageone_one_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="无"/>
+
+                            <RadioButton
+                                android:id="@+id/rb_table_sewerageone_one_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="有"/>
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_takephoto_sewerageone_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                            android:id="@+id/tv_sewerage_one_code1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="9sp"
+                            app:textViewName="统一社会信用代码"/>
+
+                        <com.augurit.agmobile.gzps.common.MultiTakePhotoTableItem
+                            android:id="@+id/takephoto_sewerageone_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:photoText="工商营业执照"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/common_rectangle_with_shadow"
+                    android:clickable="false"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <!--文本框 -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:paddingTop="4dp"
+                                android:text="接驳意见核准书"
+                                android:textColor="#FF666666"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/tv_notice2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:layout_marginTop="-4dp"
+                                android:text="*"
+                                android:textColor="@android:color/holo_red_light"
+                                android:textSize="@dimen/text_size_third"
+                                android:visibility="gone"/>
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/rg_table_sewerageone_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rb_table_sewerageone_two_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="无"/>
+
+                            <RadioButton
+                                android:id="@+id/rb_table_sewerageone_two_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="有"/>
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                    <com.augurit.agmobile.gzps.common.MultiTakePhotoTableItem
+                        android:id="@+id/takephoto_sewerageone_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:photoText="接驳意见核准书"/>
+
+                </LinearLayout>
+
+             <!--排水许可证-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/common_rectangle_with_shadow"
+                    android:clickable="false"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <!--文本框 -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:paddingTop="4dp"
+                                android:text="排水许可证"
+                                android:textColor="#FF666666"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/tv_notice3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:layout_marginTop="-4dp"
+                                android:text="*"
+                                android:textColor="@android:color/holo_red_light"
+                                android:textSize="@dimen/text_size_third"
+                                android:visibility="gone"/>
+                        </LinearLayout>
+
+                        <RadioGroup
+
+                            android:id="@+id/rg_table_sewerageone_three"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rb_table_sewerageone_three_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="无"/>
+
+                            <RadioButton
+                                android:id="@+id/rb_table_sewerageone_three_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="有"/>
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_takephoto_sewerageone_three"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                            android:id="@+id/tv_sewerage_one_code2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            app:textViewName="许可证编码"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:clickable="false"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:clickable="false"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <!--文本框 -->
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="8dp"
+                                        android:paddingTop="4dp"
+                                        android:gravity="center"
+                                        android:layout_gravity="center"
+                                        android:text="类型"
+                                        android:textColor="#FF666666"
+                                        android:textSize="14sp"/>
+
+                                    <TextView
+                                        android:id="@+id/tv_notice3_one"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="top"
+                                        android:layout_marginTop="-1dp"
+                                        android:text="*"
+                                        android:visibility="gone"
+                                        android:textColor="@android:color/holo_red_light"
+                                        android:textSize="@dimen/text_size_third"/>
+                                </LinearLayout>
+
+                                <RadioGroup
+
+                                    android:id="@+id/rg_table_sewerageone_three_one"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/rb_table_sewerageone_three_zd"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="重点排水户"/>
+
+                                    <RadioButton
+                                        android:id="@+id/rb_table_sewerageone_three_yb"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="一般排水户"/>
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="@dimen/padding_5"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <!--文本框 -->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:paddingTop="4dp"
+                                    android:text="发证日期"
+                                    android:textColor="#FF666666"
+                                    android:textSize="14sp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top"
+                                    android:layout_marginTop="-4dp"
+                                    android:text="*"
+                                    android:id="@+id/tv_notice5"
+                                    android:textColor="@android:color/holo_red_light"
+                                    android:textSize="@dimen/text_size_third"
+                                    android:visibility="visible"/>
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/btn_start_time"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/shp_blue_outline_bg"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="@dimen/padding_5"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <!--文本框 -->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:paddingTop="4dp"
+                                    android:text="有效期截止至"
+                                    android:textColor="#FF666666"
+                                    android:textSize="14sp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top"
+                                    android:layout_marginTop="-4dp"
+                                    android:text="*"
+                                    android:id="@+id/tv_notice6"
+                                    android:textColor="@android:color/holo_red_light"
+                                    android:textSize="@dimen/text_size_third"
+                                    android:visibility="visible"/>
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/btn_end_time"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/shp_blue_outline_bg"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+
+
+                        <com.augurit.agmobile.gzps.common.MultiTakePhotoTableItem
+                            android:id="@+id/takephoto_sewerageone_three"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:photoText="排水许可证"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/common_rectangle_with_shadow"
+                    android:clickable="false"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <!--文本框 -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:paddingTop="4dp"
+                                android:text="排污许可证"
+                                android:textColor="#FF666666"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/tv_notice4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:layout_marginTop="-4dp"
+                                android:text="*"
+                                android:textColor="@android:color/holo_red_light"
+                                android:textSize="@dimen/text_size_third"
+                                android:visibility="gone"/>
+                        </LinearLayout>
+
+
+                        <RadioGroup
+                            android:id="@+id/rg_table_sewerageone_four"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rb_table_sewerageone_four_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="无"/>
+
+                            <RadioButton
+                                android:id="@+id/rb_table_sewerageone_four_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="有"/>
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_takephoto_sewerageone_four"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                            android:id="@+id/tv_sewerage_one_code3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            app:textViewName="许可证编码"/>
+
+                        <com.augurit.agmobile.gzps.common.MultiTakePhotoTableItem
+                            android:id="@+id/takephoto_sewerageone_four"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:photoText="排污许可证"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/common_rectangle_with_shadow"
+                    android:orientation="vertical"
+                    android:paddingBottom="13dp"
+                    android:paddingTop="13dp">
+
+                    <com.augurit.agmobile.gzps.common.widget.TextFieldTableItem
+                        android:id="@+id/tf_table_upload_indicate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:fieldtextViewName="上报说明"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_upload_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="26dp"
+                    android:background="@drawable/common_rectangle_with_shadow"
+                    android:orientation="vertical"
+                    android:paddingTop="13dp"
+                    android:visibility="gone">
+
+                    <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                        android:id="@+id/tv_table_upload_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textViewName="上报人"/>
+
+                    <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                        android:id="@+id/tv_table_upload_org"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textViewName="上报单位"/>
+
+                    <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                        android:id="@+id/tv_table_upload_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textViewName="上报时间"/>
+
+                    <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                        android:id="@+id/tv_table_upload_edit_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:textViewName="最后编辑时间"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/map_bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/agmobile_white_dark"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:behavior_hideable="false"
+            app:layout_behavior="@string/bottom_sheet_behavior_with_anchor">
+
+            <include layout="@layout/audit_opinion_layout"/>
+        </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

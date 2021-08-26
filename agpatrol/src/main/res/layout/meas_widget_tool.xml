@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+    android:background="@color/transparent">
+
+    <LinearLayout
+        android:layout_width="@dimen/map_btn_size"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/map_btn_margin_top"
+        android:background="@color/transparent">
+
+        <ImageButton
+            android:id="@+id/btn_clear"
+            android:layout_width="@dimen/map_btn_size"
+            android:layout_height="@dimen/map_btn_size"
+            android:scaleType="fitCenter"
+            android:background="@drawable/common_sel_clear"
+            android:src="@drawable/common_sel_btn_light"
+            android:layout_marginBottom="@dimen/map_btn_spacing_vertical"
+            android:visibility="gone"/>
+
+        <ImageButton
+            android:id="@+id/btn_undo"
+            android:layout_width="@dimen/map_btn_size"
+            android:layout_height="@dimen/map_btn_size"
+            android:scaleType="fitCenter"
+            android:background="@drawable/common_sel_undo"
+            android:src="@drawable/common_sel_btn_light"
+            android:layout_marginBottom="@dimen/map_btn_spacing_vertical"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="34dp"
+            android:layout_height="@dimen/map_btn_margin_top"
+            android:scaleType="fitCenter"
+            android:text="确定"
+            android:textColor="@color/agmobile_white"
+            android:textSize="12sp"
+            android:background="@drawable/round_orange_rectangle2"
+            android:src="@drawable/common_sel_btn_light"/>
+    </LinearLayout>
+
+</LinearLayout>

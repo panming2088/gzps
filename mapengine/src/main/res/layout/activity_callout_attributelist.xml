@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+
+        <!--关闭按钮-->
+        <LinearLayout
+            android:id="@+id/btn_close"
+            android:layout_width="@dimen/min_touchable_size"
+            android:layout_height="@dimen/min_touchable_size"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/list_symbol_margin_right"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/common_sel_btn_light"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="@dimen/top_icon_size"
+                android:layout_height="@dimen/top_icon_size"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/common_ic_close_white" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_close">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="我是标题"
+                android:textColor="@color/agmobile_white" />
+            <!--返回按钮-->
+            <LinearLayout
+                android:id="@+id/ll_attributelist_back"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:elevation="5dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_back"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:clickable="false"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/back_arrow" />
+
+                <TextView
+                    android:id="@+id/tv_return"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:clickable="false"
+                    android:text="返回"
+                    android:textColor="@android:color/white" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_listcallout_attributelist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"></android.support.v7.widget.RecyclerView>
+</LinearLayout>

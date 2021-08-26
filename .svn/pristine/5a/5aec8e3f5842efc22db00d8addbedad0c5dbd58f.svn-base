@@ -1,0 +1,93 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="patrol_default_padding_size">16dp</dimen> <!--默认padding-->
+    <dimen name="patrol_default_padding_size_small">8dp</dimen> <!--默认padding-->
+    <dimen name="patrol_default_margin_very_small">4dp</dimen>
+    <dimen name="patrol_default_margin_small">8dp</dimen>
+    <dimen name="patrol_default_margin_medium">16dp</dimen>
+    <dimen name="patrol_default_margin_large">24dp</dimen>
+    <dimen name="tab_layout_text_size">20dp</dimen>
+
+    <!--地图相关尺寸-->
+    <dimen name="map_layerdir_check_box_margin_right">5dp</dimen><!--CheckBox右侧Margin-->
+    <dimen name="map_layerdir_opacity_btn_width">10dp</dimen><!--透明度按钮宽度-->
+    <dimen name="map_layerdir_opacity_text_margin_left">10dp</dimen><!--透明度按钮宽度-->
+    <dimen name="map_location_icon_size">36dp</dimen>
+    <dimen name="map_location_icon_bottom">16dp</dimen><!--地图选点底部定位图标的大小-->
+
+
+    <!-- 底图目录关闭按钮大小-->
+    <dimen name="layerdir_close_button_size">32dp</dimen>
+    <dimen name="layerdir_layout_margin_right">8dp</dimen> <!--目录图层距离右侧-->
+    <dimen name="layerdir_treeview_margin_top">112dp</dimen> <!--目录图层距离顶部-->
+    <dimen name="layerdir_close_button_margin_top">80dp</dimen> <!--目录图层关闭按钮距离右侧-->
+
+
+    <!--主界面相关参数-->
+    <!--主界面底部栏的高度-->
+    <!--主界面底部栏"+"的大小-->
+    <!--主界面底部栏"+"容器的大小-->
+    <!--主界面底部栏"+"容器的阴影-->
+    <!--主界面底部栏"+"距离底部距离-->
+
+
+    <!--轨迹记录相关参数-->
+    <!--巡查模块容器的高度-->
+    <!--"开始巡查"左侧的icon大小-->
+    <!--"开始巡查"距离左侧icon的距离-->
+    <dimen name="patrol_tracerecord_start_record_margin_top">10dp</dimen> <!--"开始巡查"距离顶部距离-->
+    <dimen name="patrol_tracerecord_start_record_margin_bottom">16dp</dimen> <!--"开始巡查"距离顶部距离-->
+    <!--巡查信息距离顶部距离-->
+
+
+    <!--登录界面相关参数-->
+
+    <!--我的界面相关参数-->
+    <!--统计数字的大小-->
+    <dimen name="mine_right_arrow_img_size">24dp</dimen>
+
+    <!--搜索界面相关参数-->
+    <dimen name="patrol_search_result_image_height">48dp</dimen>
+    <dimen name="patrol_search_drop_down_menu_margin_top">58dp</dimen> <!--筛选菜单距离顶部-->
+    <dimen name="patrols_search_drop_down_menu_text_size">16sp</dimen>
+    <dimen name="patrol_search_bottom_sheet_anchor_height">300dp</dimen>
+    <dimen name="patrol_search_bottom_sheet_peak_height">100dp</dimen>
+    <dimen name="patrol_search_bottom_sheet_evelation">4dp</dimen>
+    <dimen name="patrol_search_search_bar_evelation">6dp</dimen>
+    <dimen name="patrol_search_search_bar_height">48dp</dimen> <!--搜索栏的高度-->
+    <dimen name="patrol_search_drop_down_menu_move_distance">30dp</dimen> <!--筛选菜单移动距离-->
+    <dimen name="patrol_search_result_item_date_text_width">75dp</dimen> <!--上报历史中时间显示的宽度-->
+    <dimen name="patrol_search_bottom_sheet_peek_height">250dp</dimen>
+
+    <!--上报界面添加图片相关参数-->
+    <dimen name="partrol_upload_camera_margin">10dp</dimen>
+    <dimen name="partrol_upload_camera_height">60dp</dimen>
+    <dimen name="partrol_upload_camera_width">60dp</dimen>
+    <dimen name="partrol_upload_photo_margin">10dp</dimen>
+    <dimen name="partrol_upload_photo_height">60dp</dimen>
+    <dimen name="partrol_upload_photo_width">60dp</dimen>
+
+    <!--未提交问题界面相关参数-->
+    <dimen name="pratrol_uncommit_margin_top">6dp</dimen>
+    <dimen name="pratrol_uncommit_margin_bottom">3dp</dimen>
+    <dimen name="pratrol_uncommit_margin_left">12dp</dimen>
+    <dimen name="pratrol_uncommit_margin_right">12dp</dimen>
+
+    <!-- 选择下一环节界面  -->
+    <dimen name="user_dialog_textsize">17sp</dimen>
+
+    <!-- 日常工作 -->
+    <dimen name="column_image_width">39dp</dimen>
+    <dimen name="column_image_height">39dp</dimen>
+
+    <dimen name="padding_5">5dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+
+    <dimen name="agmobile_text_body">16sp</dimen>
+    <dimen name="widget_view_margin_left">8dp</dimen>
+
+    <dimen name="agmobile_text_body_sub">14sp</dimen>
+
+</resources>

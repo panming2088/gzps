@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    <color name="agpatrol_blue">#538DF7</color>
+    -->
+
+    <color name="grey">#DDDDDD</color>
+    <color name="trans_dark">#99323232</color>
+    <color name="material_gray_400_trans">#BDBDBDBD</color>
+    <color name="material_grey_400">#BDBDBD</color>
+
+    <!--地图模块高亮颜色-->
+    <color name="patrol_identify_point_color">#00c8ff</color>
+    <color name="patrol_identify_line_color">#00ffff</color>
+    <color name="patrol_identify_polygon_color">#00c8ff</color>
+
+    <color name="trans_light_dark">#60323232</color>
+    <color name="green">#00e676</color>
+
+    <!--dropdownMenu颜色-->
+    <color name="drop_down_background_color">#f2f2f2</color>
+    <color name="drop_down_text_color">#909090</color>
+
+    <color name="agpatrol_blue">#1A95F8</color>
+
+    <!--手机菜单栏背景 -->
+    <color name="phone_menu_bg">#f5f5f5</color>
+
+    <!--地图按钮选中-->
+    <color name="bg_map_btn_press">#ff9600</color>
+
+    <color name="light_orange">#FFA84D</color>
+    <color name="primary_background_color">#F1F2F5</color>
+
+    <!--深灰色-->
+    <color name="dust_grey">#414141</color>
+    <color name="progress_line_green">#2cc75f</color>
+</resources>

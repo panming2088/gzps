@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#fff"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layout_head"
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:background="#1dd3de"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/left_btn"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_btn_back"
+            android:drawableLeft="@mipmap/ac_back_icon"
+            android:gravity="center_vertical"
+            android:onClick="conversationBack"
+            android:textColor="@drawable/selector_btn_top"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="24dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:background="#afff"/>
+
+
+        <TextView
+            android:id="@+id/group_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|left"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/right_btn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@null"
+            android:maxLines="1"
+            android:textColor="@drawable/selector_btn_top"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:clickable="true"
+            android:maxLines="1"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:visibility="gone"/>
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/group_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:divider="@null"
+        />
+    <!--<ScrollView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content">-->
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="vertical"-->
+    <!--android:paddingBottom="30dp">-->
+    <!--<com.augurit.agmobile.gzps.im.widget.DemoGridView-->
+    <!--android:id="@+id/gridview"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#ffffff"-->
+    <!--android:gravity="start"-->
+    <!--android:listSelector="@android:color/transparent"-->
+    <!--android:numColumns="4"-->
+    <!--android:paddingLeft="1dp"-->
+    <!--android:paddingRight="1dp" />-->
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#fff">-->
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0.25dp"-->
+    <!--android:layout_marginLeft="14dp"-->
+    <!--android:layout_marginRight="14dp"-->
+    <!--android:layout_marginTop="14dp"-->
+    <!--android:background="#dfdfdd" />-->
+    <!--</LinearLayout>-->
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/group_member_size_item"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="48dp"-->
+    <!--android:background="@drawable/btn_list_item_bg"-->
+    <!--android:clickable="true">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/group_member_size"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_marginLeft="14dp"-->
+    <!--android:text="全部群成员"-->
+    <!--android:textColor="#353535"-->
+    <!--android:textSize="16sp" />-->
+
+    <!--</RelativeLayout>-->
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/group_member_online_status"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="48dp"-->
+    <!--android:background="@drawable/btn_list_item_bg"-->
+    <!--android:clickable="true"-->
+    <!--android:visibility="gone">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tv_group_member_onlinestatus"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_marginLeft="14dp"-->
+    <!--android:text="@string/group_member_online_status"-->
+    <!--android:textColor="@color/text_color"-->
+    <!--android:textSize="16sp" />-->
+
+    <!--</RelativeLayout>-->
+
+    <!--&lt;!&ndash;<View&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="0.25dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginLeft="14dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginRight="14dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="20dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:background="#dfdfdd" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<LinearLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/ac_ll_search_chatting_records"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="48dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:background="@drawable/btn_list_item_bg"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:clickable="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:orientation="horizontal">&ndash;&gt;-->
+    <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="0dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_gravity="center_vertical"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginBottom="10dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginLeft="16dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="10dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_weight="1"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:text="@string/search_message"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textColor="@color/text_color"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textSize="16sp" />&ndash;&gt;-->
+    <!--&lt;!&ndash;</LinearLayout>&ndash;&gt;-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#fff">-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0.25dp"-->
+    <!--android:layout_marginLeft="14dp"-->
+    <!--android:layout_marginRight="14dp"-->
+    <!--android:background="#dfdfdd" />-->
+    <!--</LinearLayout>-->
+
+    <!--&lt;!&ndash;<View&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="0.25dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginLeft="14dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginRight="14dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="20dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:background="#dfdfdd" />&ndash;&gt;-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#fff">-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0.25dp"-->
+    <!--android:layout_marginLeft="14dp"-->
+    <!--android:layout_marginRight="14dp"-->
+    <!--android:background="#dfdfdd" />-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/ll_group_port"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="48dp"-->
+    <!--android:background="@drawable/btn_list_item_bg"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_vertical"-->
+    <!--android:layout_marginBottom="10dp"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="@string/group_portrait"-->
+    <!--android:textColor="@color/text_color"-->
+    <!--android:textSize="16sp" />-->
+
+    <!--<com.augurit.agmobile.gzps.im.widget.SelectableRoundedImageView-->
+    <!--android:id="@+id/group_header"-->
+    <!--android:layout_width="30dp"-->
+    <!--android:layout_height="30dp"-->
+    <!--android:layout_gravity="center_vertical"-->
+    <!--android:layout_marginRight="14dp"-->
+    <!--android:scaleType="centerCrop"-->
+    <!--app:sriv_left_bottom_corner_radius="3dip"-->
+    <!--app:sriv_left_top_corner_radius="3dip"-->
+    <!--app:sriv_right_bottom_corner_radius="3dip"-->
+    <!--app:sriv_right_top_corner_radius="3dip" />-->
+
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/ll_group_name"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="48dp"-->
+    <!--android:background="@drawable/btn_list_item_bg"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_vertical"-->
+    <!--android:layout_marginBottom="10dp"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:layout_marginStart="16dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:ellipsize="end"-->
+    <!--android:maxLines="1"-->
+    <!--android:text="@string/group_name"-->
+    <!--android:textColor="@color/text_color"-->
+    <!--android:textSize="16sp" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/group_name"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_vertical"-->
+    <!--android:layout_marginBottom="10dp"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:layout_marginRight="14dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:ellipsize="end"-->
+    <!--android:gravity="right"-->
+    <!--android:maxLines="1"-->
+    <!--android:textColor="#999"-->
+    <!--android:textSize="14sp" />-->
+
+
+    <!--</LinearLayout>-->
+
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/ac_ll_group_announcement_divider"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#fff"-->
+    <!--android:visibility="gone">-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0.25dp"-->
+    <!--android:layout_marginLeft="14dp"-->
+    <!--android:layout_marginRight="14dp"-->
+    <!--android:background="#dfdfdd" />-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/group_announcement"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="48dp"-->
+    <!--android:background="@drawable/btn_list_item_bg"-->
+    <!--android:clickable="true"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_vertical"-->
+    <!--android:layout_marginBottom="10dp"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:layout_marginStart="16dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="@string/group_announcement"-->
+    <!--android:textColor="@color/text_color"-->
+    <!--android:textSize="16sp" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--&lt;!&ndash;<View&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="0.25dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginLeft="14dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginRight="14dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:background="#dfdfdd" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<LinearLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/group_code"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="48dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:background="@drawable/btn_list_item_bg"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:clickable="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:orientation="horizontal"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:visibility="gone">&ndash;&gt;-->
+
+
+    <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="0dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_gravity="center_vertical"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginBottom="10dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginLeft="16dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="10dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_weight="1"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:text="@string/group_code"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textSize="16sp" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_gravity="center_vertical"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginEnd="14dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginRight="14dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:src="@mipmap/a_5" />&ndash;&gt;-->
+
+
+    <!--&lt;!&ndash;</LinearLayout>&ndash;&gt;-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#fff">-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0.25dp"-->
+    <!--android:layout_marginLeft="14dp"-->
+    <!--android:layout_marginRight="14dp"-->
+    <!--android:background="#dfdfdd" />-->
+    <!--</LinearLayout>-->
+
+    <!--&lt;!&ndash;<View&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="0.25dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginLeft="14dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginRight="14dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="20dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:background="#dfdfdd" />&ndash;&gt;-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="48dp"-->
+    <!--android:background="#ffffff"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_vertical"-->
+    <!--android:layout_marginBottom="10dp"-->
+    <!--android:layout_marginLeft="14dp"-->
+    <!--android:layout_marginStart="14dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="@string/message_notice"-->
+    <!--android:textColor="@color/text_color"-->
+    <!--android:textSize="16sp" />-->
+
+    <!--<com.augurit.agmobile.gzps.im.widget.SwitchButton-->
+    <!--android:id="@+id/sw_group_notfaction"-->
+    <!--style="@style/SwitchButtonStyle"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="8dp"-->
+    <!--app:kswAnimationDuration="300"-->
+    <!--app:kswBackDrawable="@drawable/ios_back_drawable"-->
+    <!--app:kswBackMeasureRatio="1.4"-->
+    <!--app:kswThumbDrawable="@mipmap/ios_thumb"-->
+    <!--app:kswThumbMarginBottom="-8dp"-->
+    <!--app:kswThumbMarginLeft="-5dp"-->
+    <!--app:kswThumbMarginRight="-5dp"-->
+    <!--app:kswThumbMarginTop="-2.5dp" />-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#fff">-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0.5dp"-->
+    <!--android:layout_marginLeft="14dp"-->
+    <!--android:layout_marginRight="14dp"-->
+    <!--android:background="#dfdfdd" />-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="48dp"-->
+    <!--android:layout_gravity="center_vertical"-->
+    <!--android:background="#ffffff"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_vertical"-->
+    <!--android:layout_marginBottom="10dp"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:layout_marginStart="16dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="@string/set_top"-->
+    <!--android:textColor="@color/text_color"-->
+    <!--android:textSize="16sp" />-->
+
+    <!--<com.augurit.agmobile.gzps.im.widget.SwitchButton-->
+    <!--android:id="@+id/sw_group_top"-->
+    <!--style="@style/SwitchButtonStyle"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="8dp"-->
+    <!--app:kswAnimationDuration="300"-->
+    <!--app:kswBackDrawable="@drawable/ios_back_drawable"-->
+    <!--app:kswBackMeasureRatio="1.4"-->
+    <!--app:kswThumbDrawable="@mipmap/ios_thumb"-->
+    <!--app:kswThumbMarginBottom="-8dp"-->
+    <!--app:kswThumbMarginLeft="-5dp"-->
+    <!--app:kswThumbMarginRight="-5dp"-->
+    <!--app:kswThumbMarginTop="-2.5dp" />-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#fff">-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0.25dp"-->
+    <!--android:layout_marginLeft="14dp"-->
+    <!--android:layout_marginRight="14dp"-->
+    <!--android:background="#dfdfdd" />-->
+    <!--</LinearLayout>-->
+
+
+    <!--&lt;!&ndash;<LinearLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/group_clean"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="48dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:background="@drawable/btn_list_item_bg"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:clickable="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:orientation="horizontal">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="0dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_gravity="center_vertical"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginBottom="10dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginLeft="16dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginStart="16dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="10dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_weight="1"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:text="@string/clean_message"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textColor="@color/text_color"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textSize="16sp" />&ndash;&gt;-->
+
+
+    <!--&lt;!&ndash;</LinearLayout>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<LinearLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="5dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:background="#ffffff"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:orientation="horizontal"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:visibility="gone">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="0dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginBottom="10dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginLeft="16dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="10dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_weight="1"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:text="开启群组会话"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textSize="16sp" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_gravity="center_vertical"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:background="@drawable/rp_arrow" />&ndash;&gt;-->
+    <!--&lt;!&ndash;</LinearLayout>&ndash;&gt;-->
+
+
+    <!--&lt;!&ndash;<LinearLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/group_displayname"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="5dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:background="#ffffff"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:orientation="horizontal"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:visibility="gone">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="0dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginBottom="10dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginLeft="16dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="10dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_weight="1"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:text="群组昵称"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textSize="16sp" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/group_displayname_text"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="0dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginBottom="10dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginLeft="16dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="10dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_weight="1"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:gravity="right"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:paddingRight="10dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:text="无"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textColor="@color/group_list_gray"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textSize="16sp" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_gravity="center_vertical"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:background="@mipmap/rp_arrow" />&ndash;&gt;-->
+    <!--&lt;!&ndash;</LinearLayout>&ndash;&gt;-->
+
+
+    <!--&lt;!&ndash;<Button&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/group_quit"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="48dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginLeft="14dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginRight="14dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="30dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:background="@drawable/rs_select_btn_red"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:text="@string/quit_group"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textColor="#FFF"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textSize="16sp" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<Button&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/group_dismiss"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="48dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginLeft="14dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginRight="14dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="30dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:background="@drawable/rs_select_btn_red"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:text="@string/dismiss_group"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textColor="#FFF"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textSize="16sp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:visibility="gone" />&ndash;&gt;-->
+    <!--</LinearLayout>-->
+    <!--</ScrollView>-->
+</LinearLayout>

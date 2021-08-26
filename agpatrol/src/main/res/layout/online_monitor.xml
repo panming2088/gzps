@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/agpatrol_blue">
+
+        <!--返回按钮-->
+        <LinearLayout
+            android:id="@+id/btn_back"
+            style="@style/AGMobile.Widget.Button.Container.Dark"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/top_icon_margin_horizontal"
+            android:orientation="horizontal">
+
+            <ImageButton
+                style="@style/AGMobile.Widget.ImageButton.TopBar"
+                android:src="@mipmap/common_ic_back" />
+        </LinearLayout>
+
+        <!--标题-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/top_bar_height"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:textColor="@color/agmobile_white"
+            android:textSize="@dimen/top_title_text_size"
+            android:text="在线人员定位"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+
+            <LinearLayout
+                android:id="@+id/btn_all_subordinate"
+                style="@style/AGMobile.Widget.Button.Container.Dark"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/top_icon_margin_horizontal"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    style="@style/AGMobile.Widget.ImageButton.TopBar"
+                    android:src="@mipmap/common_ic_add_white" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.esri.android.map.MapView
+            android:id="@+id/mapview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</LinearLayout>

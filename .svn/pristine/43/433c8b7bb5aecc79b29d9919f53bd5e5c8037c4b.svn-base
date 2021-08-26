@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="com.augurit.agmobile.gzps.SewerageTableThreeClickData">
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/common_rectangle_with_shadow"
+                    android:orientation="vertical"
+                    android:paddingBottom="13dp"
+                    android:paddingTop="13dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/common_rectangle_with_shadow"
+                        android:orientation="vertical"
+                        android:paddingBottom="13dp"
+                        android:paddingTop="13dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                style="@style/PatrolUploadKeyTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="管类别" />
+                            <TextView
+                                android:id="@+id/tv_notice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:layout_marginTop="-4dp"
+                                android:text="*"
+                                android:visibility="gone"
+                                android:textColor="@android:color/holo_red_light"
+                                android:textSize="@dimen/text_size_third" />
+                        </LinearLayout>
+
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_seweragetablethreeclick3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginTop="15dp"
+                            android:horizontalSpacing="10dp"
+                            android:padding="6dp"
+                            android:verticalSpacing="10dp"/>
+                        <EditText
+                            android:id="@+id/edt_PipeType_other"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:visibility="gone"
+                            android:maxLength="30"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginLeft="15dp"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/PatrolUploadKeyTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="所连接驳井"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_notice4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_marginTop="-4dp"
+                            android:text="*"
+                            android:textColor="@android:color/holo_red_light"
+                            android:textSize="@dimen/text_size_third"
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/edt_well_location"
+                            style="@style/PatrolUploadKeyTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:enabled="false"/>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_select_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/sel_btn_select_location"
+                            android:paddingRight="10dp">
+
+                            <ImageView
+                                android:id="@+id/iv"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:src="@mipmap/ic_select_location" />
+
+                            <TextView
+                                android:id="@+id/tv_select_or_check_location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/iv"
+                                android:text="关联井" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/common_rectangle_with_shadow"
+                        android:orientation="vertical"
+                        android:paddingBottom="13dp"
+                        android:paddingTop="13dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/PatrolUploadKeyTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="井类别" />
+
+                            <TextView
+                                android:id="@+id/tv_notice2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:layout_marginTop="-4dp"
+                                android:text="*"
+                                android:textColor="@android:color/holo_red_light"
+                                android:textSize="@dimen/text_size_third"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/rv_seweragetablethreeclick1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginTop="15dp"
+                                android:horizontalSpacing="10dp"
+                                android:padding="6dp"
+                                android:verticalSpacing="10dp" />
+                            <EditText
+                                android:id="@+id/edit_wellType_other"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:visibility="gone"
+                                android:maxLength="30"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginLeft="15dp"/>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/common_rectangle_with_shadow"
+                        android:orientation="vertical"
+                        android:paddingBottom="13dp"
+                        android:paddingTop="13dp">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/PatrolUploadKeyTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="井存在问题" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/rv_seweragetablethreeclick2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginTop="15dp"
+                                android:horizontalSpacing="10dp"
+                                android:paddingBottom="6dp"
+                                android:paddingRight="6dp"
+                                android:paddingTop="6dp"
+                                android:paddingEnd="1dp"
+                                android:verticalSpacing="10dp"/>
+                            <EditText
+                                android:id="@+id/edt_other_two"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:visibility="gone"
+                                android:maxLength="30"
+                                android:layout_marginLeft="18dp"
+                                android:layout_marginRight="18dp"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_nextlilnk_org"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <com.augurit.agmobile.gzps.common.widget.AutoBreakViewGroup
+                            android:id="@+id/radio_nextlink_org"
+                            android:layout_width="match_parent"
+                            android:layout_height="160dp"
+                            android:layout_marginLeft="12dp"
+                            android:orientation="horizontal" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_stroke"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <com.augurit.agmobile.gzps.common.widget.AutoBreakViewGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="160dp"
+                            android:layout_marginLeft="12dp"
+                            android:orientation="horizontal" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            style="@style/PatrolUploadKeyTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="排水去向"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_notice3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_marginTop="-4dp"
+                            android:text="*"
+                            android:visibility="gone"
+                            android:textColor="@android:color/holo_red_light"
+                            android:textSize="@dimen/text_size_third" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:clickable="false">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <RadioGroup
+                                android:id="@+id/rg_sewersgetablethreeclick"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:orientation="vertical">
+                                <RadioButton
+                                    android:id="@+id/direction_item"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="接入管网" />
+                                <RadioButton
+                                    android:id="@+id/direction_item1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="直排水体" />
+                                <RadioButton
+                                    android:id="@+id/direction_item2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="其他" />
+                            </RadioGroup>
+                            <EditText
+                                android:id="@+id/edit_direction_other"
+                                android:layout_width="match_parent"
+                                android:textSize="14sp"
+                                android:maxLength="30"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:layout_marginLeft="65dp"/>
+                        </FrameLayout>
+
+                    <!--    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="5dp">
+                            <RadioGroup
+                                android:id="@+id/rg_sewersgetablethreeclick2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <RadioButton
+                                    android:id="@+id/direction_item2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="其他" />
+                            </RadioGroup>
+                            <EditText
+                                android:id="@+id/edit_direction_other"
+                                android:layout_width="match_parent"
+                                android:textSize="14sp"
+                                android:maxLength="30"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>-->
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/common_rectangle_with_shadow"
+                    android:orientation="vertical"
+                    android:paddingBottom="13dp"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="15dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="排水存在的问题"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@drawable/bg_stroke" />
+
+                    <CheckBox
+                        android:id="@+id/check_item1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="雨污混接" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/check_item2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="排水性状异常(描述)" />
+
+                        <EditText
+                            android:id="@+id/edit_item1"
+                            android:layout_width="match_parent"
+                            android:textSize="14sp"
+                            android:maxLength="30"
+                            android:layout_marginRight="18dp"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/check_item3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="偷排" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/check_item4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="其他(描述)" />
+
+                        <EditText
+                            android:id="@+id/edit_item2"
+                            android:layout_width="match_parent"
+                            android:layout_marginRight="18dp"
+                            android:textSize="14sp"
+                            android:maxLength="30"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/ll_bottom"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btn_seweragetablethree_save"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/padding_5"
+                    android:layout_marginRight="@dimen/padding_5"
+                    android:background="@drawable/sel_btn_upload"
+                    android:clickable="false"
+                    android:text="保存"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btn_seweragetablethree_del"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="12dp"
+                    android:visibility="gone"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/padding_5"
+                    android:layout_marginRight="@dimen/padding_5"
+                    android:background="@drawable/sel_btn_delete"
+                    android:clickable="false"
+                    android:text="删除"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</layout>

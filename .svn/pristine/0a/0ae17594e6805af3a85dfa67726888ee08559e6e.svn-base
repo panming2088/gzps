@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    
+    <LinearLayout
+        android:id="@+id/layout_head"
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:background="#1dd3de"
+        android:orientation="horizontal">
+        
+        <Button
+            android:id="@+id/left_btn"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_btn_back"
+            android:drawableLeft="@mipmap/ac_back_icon"
+            android:gravity="center_vertical"
+            android:onClick="conversationBack"
+            android:textColor="@drawable/selector_btn_top"/>
+        
+        <View
+            android:layout_width="1dp"
+            android:layout_height="24dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:background="#afff"/>
+        
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/title_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/online_state_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|center"
+                android:padding="3dp"
+                android:textColor="@color/dark_gray"
+                android:textSize="13sp"
+                android:visibility="gone"/>
+        
+        </LinearLayout>
+        
+        
+        <Button
+            android:id="@+id/right_btn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@null"
+            android:maxLines="1"
+            android:textColor="@drawable/selector_btn_top"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:clickable="true"
+            android:maxLines="1"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:visibility="gone"/>
+    </LinearLayout>
+    
+    <fragment
+        android:id="@+id/conversation"
+        android:name="io.rong.imkit.fragment.ConversationFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

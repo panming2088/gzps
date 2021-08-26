@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./component/libs/galaxy-v2.0.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/component/libs/galaxy-v2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

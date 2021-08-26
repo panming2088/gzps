@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data class="com.augurit.agmobile.gzpssb.SewerageTableThree">
+
+        <variable
+            name="wellbean"
+            type="com.augurit.agmobile.gzps.doorno.model.SewerageInfoBean.WellBeen" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="15dp">
+            <!--管类别(所连接驳井ID)-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/tv_well_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/dust_grey"
+                    android:textSize="@dimen/text_size_first" />
+            </LinearLayout>
+            <!--井类别 | 排水去向-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/down_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{wellbean.wellType}"
+                    android:textSize="@dimen/text_size_third"
+                    android:textColor="@color/dust_grey"
+                    android:paddingTop="5dp"/>
+                <View
+                    android:id="@+id/down_line"
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:background="@color/agmobile_black"
+                    android:layout_marginLeft="15dp"
+                    />
+
+                <TextView
+                    android:id="@+id/down_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{wellbean.wellDir}"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/dust_grey"
+                    android:textSize="@dimen/text_size_third"
+                    android:paddingTop="5dp"/>
+            </LinearLayout>
+            <!--井存在的问题-->
+            <LinearLayout
+                android:id="@+id/ll_well_pro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:visibility="gone">
+                <TextView
+                    style="@style/well_list_item_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{`井存在的问题：`+(wellbean.wellPro==null?`无`:wellbean.wellPro)}"
+                    android:textSize="@dimen/text_size_third"
+                    android:textColor="@color/dust_grey"/>
+            </LinearLayout>
+            <!--排水存在的问题-->
+            <LinearLayout
+                android:id="@+id/ll_well_newdrain_pro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:visibility="gone">
+                <TextView
+                    style="@style/well_list_item_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{`排水存在问题：`+wellbean.newDrainPro}"
+                    android:textColor="@color/dust_grey"
+                    android:textSize="@dimen/text_size_third" />
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="@color/agmobile_grey_0"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+</layout>

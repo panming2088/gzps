@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--登录-->
+    <dimen name="btn_setting_margin_bottom">30dp</dimen>
+    <dimen name="btn_setting_margin_right">22dp</dimen>
+    <dimen name="login_frame_margin_horizontal">32dp</dimen>
+    <dimen name="login_form_padding_top">36dp</dimen>
+    <dimen name="login_form_padding_horizontal">20dp</dimen>
+    <dimen name="login_et_margin_bottom">1dp</dimen>
+    <dimen name="login_et_height">53dp</dimen>
+    <dimen name="login_et_text_padding_left">12dp</dimen>
+    <dimen name="login_et_text_size">16sp</dimen>
+    <dimen name="login_checkbox_size">16dp</dimen>
+    <dimen name="login_checkbox_padding">6dp</dimen>
+    <dimen name="login_checkbox_text_spacing">6dp</dimen><!--复选框与文字的间距-->
+    <!--登录按钮显示其他信息时的字体大小-->
+
+    <!--登录设置-->
+    <dimen name="login_setting_dialog_width">350dp</dimen>
+    <!--设置对话框圆角-->
+    <dimen name="login_setting_frame_padding_left">15dp</dimen>
+    <dimen name="login_setting_frame_padding_right">7dp</dimen>
+    <dimen name="login_setting_item_margin_right">9dp</dimen>
+    <dimen name="login_setting_save_btn_height">37dp</dimen>
+    <dimen name="login_setting_save_btn_margin_top">18dp</dimen>
+    <dimen name="login_setting_save_btn_margin_bottom">10dp</dimen>
+    <dimen name="login_setting_save_btn_text_size">19sp</dimen><!--保存按钮字体大小-->
+</resources>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">patrolcore</string>
+    <!--功能名称-->
+    <string name="title_project">专题选择</string>
+    <string name="title_layer">图层选择</string>
+
+    <!--转场动画-->
+    <string name="textview_transition_name">textview_transition_name</string>
+    <string name="title_activity_street_collection">StreetCollectionActivity</string>
+    <string name="title_activity_building_collection">BuildingCollectionActivity</string>
+    <string name="title_activity_building_address_collection">BuildingAddressCollectionActivity
+    </string>
+
+
+    <string name="select_device">%s选择</string>
+    <string name="show_selected_device">%s展示</string>
+    <!--巡查上报地图-->
+    <string name="the_current_address_is_near">%s附近</string>
+    <string name="the_current_location_latitude">%d</string>
+    <string name="the_current_location_longitude">%d</string>
+
+
+    <!--转场动画-->
+    <string name="transition_story_title" translatable="false">story_title</string>
+    <string name="transition_story_title_background" translatable="false">story_title_background</string>
+    <string name="transition_story_background" translatable="false">transition_story_background</string>
+    <string name="transition_player_avatar" translatable="false">transition_player_avatar</string>
+    <string name="transition_player_background" translatable="false">transition_player_background</string>
+    <string name="transition_shot" translatable="false">shot</string>
+    <string name="transition_shot_title" translatable="false">shot_title</string>
+    <string name="transition_shot_background" translatable="false">shot_background</string>
+</resources>

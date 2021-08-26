@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary"
+        >
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_height"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="已提交"
+            android:textColor="@color/agmobile_white"
+            android:textSize="@dimen/text_size_first"
+            />
+        <!--返回按钮-->
+        <LinearLayout
+            android:id="@+id/ll_back"
+            style="@style/AGMobile.Widget.Button.Container.Dark"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/top_icon_margin_horizontal"
+            android:elevation="5dp"
+            android:layout_width="@dimen/min_touchable_size"
+            android:layout_height="@dimen/min_touchable_size"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                style="@style/AGMobile.Widget.ImageButton.TopBar"
+                android:src="@mipmap/back_arrow"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:id="@+id/track_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <include layout="@layout/layout_sticky_head_view" />
+
+    </FrameLayout>
+
+</LinearLayout>

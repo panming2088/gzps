@@ -1,0 +1,82 @@
+<resources>
+    <!--上报item中id为et_的EditText样式-->
+    <style name="PatrolUploadETItemStyle">
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginLeft">@dimen/patrol_upload_view_margin_left</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/dust_grey</item>
+    </style>
+    
+    <!--spinner样式-->
+    <style name="spinner_style" parent="PatrolUploadETItemStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/spinner_background</item>
+
+        <item name="android:popupBackground">#DFFFFFFF</item>
+    </style>
+
+    <!--上报界面key的样式-->
+    <style name="PatrolUploadKeyTextStyle">
+        <item name="android:layout_width">@dimen/patrol_upload_text_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/patrol_upload_view_margin_left</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:textSize">@dimen/partrol_upload_text_size</item>
+        <item name="android:textColor">#FF666666</item>
+       <!-- <item name="android:gravity">right</item>-->
+    </style>
+
+    <!--上报Item最外层容器样式-->
+    <style name="PatrolUploadItemOuterContainerStyle">
+        <item name="android:paddingBottom">@dimen/patrol_upload_text_padding</item>
+        <item name="android:paddingRight">@dimen/patrol_upload_text_padding</item>
+        <item name="android:paddingTop">@dimen/patrol_upload_text_padding</item>
+    </style>
+
+
+    <!--设施选择底部弹窗样式-->
+    <style name="SelectDeviceBottomSheetDialogTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/patrol_default_margin_small</item>
+        <item name="android:textSize">@dimen/text_size_second</item>
+    </style>
+
+    <style name="transparent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/trans_dark</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+
+    <!--蓝牙设备选择界面-->
+    <style name="SettingBlockTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#fcfcfc</item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--<style name="AGMobile.Widget.SlideTabLayout">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@color/agmobile_white</item>
+        <item name="tl:tl_textBold">SELECT</item>
+        <item name="tl:tl_textsize">@dimen/text_size_first</item>
+        <item name="tl:tl_textUnselectColor">@color/dust_grey</item>
+        <item name="tl:tl_textSelectColor">@color/colorPrimary</item>
+        <item name="tl:tl_underline_gravity">BOTTOM</item>
+        <item name="tl:tl_tab_space_equal">false</item>
+        <item name="tl:tl_underline_height">1dp</item>
+        <item name="tl:tl_indicator_color">@color/colorPrimary</item>
+    </style>-->
+
+</resources>

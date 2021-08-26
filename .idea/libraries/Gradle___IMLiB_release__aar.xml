@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: :IMLiB-release:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/1ac2717e6b7c14e7576ec0f65260ddea/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/1ac2717e6b7c14e7576ec0f65260ddea/res" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/1ac2717e6b7c14e7576ec0f65260ddea/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/1ac2717e6b7c14e7576ec0f65260ddea/jars/libs/Rong_IMLib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

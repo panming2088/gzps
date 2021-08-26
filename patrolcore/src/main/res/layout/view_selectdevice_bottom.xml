@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_select_from_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/patrol_default_padding_size"
+        android:clickable="true">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@mipmap/common_ic_grey_loc"/>
+
+        <TextView
+            style="@style/SelectDeviceBottomSheetDialogTextStyle"
+            android:text="从地图选择"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/list_divider"/>
+
+    <LinearLayout
+        android:id="@+id/ll_select_from_qr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/patrol_default_padding_size">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@mipmap/common_ic_qr"/>
+
+        <TextView
+            style="@style/SelectDeviceBottomSheetDialogTextStyle"
+            android:text="扫描二维码"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/list_divider"/>
+
+    <LinearLayout
+        android:id="@+id/ll_select_device_by_barcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/patrol_default_padding_size">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@mipmap/common_ic_barcode"/>
+
+        <TextView
+            style="@style/SelectDeviceBottomSheetDialogTextStyle"
+            android:text="扫描条形码"
+            />
+    </LinearLayout>
+</LinearLayout>

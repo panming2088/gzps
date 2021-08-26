@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/item"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              style="@style/PatrolUploadItemOuterContainerStyle">
+
+    <!--复选框 -->
+    <TextView
+        android:id="@+id/tv_"
+        style="@style/PatrolUploadKeyTextStyle"
+        android:text="文本域"/>
+    <!--
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/container"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
+    -->
+
+</LinearLayout>

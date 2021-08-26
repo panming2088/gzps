@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--统计条件视图-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--分组条件-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/list_item_height"
+                    android:paddingLeft="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/agmobile_white">
+
+                    <TextView
+                        android:id="@+id/time_tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/part_title_padding"
+                        android:text="时间区间"
+                        android:textColor="@color/agmobile_blue"
+                        android:textSize="@dimen/text_size_second"/>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/part_title_underline_height"
+                        android:layout_alignLeft="@id/time_tv_title"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignRight="@id/time_tv_title"
+                        android:background="@color/agpatrol_blue"/>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_start_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        tools:text="2017-07-17"/>
+
+                    <View
+                        android:layout_width="16dp"
+                        android:layout_height="1dp"
+                        android:background="#dbdbdb"/>
+
+                    <TextView
+                        android:id="@+id/tv_end_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        tools:text="2017-07-17"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--统计条件-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/list_item_height"
+                    android:paddingLeft="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/agmobile_white">
+
+                    <TextView
+                        android:id="@+id/statis_tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/part_title_padding"
+                        android:text="统计条件"
+                        android:textColor="@color/agmobile_blue"
+                        android:textSize="@dimen/text_size_second"/>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/part_title_underline_height"
+                        android:layout_alignLeft="@id/statis_tv_title"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignRight="@id/statis_tv_title"
+                        android:background="@color/agpatrol_blue"/>
+                </RelativeLayout>
+
+                <ImageButton
+                    android:id="@+id/btn_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:padding="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    style="@style/AGMobile.Widget.Button.Positive"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/common_ic_add_white"/>
+
+                <!--条件容器-->
+                <LinearLayout
+                    android:id="@+id/statistc_conditions_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--分组条件-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/list_item_height"
+                    android:paddingLeft="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/agmobile_white">
+
+                    <TextView
+                        android:id="@+id/group_tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/part_title_padding"
+                        android:text="分组条件"
+                        android:textColor="@color/agmobile_blue"
+                        android:textSize="@dimen/text_size_second"/>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/part_title_underline_height"
+                        android:layout_alignLeft="@id/group_tv_title"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignRight="@id/group_tv_title"
+                        android:background="@color/agpatrol_blue"/>
+                </RelativeLayout>
+
+                <com.augurit.am.cmpt.widget.spinner.AMSpinner
+                    android:id="@+id/sp_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.augurit.am.cmpt.widget.spinner.AMSpinner>
+
+                <!--条件容器-->
+                <LinearLayout
+                    android:id="@+id/group_conditions_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_statistic"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="4dp"
+            android:layout_gravity="center_horizontal"
+            style="@style/AGMobile.Widget.Button.Positive"
+            android:text="统  计"
+            android:textColor="@color/agmobile_white"
+            android:textSize="@dimen/text_size_button"/>
+    </LinearLayout>
+</LinearLayout>

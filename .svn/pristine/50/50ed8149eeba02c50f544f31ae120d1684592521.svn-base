@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--条件选择popup-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ListView
+            android:id="@+id/lv_names"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#dbdbdb"
+            android:dividerHeight="1px">
+
+        </ListView>
+    </LinearLayout>
+</LinearLayout>

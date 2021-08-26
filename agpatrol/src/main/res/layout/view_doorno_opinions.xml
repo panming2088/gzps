@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/primary_background_color"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp">
+        <TextView
+            android:id="@+id/tv_empty"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="暂时没有审核意见"/>
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="12dp"
+            />
+
+        <include
+            android:id="@+id/person_layout"
+            layout="@layout/item_approval_phone" />
+
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:id="@+id/tv_approve_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="审核时间"/>
+
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:id="@+id/tv_approve_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="审核状态"/>
+
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:id="@+id/tv_option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="审核意见"/>
+    </LinearLayout>
+
+    <!--</android.support.v7.widget.CardView>-->
+</LinearLayout>

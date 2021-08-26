@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/common_bg_circle_bar"
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/icon_query_tip"
+        />
+    <TextView
+        android:id="@+id/tv_query_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请移动地图选择关联井"
+        android:textSize="14sp"
+        android:textColor="@color/agmobile_white"
+        android:layout_marginLeft="4dp"
+        />
+</LinearLayout>

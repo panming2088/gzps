@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_patrol_toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout
+            android:id="@+id/pb_load_address"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primary_background_color"
+                android:padding="16dp"
+                android:text="请选择核查地址："
+                android:textSize="@dimen/text_size_first" />
+
+            <com.jcodecraeer.xrecyclerview.XRecyclerView
+                android:id="@+id/rv_grid_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout>
+
+        <Button
+            android:id="@+id/btn_select_address"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:background="@drawable/round_bg_orange"
+            android:text="确定"
+            android:textColor="@color/agmobile_white"
+            android:textSize="@dimen/text_size_first"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"/>
+    </RelativeLayout>
+</LinearLayout>

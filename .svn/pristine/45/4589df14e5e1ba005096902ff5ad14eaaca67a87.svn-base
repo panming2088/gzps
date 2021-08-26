@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/dark_white"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/MainFragmentTitleLinearLayout">
+
+        <ImageView
+            style="@style/MainFragmentTitleImageView"
+            android:src="@mipmap/ic_work_news" />
+
+        <TextView
+            style="@style/MainFragmentTitleTextView"
+            android:text="巡检动态" />
+
+        <!--<ImageView-->
+        <!--style="@style/MainFragmentImageViewBesideTitle"-->
+        <!--android:src="@mipmap/home_ic_quick_start"/>-->
+
+    </LinearLayout>
+    <!--<LinearLayout style="@style/MainFragmentTitleLinearLayout">-->
+
+
+        <!--<ImageView-->
+            <!--style="@style/MainFragmentImageViewBesideTitle"-->
+            <!--android:layout_height="15dp"-->
+            <!--android:src="@mipmap/ic_work_news" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:background="@color/list_divider" />-->
+    <include layout="@layout/include_home_divide" />
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:gravity="center_vertical"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:layout_marginTop="8dp">-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="6dp"-->
+    <!--android:layout_height="6dp"-->
+    <!--android:layout_gravity="center_vertical"-->
+    <!--android:layout_marginBottom="4dp"-->
+    <!--android:layout_marginLeft="8dp"-->
+    <!--android:layout_marginTop="4dp"-->
+    <!--android:src="@mipmap/ic_dot" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tv_name"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="4dp"-->
+    <!--android:layout_marginLeft="8dp"-->
+    <!--android:layout_marginTop="4dp"-->
+    <!--android:layout_weight="3"-->
+    <!--android:text="水务局何方同志正在巡检"-->
+    <!--android:textSize="14sp" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tv_time"-->
+    <!--android:layout_width="75dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="4dp"-->
+    <!--android:layout_marginLeft="8dp"-->
+    <!--android:layout_marginTop="4dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="2017-10-19 16:30"-->
+    <!--android:textSize="13sp" />-->
+
+    <!--</LinearLayout>-->
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:gravity="center_vertical"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:layout_marginLeft="16dp">-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="6dp"-->
+    <!--android:layout_height="6dp"-->
+    <!--android:layout_gravity="center_vertical"-->
+    <!--android:layout_marginBottom="4dp"-->
+    <!--android:layout_marginLeft="8dp"-->
+    <!--android:layout_marginTop="4dp"-->
+    <!--android:src="@mipmap/ic_dot" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="4dp"-->
+    <!--android:layout_marginLeft="8dp"-->
+    <!--android:layout_marginTop="4dp"-->
+    <!--android:layout_weight="3"-->
+    <!--android:text="水务局柳生同志正在巡检"-->
+    <!--android:textSize="14sp" />-->
+
+    <!--<TextView-->
+
+    <!--android:layout_width="75dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="4dp"-->
+    <!--android:layout_marginLeft="8dp"-->
+    <!--android:layout_marginTop="4dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="2017-10-16 09:30"-->
+    <!--android:textSize="13sp" />-->
+
+    <!--</LinearLayout>-->
+    <com.augurit.am.cmpt.widget.loadinglayout.ProgressRelativeLayout
+        android:id="@+id/pb_loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_work_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="8dp"
+            />
+    </com.augurit.am.cmpt.widget.loadinglayout.ProgressRelativeLayout>
+</LinearLayout>
+

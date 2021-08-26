@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp">
+
+        <LinearLayout
+            android:id="@+id/ll_tv"
+            style="@style/PatrolUploadKeyTextStyle"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+            <!--文本框 -->
+            <TextView
+                android:id="@+id/tv_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="文本框"
+                android:textColor="#FF666666"
+                android:textSize="@dimen/partrol_upload_text_size" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_requiredTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="top"
+            android:layout_marginTop="-4dp"
+            android:layout_toRightOf="@id/ll_tv"
+            android:text="*"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="@dimen/text_size_third" />
+
+        <EditText
+            android:id="@+id/et_"
+            style="@style/PatrolUploadETItemStyle"
+            android:layout_toLeftOf="@+id/btn"
+            android:layout_toRightOf="@id/ll_tv"
+            android:hint=""
+            android:background="@null"/>
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:background="@color/agpatrol_blue"
+            android:text="详情"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_query"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:background="@color/agpatrol_blue"
+            android:text="查询"
+            android:visibility="gone"
+            android:textColor="@android:color/white"
+             />
+
+        <ProgressBar
+            android:id="@+id/pb_loading"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/tv_size"
+            style="@style/PatrolUploadKeyTextStyle"
+            android:layout_gravity="right"
+            android:gravity="right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="4dp"
+            android:text="10/100"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="12sp" />
+    </RelativeLayout>
+   <include layout="@layout/include_table_divide_line"/>
+</LinearLayout>

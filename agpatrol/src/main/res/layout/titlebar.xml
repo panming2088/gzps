@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="com.augurit.agmobile.gzpssb.BaseInfoData">
+
+        <variable
+            name="baseInfoActivityonclic"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="titlename"
+            type="java.lang.String" />
+
+        <variable
+            name="titlerightname"
+            type="java.lang.String" />
+    </data>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <!--主体内容布局-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/rl_titlebar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="0dp"
+                android:background="@color/colorPrimary">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <!--返回按钮-->
+                    <LinearLayout
+                        android:id="@+id/ll_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dp"
+                        android:elevation="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/iv_titlebar_left"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:background="@null"
+                            android:clickable="false"
+                            android:scaleType="fitCenter"
+                            android:src="@mipmap/back_arrow" />
+
+                        <TextView
+                            android:id="@+id/tv_titlebar_left"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:clickable="false"
+                            android:text="返回"
+                            android:textColor="@android:color/white" />
+
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="250dp"
+                        android:layout_height="@dimen/top_bar_height"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@{titlename}"
+                        android:textColor="@color/agmobile_white"
+                        android:textSize="@dimen/text_size_first" />
+                    <LinearLayout
+                        android:id="@+id/ll_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="center"
+                        android:onClick="@{baseInfoActivityonclic::onClick}"
+                        android:clickable="true"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/iv_titlebar_right"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center_vertical|right"
+                            android:src="@mipmap/ic_search"
+                            android:textColor="@color/agmobile_white"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/tv_titlebar_right"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="8dp"
+                            android:gravity="center"
+                            android:text="@{titlerightname}"
+                            android:textColor="@color/agmobile_white" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/content_parnt_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+        <!--右侧菜单布局-->
+        <LinearLayout
+            android:id="@+id/progress_linearlayout"
+            android:layout_width="@dimen/drawer_layout_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="@color/agmobile_white"
+            android:orientation="vertical">
+
+            <!--<include
+                android:id="@+id/ll_facility_condition"
+                layout="@layout/view_sewerage_search_condition"
+                android:visibility="visible" />-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:background="#F2F2F2">
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="44dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@color/white"
+                            android:padding="10dp"
+                            android:text="筛选"
+                            android:textColor="#DD000000"
+                            android:textSize="16dp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:background="@color/white"
+                            android:orientation="vertical"
+                            android:padding="10dp"
+                            android:layout_marginTop="10dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@drawable/ic_arrow_drop_up_black_24dp"
+                                android:text="单位名称"
+                                android:textColor="#DD000000" />
+
+                            <LinearLayout
+                                android:id="@+id/ll_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="5dp">
+
+                                <EditText
+                                    android:id="@+id/et_search"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/search_et_shape"
+                                    android:hint="请输入单位名称"/>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_clear"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:text="重置" />
+
+                    <Button
+                        android:id="@+id/btn_submit"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_blue"
+                        android:text="确定"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </android.support.v4.widget.DrawerLayout>
+</layout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    style="@style/PatrolUploadItemOuterContainerStyle">
+
+
+
+   <!-- <TextView
+        android:id="@+id/tv_requiredTag"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text="*"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="@dimen/text_size_third"
+        android:visibility="gone"/>-->
+
+    <!--文本框 -->
+    <TextView
+        android:id="@+id/tv"
+        style="@style/PatrolUploadKeyTextStyle"
+       android:layout_alignParentBottom="true"
+        android:text="文本框"
+        />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@id/tv"
+        android:hint=""
+        android:layout_marginLeft="22dp"
+        style="@style/PatrolUploadETItemStyle"
+        android:layout_alignParentBottom="true"
+        android:textSize="16dp"
+        android:textColor="@color/agpatrol_blue"
+        />
+
+
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@mipmap/common_ic_right_arrow_grey"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        />
+
+
+</RelativeLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.augurit.agmobile.gzps.jbjpsdy.JbjPsdySewerageUserListHeaderView
+        android:id="@+id/tabHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#55C0C0C0" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout
+            android:id="@+id/progressbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:id="@+id/rvList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:clipToPadding="false"
+            android:listDivider="@drawable/drainage_shape_jbjpsdy_sewerage_user_tab_divider"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            tools:listitem="@layout/drainage_view_jbjpsdy_sewerage_user_list_item" />
+        </com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout>
+<!--        <include-->
+<!--            android:id="@+id/emptyView"-->
+<!--            android:visibility="invisible"-->
+<!--            layout="@layout/progress_linear_layout_error_view"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent" />-->
+
+<!--        <ProgressBar-->
+<!--            android:id="@+id/progressbar"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:indeterminateTint="#358AFF"-->
+<!--            android:visibility="invisible" />-->
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/common_patrol_toolbar" />
+
+        <LinearLayout style="@style/JournalFormLinearlayoutStyle">
+
+            <TextView
+                style="@style/JournalFormTextViewStyle"
+                android:text="标识位置" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/agmobile_grey_0" />
+
+            <EditText
+                android:id="@+id/et_address"
+                style="@style/JournalFormEditTextStyle" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/agmobile_grey_0" />
+
+        <LinearLayout style="@style/JournalFormLinearlayoutStyle"
+
+            >
+
+            <TextView
+                style="@style/JournalFormTextViewStyle"
+                android:text="所在道路" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/agmobile_grey_0" />
+
+            <EditText
+                android:id="@+id/et_road"
+                style="@style/JournalFormEditTextStyle" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/agmobile_grey_0" />
+
+        <LinearLayout style="@style/JournalFormLinearlayoutStyle">
+
+            <TextView
+                style="@style/JournalFormTextViewStyle"
+                android:text="日志描述" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/agmobile_grey_0" />
+
+            <EditText
+                android:id="@+id/et_content"
+                style="@style/JournalFormEditTextStyle"
+                android:lines="3"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/agmobile_grey_0" />
+
+        <LinearLayout style="@style/JournalFormLinearlayoutStyle">
+
+            <TextView
+                style="@style/JournalFormTextViewStyle"
+                android:text="图片" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/agmobile_grey_0" />
+
+            <LinearLayout style="@style/JournalFormEditTextStyle">
+
+                <include layout="@layout/include_take_photo" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/agmobile_grey_0" />
+
+        <LinearLayout style="@style/JournalFormLinearlayoutStyle" >
+
+            <TextView
+                style="@style/JournalFormTextViewStyle"
+                android:text="班组成员" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/agmobile_grey_0" />
+
+            <EditText
+                android:id="@+id/et_team_memeber"
+                style="@style/JournalFormEditTextStyle"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ll_team_memeber"
+                style="@style/JournalFormEditTextStyle"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="张三" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="李四" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="王五" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="刘常" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/agmobile_grey_0" />
+
+        <LinearLayout style="@style/JournalFormLinearlayoutStyle"
+            android:id="@+id/ll_parent_organization"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/JournalFormTextViewStyle"
+                android:text="业务方名称" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/agmobile_grey_0" />
+
+            <EditText
+                android:id="@+id/et_parent_organization"
+                style="@style/JournalFormEditTextStyle" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_organizaation"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/agmobile_grey_0"
+            android:visibility="gone"/>
+
+        <LinearLayout style="@style/JournalFormLinearlayoutStyle" android:visibility="gone"
+            android:id="@+id/ll_organization">
+
+            <TextView
+                style="@style/JournalFormTextViewStyle"
+                android:text="直属机构" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/agmobile_grey_0" />
+
+            <EditText
+                android:id="@+id/et_direct_organization"
+                style="@style/JournalFormEditTextStyle" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_direct_organization"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/agmobile_grey_0" android:visibility="gone"/>
+
+        <LinearLayout style="@style/JournalFormLinearlayoutStyle"
+            android:id="@+id/ll_team"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/JournalFormTextViewStyle"
+                android:text="队/班组" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/agmobile_grey_0" />
+
+            <EditText
+                android:id="@+id/et_team"
+                style="@style/JournalFormEditTextStyle" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_team"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/agmobile_grey_0"
+            android:visibility="gone" />
+
+        <LinearLayout style="@style/JournalFormLinearlayoutStyle">
+
+            <TextView
+                style="@style/JournalFormTextViewStyle"
+                android:text="填写人" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/agmobile_grey_0" />
+
+            <EditText
+                android:id="@+id/et_user"
+                style="@style/JournalFormEditTextStyle" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/agmobile_grey_0" />
+
+        <LinearLayout style="@style/JournalFormLinearlayoutStyle">
+
+            <TextView
+                style="@style/JournalFormTextViewStyle"
+                android:text="标识时间" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/agmobile_grey_0" />
+
+            <EditText
+                android:id="@+id/et_date"
+                style="@style/JournalFormEditTextStyle" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/agmobile_grey_0" />
+
+        <Button
+            android:id="@+id/btn_upload_journal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:background="@drawable/sel_btn_upload"
+            android:text="提交"
+            android:textColor="@color/agmobile_white" />
+
+
+    </LinearLayout>
+</ScrollView>

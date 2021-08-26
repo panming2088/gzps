@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/PatrolUploadItemOuterContainerStyle">
+    <LinearLayout
+        android:id="@+id/ll_tv"
+        style="@style/PatrolUploadKeyTextStyle"
+        android:layout_centerVertical="true">
+        <!--文本框 -->
+        <TextView
+            android:id="@+id/tv_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="文本框"
+            android:textColor="#FF666666"
+            android:textSize="@dimen/partrol_upload_text_size" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_requiredTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="-4dp"
+        android:layout_toRightOf="@id/ll_tv"
+        android:layout_gravity="top"
+        android:text="*"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="@dimen/text_size_third" />
+
+    <Spinner
+        style="@style/spinner_style"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="14dp"
+        android:id="@+id/spinner"
+        android:gravity="center"
+        android:layout_toRightOf="@id/ll_tv"
+        >
+
+    </Spinner>
+
+    <TextView
+        android:id="@+id/tv_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/ll_tv"
+        android:layout_centerVertical="true"
+        android:visibility="gone">
+    </TextView>
+
+    <EditText
+        android:id="@+id/et_"
+        android:layout_centerVertical="true"
+        style="@style/PatrolUploadETItemStyle"
+        android:layout_toRightOf="@id/ll_tv"
+        android:visibility="gone">
+    </EditText>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/ll_tv">
+
+        <Button
+            android:id="@+id/btn"
+            android:visibility="gone"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+           android:text="详情"
+            android:background="@color/agpatrol_blue"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+</RelativeLayout>

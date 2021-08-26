@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">@color/light_green</color>
+    <color name="colorAccent">#FFFAB370</color>
+    <color name="colorPrimaryDark">#33b9c1</color>
+    <color name="trans_dark">#99323232</color>
+    <color name="trans_light_dark">#60323232</color>
+    <!--
+    <color name="agpatrol_blue">#2196f3</color>
+    -->
+    <color name="material_gray_400_trans">#BDBDBDBD</color>
+    <color name="material_grey_400">#BDBDBD</color>
+    <!--信息采集模块的颜色-->
+    <color name="grey">#DDDDDD</color>
+    <color name="black">#000</color>
+    <color name="group_list_gray">#999999</color>
+    <color name="text_black">#333333</color>
+    <color name="press">#e8e8e8</color>
+    <color name="white">#ffffff</color>
+    <color name="white_alpha">#50ffffff</color>
+    <!-- 任务列表项 -->
+    <!-- 工单进度 -->
+    <color name="progress_line_green">#2cc75f</color>
+
+    <!--dropdownMenu颜色-->
+    <color name="drop_down_background_color">#f2f2f2</color>
+    <color name="drop_down_text_color">#909090</color>
+
+
+    <!--20m周边字体颜色-->
+
+
+    <color name="primary_background_color">#F1F2F5</color>
+
+
+    <!--设置-->
+
+    <color name="tangelo">#f64b00</color>
+    <!--轨迹列表分割线颜色-->
+    <color name="trace_list_divider_color">#EFEFEF</color>
+    <color name="orange">#fe8a23</color>
+    <color name="green">#39a23d</color>
+    <color name="blue">#3b79ac</color>
+    
+    <color name="light_green">#1dd3de</color>
+    <color name="enable_selecy">#FF68B7B5</color>
+    <color name="light_green_alpha">#441dd3de</color>
+    <color name="agmobile_background">#f5f5f5</color>
+
+    <!--主界面分割线的颜色-->
+    <color name="home_divider_color">#e6e6e6</color>
+    <!--带一点灰度的白色-->
+    <color name="dark_white">#fafafa</color>
+
+    <color name="deep_blue">#5050c7</color>
+
+    <color name="work_station_list_divider_color">#e8e8e8</color>
+
+    <!--事务公开中用到的颜色-->
+    <color name="color_light_green">#ddf4df</color>
+
+    <!--已安装字体的颜色-->
+    <color name="color_already_installed">#3EA500</color>
+
+
+    <!--整个APP字体风格-->
+    <color name="primary_text_color">@color/dust_grey</color>
+
+    <color name="invisible_state_text_color">#707070</color>
+
+    <color name="layer_url_init_fail_msg_color">#ffeaf2</color>
+
+    <color name="colorWhite">#FFF</color>
+    <color name="transparent">#0000</color>
+
+    <!--<color name="text_black">#737373</color>-->
+    <color name="text_grey">#9DA0A3</color>
+
+    <color name="divider">#e6e6e6</color>
+
+    <color name="colorMask">#66000000</color>
+
+    <color name="agmobile_form_disabled">#ffffff</color>
+
+    <color name="agmobile_surface_pressed">#d9d9d9</color>
+
+    <color name="agmobile_surface">#ffffff</color>
+
+    <color name="widget_text_key">#6a6a6a</color>
+
+    <color name="agmobile_text_warn">#f04443</color>
+
+    <color name="agmobile_text_caption">#999999</color>
+    <color name="agmobile_text_body">#333333</color>
+    <color name="agmobile_divider">#d6d6d6</color>
+
+    <!--污水管字体颜色-->
+    <color name="sewerage_pipe">#e60000</color>
+    <!--雨水管字体颜色-->
+    <color name="rain_pipe">#54e719</color>
+    <!--雨污合流的字体颜色-->
+    <color name="rain_sewerage_pipe">#b487d8</color>
+    <color name="agmobile_text_title_bar">#fff</color>
+    <color name="agmobile_primary">#36a3f7</color>
+    <color name="agmobile_divider_title_bar">#4aabf7</color>
+
+    <color name="drainage_col_sewerage_user_list_header_tab_text_def">#C0C0C0</color>
+    <color name="drainage_col_sewerage_user_list_header_tab_text_total">#000</color>
+    <color name="drainage_col_sewerage_user_list_header_tab_text_catering_trade">#828AD3</color>
+    <color name="drainage_col_sewerage_user_list_header_tab_text_precipitate">#19B6EE</color>
+    <color name="drainage_col_sewerage_user_list_header_tab_text_danger">#F71718</color>
+    <color name="drainage_col_sewerage_user_list_header_tab_text_life">#04B153</color>
+
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true" android:color="@color/drainage_col_sewerage_user_list_header_tab_text_catering_trade"/>
+    <item android:color="@color/drainage_col_sewerage_user_list_header_tab_text_catering_trade"/>
+</selector>

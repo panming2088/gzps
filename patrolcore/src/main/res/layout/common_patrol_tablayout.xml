@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<com.augurit.am.cmpt.widget.slideTablayout.SlidingTabLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tabs"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/agmobile_white"
+    tl:tl_indicator_color="@color/colorPrimary"
+    tl:tl_tab_space_equal="true"
+    tl:tl_textBold="SELECT"
+    tl:tl_textSelectColor="@color/colorPrimary"
+    tl:tl_textUnselectColor="@color/dust_grey"
+    tl:tl_textsize="@dimen/text_size_first"
+    tl:tl_underline_gravity="BOTTOM"
+    tl:tl_underline_height="1dp"
+    android:overScrollMode="never"
+    />-->
+<android.support.design.widget.TabLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tab_layout"
+    app:tabBackground="@color/agmobile_white"
+    app:tabGravity="fill"
+    app:tabMode="fixed"
+    app:tabIndicatorColor="@color/colorPrimary"
+    app:tabIndicatorHeight="2dp"
+    app:tabMaxWidth="500dp"
+    app:tabSelectedTextColor="@color/colorPrimary"
+    app:tabTextColor="@color/dust_grey"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+</android.support.design.widget.TabLayout>

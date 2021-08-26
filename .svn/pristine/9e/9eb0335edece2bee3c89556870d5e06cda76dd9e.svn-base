@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="false">
+
+
+    <LinearLayout
+        android:id="@+id/ll_tv1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/patrol_upload_text_padding"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            style="@style/PatrolUploadKeyTextStyle"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:clickable="false">
+            <!--文本框 -->
+            <TextView
+                android:id="@+id/tv_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="权属单位"
+                android:textColor="#FF666666"
+                android:textSize="@dimen/partrol_upload_text_size" />
+            <TextView
+                android:id="@+id/tv_requiredTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginTop="-4dp"
+                android:text="*"
+                android:visibility="visible"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="@dimen/text_size_third" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/patrol_upload_view_margin_left"
+            android:layout_toRightOf="@id/ll_tv1"
+            android:orientation="vertical">
+
+            <com.augurit.am.cmpt.widget.spinner.AMSpinner
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_tv1">
+
+    <LinearLayout
+        style="@style/PatrolUploadKeyTextStyle"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="false"
+        android:clickable="false"/>
+
+        <EditText
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner"
+            android:maxLength="20"
+            android:hint=""
+            android:layout_marginLeft="@dimen/patrol_upload_view_margin_left"
+            android:visibility="gone"/>
+
+
+    </LinearLayout>
+
+
+
+
+    <AutoCompleteTextView
+        android:id="@+id/auto_complete_text_view"
+        style="@style/PatrolUploadETItemStyle"
+        android:layout_toRightOf="@id/ll_tv1"
+        android:textColor="@color/dust_grey"
+        android:focusableInTouchMode="true"
+        android:hint=""
+        android:visibility="gone"/>
+
+    <!--android:textColor="@drawable/sel_text_item_color"-->
+</RelativeLayout>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_patrol_toolbar" />
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.esri.android.map.MapView
+            android:id="@+id/mapview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <Button
+            android:id="@+id/btn_sure"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/round_bg_blue"
+            android:text="确定"
+            android:textColor="@color/agmobile_white"
+            android:visibility="gone" />
+
+        <!--<Button-->
+            <!--android:id="@+id/btn_choose_current_position"-->
+            <!--android:layout_width="64dp"-->
+            <!--android:layout_height="64dp"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--android:background="@color/agmobile_blue"-->
+            <!--android:text="选择当前位置"-->
+            <!--android:textColor="@color/agmobile_white" />-->
+
+        <LinearLayout
+            android:id="@+id/ll_component_list"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/agmobile_white"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_marginRight="24dp"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:padding="8dp">-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_total"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="当前位置查找到：" />-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/iv_close_list"-->
+                    <!--android:layout_width="24dp"-->
+                    <!--android:layout_height="24dp"-->
+                    <!--android:src="@mipmap/common_ic_close_black" />-->
+            <!--</LinearLayout>-->
+
+            <!--<android.support.v7.widget.RecyclerView-->
+                <!--android:id="@+id/rv_component_list"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent" />-->
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/agmobile_white"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="当前位置：" />
+
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_address"
+            android:gravity="center"
+            android:text="在地图上点击进行选择"
+            android:textColor="@color/agmobile_red" />
+
+        <LinearLayout
+            android:id="@+id/btn_layer"
+            android:layout_width="@dimen/map_icon_size"
+            android:layout_height="@dimen/map_icon_size"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="65dp"
+            android:background="@drawable/map_sel_btn"
+            android:orientation="vertical"
+            android:scaleType="fitCenter">
+
+            <ImageView
+                android:layout_width="@dimen/map_icon_size"
+                android:layout_height="@dimen/map_icon_size"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/phone_ic_layers_white_24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="图层"
+                android:textSize="8sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_legend"
+            android:layout_width="@dimen/map_icon_size"
+            android:layout_height="@dimen/map_icon_size"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/btn_layer"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:scaleType="fitCenter">
+
+            <ImageView
+                android:layout_width="@dimen/map_icon_size"
+                android:layout_height="@dimen/map_icon_size"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="1dp"
+                android:src="@mipmap/ic_legend" />
+
+        </LinearLayout>
+
+        <com.augurit.agmobile.mapengine.common.widget.scaleview.MapScaleView
+            android:id="@+id/scale_view"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp">
+
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="36dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/ic_two_lines" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_next_and_prev_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="4dp">
+
+        <LinearLayout
+            android:id="@+id/prev"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="上一个"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/next"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="下一个"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:id="@+id/tv_sure"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="养护信息"
+            android:textColor="@color/agmobile_white"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="@color/primary_background_color"/>
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_approval_opinion_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="审核意见"
+            android:textColor="@color/agmobile_blue"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/detail_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/detail_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:id="@+id/ll_table_item_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/common_rectangle_with_shadow"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:id="@+id/ll_approval_opinion_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/common_rectangle_with_shadow"
+                android:orientation="vertical" />
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/sel_btn_delete"
+            android:text="删除"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_first"
+            android:visibility="gone" />
+
+
+        <Button
+            android:id="@+id/btn_reedit"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/sel_btn_reedit"
+            android:text="编辑"
+            android:textColor="@color/white"
+            android:layout_marginLeft="16dp"
+            android:textSize="@dimen/text_size_first"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btn_feedback"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_reedit"
+                android:text="反馈"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginLeft="16dp"
+                android:textSize="@dimen/text_size_first"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/ll_go_feedback_list"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_reedit"
+                android:text="反馈列表"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginLeft="16dp"
+                android:textSize="@dimen/text_size_first"
+                android:visibility="gone" />
+
+            <!--<LinearLayout
+                android:id="@+id/ll_go_feedback_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="visible">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/sel_btn_reedit"
+                    android:text="反馈列表"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="16dp"
+                    android:textSize="@dimen/text_size_first"
+                    android:visibility="visible" />
+
+            </LinearLayout>-->
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

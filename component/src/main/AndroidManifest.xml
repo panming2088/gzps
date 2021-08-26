@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.augurit.am.cmpt"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <!--DownloadManager下载时不显示Notification-->
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true">
+        <activity
+            android:name=".widget.filepicker.ui.FilePickerActivity"
+            android:theme="@style/MFP_BaseTheme"></activity>
+
+        <activity android:name=".widget.HorizontalScrollPhotoView.CommonViewPhotoActivity"></activity>
+        <activity
+            android:name="com.augurit.am.cmpt.permission.dispatcher.ShadowPermissionActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"/>
+
+        <activity
+            android:name=".permission.PermissionsActivity"
+            android:theme="@style/AppThemeCmpt.NoActionBar.Permissions"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            />
+        <!--
+        name:属性值，固定写法
+        authorities:组件标识，按照江湖规矩,都以包名开头,避免和其它应用发生冲突。和FileProvider.getUriForFile()方法的第二个参数一致
+        exported:要求必须为false，为true则会报安全异常。
+        grantUriPermissions:true，表示授予 URI 临时访问权限。
+        -->
+
+        <!--<provider-->
+            <!--android:name="android.support.v4.content.FileProvider"-->
+            <!--android:authorities="${applicationId}.provider"-->
+            <!--android:exported="false"-->
+            <!--android:grantUriPermissions="true">-->
+            <!--<meta-data-->
+                <!--android:name="android.support.FILE_PROVIDER_PATHS"-->
+                <!--android:resource="@xml/file_paths"></meta-data>-->
+        <!--</provider>-->
+
+        <service android:name=".update.service.CheckUpdateService"></service>
+
+    </application>
+
+</manifest>

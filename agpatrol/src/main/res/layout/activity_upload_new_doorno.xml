@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_patrol_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp">
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/text_item_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:editTextMaxLength="15"
+                app:editTextHint="如：天河区"
+                app:textViewName="行政区*" />
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/text_item_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:editTextMaxLength="15"
+                app:editTextHint="如：五山街"
+                app:textViewName="镇街*" />
+
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/text_item_three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:editTextMaxLength="15"
+                app:editTextHint="如：瘦狗岭社区"
+                app:textViewName="村(居)委会*" />
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/text_item_four"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:editTextMaxLength="15"
+                app:editTextHint="如：瘦狗岭路"
+                app:textViewName="街路巷*" />
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/text_item_five"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:editTextMaxLength="15"
+                app:editTextHint="如：555号"
+                app:textViewName="门牌号*" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_rectangle_with_shadow"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:paddingBottom="13dp"
+                android:paddingTop="13dp"
+                android:layout_marginTop="10dp">
+
+                <com.augurit.agmobile.gzps.common.widget.TextFieldTableItem
+                    android:id="@+id/tf_table_upload_indicate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fieldtextViewName="上报说明" />
+
+            </LinearLayout>
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/text_item_six"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:textViewName="上报人：" />
+
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/text_item_seven"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:textViewName="上报单位：" />
+
+
+            <Button
+                android:id="@+id/btn_upload_door_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="bottom"
+                android:layout_margin="16dp"
+                android:background="@drawable/sel_btn_upload"
+                android:text="提交"
+                android:textColor="@color/agmobile_white"
+                android:textSize="@dimen/text_size_first" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

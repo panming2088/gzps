@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_local_task_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.augurit.agmobile.patrolcore.common.table.view.LocalTaskListActivity">
+  <!--  <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/agpatrol_blue">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_height"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="待上传"
+            android:textColor="@color/agmobile_white"
+            android:textSize="@dimen/text_size_first" />
+        &lt;!&ndash;返回按钮&ndash;&gt;
+        <LinearLayout
+            android:id="@+id/ll_back"
+            style="@style/AGMobile.Widget.Button.Container.Dark"
+            android:layout_width="58dp"
+            android:layout_height="@dimen/min_touchable_size"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/top_icon_margin_horizontal"
+            android:elevation="5dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                style="@style/AGMobile.Widget.ImageButton.TopBar"
+                android:src="@mipmap/back_arrow" />
+
+            <TextView
+                android:id="@+id/tv_return"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="主页"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+-->
+
+    <include layout="@layout/common_patrol_toolbar"/>
+
+    <com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout
+        android:id="@+id/pb_load_task"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:id="@+id/rv_tasklist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout>
+</LinearLayout>

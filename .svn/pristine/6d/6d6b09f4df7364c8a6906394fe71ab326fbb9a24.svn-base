@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/PatrolUploadItemOuterContainerStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_"
+            style="@style/PatrolUploadKeyTextStyle"
+            android:text="路段名称选择"/>
+
+        <TextView
+            android:id="@+id/tv_requiredTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/tv_"
+            android:gravity="center"
+            android:text="*"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="@dimen/text_size_third"/>
+
+        <EditText
+            android:id="@+id/tv_readonly"
+            style="@style/PatrolUploadETItemStyle"
+            android:layout_toRightOf="@id/tv_"
+            android:focusable="false"
+            android:text=""
+            android:visibility="gone"
+            />
+
+        <AutoCompleteTextView
+            android:id="@+id/autocompleteView"
+            style="@style/PatrolUploadETItemStyle"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@id/tv_"
+            android:hint="点击右侧按钮进行选择"/>
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/et_"
+        style="@style/PatrolUploadETItemStyle"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btn_select_device_on_map"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="@dimen/patrol_default_margin_medium"
+        android:background="@mipmap/common_ic_more"
+        android:text=""
+        android:textColor="@color/agmobile_blue"/>
+
+    <Button
+        android:id="@+id/btn_show_device_on_map"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginRight="@dimen/patrol_default_margin_medium"
+        android:background="@mipmap/ic_map"
+        android:text=""
+        android:textColor="@color/agmobile_blue"
+        android:visibility="gone"/>
+</LinearLayout>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_filter"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="end"
+    android:background="#F2F2F2">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="44dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/white"
+                android:padding="10dp"
+                android:text="筛选"
+                android:textColor="#DD000000"
+                android:textSize="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_arrow_drop_up_black_24dp"
+                    android:text="单位"
+                    android:textColor="#000" />
+
+                <com.augurit.agmobile.gzps.common.widget.FlexRadioGroup
+                    android:id="@+id/fbl_filter_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:flexWrap="wrap" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_type_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_arrow_drop_up_black_24dp"
+                    android:text="类型"
+                    android:textColor="#DD000000" />
+
+
+                <com.augurit.agmobile.gzps.common.widget.FlexRadioGroup
+                    android:id="@+id/fbl_filter_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    app:flexWrap="wrap" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_ss_type_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@color/white"
+                android:visibility="gone"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_structure_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_arrow_drop_up_black_24dp"
+                    android:text="设施类型"
+                    android:textColor="#DD000000" />
+
+
+                <com.augurit.agmobile.gzps.common.widget.FlexRadioGroup
+                    android:id="@+id/fbl_filter_structure_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    app:flexWrap="wrap" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_ss_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_structure"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_arrow_drop_up_black_24dp"
+                    android:text="设施类型"
+                    android:textColor="#DD000000" />
+
+
+                <com.augurit.agmobile.gzps.common.widget.FlexRadioGroup
+                    android:id="@+id/fbl_filter_structure"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    app:flexWrap="wrap" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_pipetype_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_pipetype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_arrow_drop_up_black_24dp"
+                    android:text="管线类型"
+                    android:textColor="#DD000000" />
+
+
+                <com.augurit.agmobile.gzps.common.widget.FlexRadioGroup
+                    android:id="@+id/fbl_filter_pipetype"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    app:flexWrap="wrap" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_pipedirect_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_pipedirect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_arrow_drop_up_black_24dp"
+                    android:text="管线方向"
+                    android:textColor="#DD000000" />
+
+
+                <com.augurit.agmobile.gzps.common.widget.FlexRadioGroup
+                    android:id="@+id/fbl_filter_pipedirect"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    app:flexWrap="wrap" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="10dp"
+               >
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_arrow_drop_up_black_24dp"
+                    android:text="时间"
+                    android:textColor="#DD000000" />
+
+                <LinearLayout
+                    android:id="@+id/ll_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+
+                    <Button
+                        android:id="@+id/btn_start_date"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shp_green_outline_bg"
+                        android:text="2016-11-10" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:text="-" />
+
+                    <Button
+                        android:id="@+id/btn_end_date"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shp_green_outline_bg"
+                        android:text="2016-11-10" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:text="重置" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_blue"
+            android:text="确定"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</RelativeLayout>

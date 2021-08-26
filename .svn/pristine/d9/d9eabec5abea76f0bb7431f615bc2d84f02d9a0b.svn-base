@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/common_rectangle_with_shadow"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_select_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="16dp">
+
+            <LinearLayout
+                android:id="@+id/ll_tv_location"
+                style="@style/PatrolUploadKeyTextStyle"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true">
+                <!--文本框 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="河涌名称"
+                    android:textColor="#FF666666"
+                    android:textSize="@dimen/partrol_upload_text_size" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="top"
+                android:layout_marginTop="-4dp"
+                android:layout_toRightOf="@id/ll_tv_location"
+                android:text="*"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="@dimen/text_size_third" />
+
+            <LinearLayout
+                android:id="@+id/ll_select_component"
+                style="@style/PatrolUploadETItemStyle"
+                android:layout_marginBottom="6dp"
+                android:layout_toRightOf="@id/ll_tv_location"
+                android:background="@drawable/sel_btn_select_location"
+                android:clickable="true"
+                android:gravity="center"
+                android:padding="4dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@mipmap/ic_select_location" />
+
+                <TextView
+                    android:id="@+id/tv_select_or_check_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="选择河涌" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:id="@+id/addr_tab_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="河涌名称" />
+
+    </LinearLayout>
+
+</LinearLayout>

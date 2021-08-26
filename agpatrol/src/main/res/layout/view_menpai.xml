@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:zhy="http://schemas.android.com/apk/res-auto"
+    android:background="#f4f3ef"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/ll_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/PatrolUploadKeyTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="8dp"
+                android:padding="4dp"
+                android:id="@+id/tv_content"
+                android:text="关联门牌号"
+                android:textSize="@dimen/partrol_upload_text_size"/>
+            <TextView
+                android:id="@+id/tv_requiredTag1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@id/tv_content"
+                android:text="*"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="@dimen/text_size_third" />
+            <Button
+                android:id="@+id/btn_add_attached"
+                android:layout_width="50sp"
+                android:layout_height="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="2dp"
+                android:background="@drawable/btn_red"
+                android:text="添加"
+                android:textColor="@color/agmobile_white" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/grey_dot_line"
+            android:layerType="software" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.zhy.view.flowlayout.TagFlowLayout
+                android:id="@+id/id_flowlayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                zhy:max_select="1"></com.zhy.view.flowlayout.TagFlowLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

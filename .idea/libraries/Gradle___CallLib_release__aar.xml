@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: :CallLib-release:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/68e86b2448654ca162b749f67eb96c9d/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/68e86b2448654ca162b749f67eb96c9d/res" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/68e86b2448654ca162b749f67eb96c9d/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/68e86b2448654ca162b749f67eb96c9d/jars/libs/blink-engine-api.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/68e86b2448654ca162b749f67eb96c9d/jars/libs/CallEngine_Blink.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/68e86b2448654ca162b749f67eb96c9d/jars/libs/Rong_CallLib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

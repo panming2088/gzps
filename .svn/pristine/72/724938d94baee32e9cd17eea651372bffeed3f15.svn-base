@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/common_patrol_toolbar" />
+
+        <LinearLayout
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right|center_vertical"
+            android:background="@drawable/sel_btn_choose_current_position"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/btn_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:text="编辑"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <com.augurit.agmobile.gzps.common.MultiTakePhotoTableItem
+                android:id="@+id/take_photo_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:photoText="添加照片" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_rectangle_with_shadow"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_select_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_tv_location"
+                        style="@style/PatrolUploadKeyTextStyle"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true">
+                        <!--文本框 -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="部       件"
+                            android:textColor="#FF666666"
+                            android:textSize="@dimen/partrol_upload_text_size" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="top"
+                        android:layout_marginTop="-4dp"
+                        android:layout_toRightOf="@id/ll_tv_location"
+                        android:text="*"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textSize="@dimen/text_size_third" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_select_component"
+                        style="@style/PatrolUploadETItemStyle"
+                        android:layout_marginBottom="6dp"
+                        android:layout_toRightOf="@id/ll_tv_location"
+                        android:background="@drawable/sel_btn_select_location"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:padding="4dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@mipmap/ic_select_location" />
+
+                        <TextView
+                            android:id="@+id/tv_select_or_check_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="选择部件" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                    android:id="@+id/textitem_component_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textViewName="部件类型"
+                    android:visibility="gone"/>
+
+                <!--<com.augurit.agmobile.gzps.common.widget.TextItemTableItem-->
+                    <!--android:id="@+id/textitem_water_level"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--app:textViewName="水深" />-->
+                <RelativeLayout
+                    android:id="@+id/rl_water_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/ll_tv1"
+                        style="@style/PatrolUploadKeyTextStyle"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true">
+                        <!--文本框 -->
+                        <TextView
+                            android:id="@+id/tv_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="水位"
+                            android:textColor="#FF666666"
+                            android:textSize="@dimen/partrol_upload_text_size" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/et_water_level"
+                        android:layout_toRightOf="@id/ll_tv1"
+                        android:visibility="gone"
+                         />
+                    <com.augurit.agmobile.gzps.common.widget.FlexRadioGroup
+                        android:id="@+id/rg_water_level"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/ll_tv1"
+                        app:flexWrap="wrap">
+
+                        <RadioButton
+                            android:id="@+id/rb_full"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="满管" />
+
+                        <RadioButton
+                            android:id="@+id/rb_3_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3/4管"
+                            />
+
+                        <RadioButton
+                            android:id="@+id/rb_2_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2/4管"
+                            />
+
+                        <RadioButton
+                            android:id="@+id/rb_1_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1/4管"
+                            />
+                    </com.augurit.agmobile.gzps.common.widget.FlexRadioGroup>
+                </RelativeLayout>
+
+                <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                    android:id="@+id/textitem_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textViewName="当前位置"
+                    android:visibility="gone"/>
+
+                <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                    android:id="@+id/textitem_road"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textViewName="所在道路"
+                    android:visibility="gone"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_rectangle_with_shadow"
+                android:orientation="vertical">
+
+                <com.augurit.agmobile.gzps.common.widget.TextFieldTableItem
+                    android:id="@+id/textfield_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:fieldtextViewName="日志描述" />
+
+            </LinearLayout>
+
+            <!--<LinearLayout style="@style/JournalFormLinearlayoutStyle">-->
+
+            <!--<TextView-->
+            <!--style="@style/JournalFormTextViewStyle"-->
+            <!--android:text="日志描述" />-->
+
+            <!--<View-->
+            <!--android:layout_width="0.5dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@color/agmobile_grey_0" />-->
+
+            <!--<EditText-->
+            <!--android:id="@+id/et_content"-->
+            <!--style="@style/JournalFormEditTextStyle"-->
+            <!--android:lines="3"-->
+            <!--android:textSize="16sp" />-->
+            <!--</LinearLayout>-->
+
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0.5dp"-->
+            <!--android:background="@color/agmobile_grey_0" />-->
+
+
+            <!--<LinearLayout style="@style/JournalFormLinearlayoutStyle">-->
+
+            <!--<TextView-->
+            <!--style="@style/JournalFormTextViewStyle"-->
+            <!--android:text="图片" />-->
+
+            <!--<View-->
+            <!--android:layout_width="0.5dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@color/agmobile_grey_0" />-->
+
+            <!--<LinearLayout style="@style/JournalFormEditTextStyle">-->
+
+            <!--<include layout="@layout/include_take_photo" />-->
+            <!--</LinearLayout>-->
+
+            <!--</LinearLayout>-->
+
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0.5dp"-->
+            <!--android:background="@color/agmobile_grey_0" />-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_rectangle_with_shadow"
+                android:orientation="vertical">
+
+
+                <com.augurit.agmobile.gzps.common.widget.MultiSelectTableItlem
+                    android:id="@+id/multiselect_table_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:multiselecttextViewName="班组成员"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="4dp"/>
+
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/ll_member_total_container"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="4dp"-->
+                   <!--&gt;-->
+
+                    <!--<LinearLayout style="@style/PatrolUploadKeyTextStyle">-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="班组成员"-->
+                            <!--android:textColor="#FF666666"-->
+                            <!--android:textSize="@dimen/partrol_upload_text_size" />-->
+                    <!--</LinearLayout>-->
+
+                    <!--<EditText-->
+                        <!--android:id="@+id/et_team_memeber"-->
+                        <!--style="@style/PatrolUploadETItemStyle"-->
+                        <!--android:visibility="gone" />-->
+
+                    <!--<com.google.android.flexbox.FlexboxLayout-->
+                        <!--android:id="@+id/fl_team_memeber"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="vertical">-->
+                    <!--</com.google.android.flexbox.FlexboxLayout>-->
+
+                <!--</LinearLayout>-->
+
+
+                <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                    android:id="@+id/textitem_parent_organization"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:textViewName="业务方名称" />
+
+                <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                    android:id="@+id/textitem_direct_organization"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:textViewName="直属机构" />
+
+                <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                    android:id="@+id/textitem_team"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:textViewName="队/班组" />
+
+                <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                    android:id="@+id/textitem_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textViewName="填写人" />
+
+                <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                    android:id="@+id/textitem_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:textViewName="填写时间" />
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btn_upload_journal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:background="@drawable/sel_btn_upload"
+                android:text="提交"
+                android:textColor="@color/agmobile_white" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

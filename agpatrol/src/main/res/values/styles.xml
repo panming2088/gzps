@@ -1,0 +1,233 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/ic_splash_2</item>
+    </style>
+
+    <style name="transparent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/trans_dark</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+
+
+    <!--待签收界面的参数-->
+
+    <!--底部弹框-->
+
+    <!--我的界面相关样式-->
+
+    <!--设施选择底部弹窗样式-->
+    <style name="SelectDeviceBottomSheetDialogTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/patrol_default_margin_small</item>
+        <item name="android:textSize">@dimen/text_size_second</item>
+    </style>
+
+
+    <style name="dialogText" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20sp</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="MainFragmentLinearlayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">62dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="MainFragmentImageViewOuterContainer">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="MainFragmentImageView">
+        <item name="android:layout_width">@dimen/column_image_width</item>
+        <item name="android:layout_height">@dimen/column_image_height</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:padding">7dp</item>
+    </style>
+
+    <style name="MainFragmentTitleImageView">
+        <item name="android:layout_width">16dp</item>
+        <item name="android:layout_height">16dp</item>
+        <!--<item name="android:layout_gravity">center_vertical</item>-->
+        <item name="android:layout_marginLeft">4dp</item>
+    </style>
+
+
+    <style name="MainFragmentTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:textSize">@dimen/text_size_third</item>
+    </style>
+
+    <style name="MainFragmentTitleLinearLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">6dp</item>
+        <!--<item name="android:gravity">center_vertical</item>-->
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+<!--“专栏”等文字样式-->
+    <style name="MainFragmentTitleTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">14dp</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:textSize">@dimen/text_size_third</item>
+    </style>
+
+    <!--标识以及日志界面的样式-->
+    <style name="JournalFormLinearlayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="JournalFormTextViewStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/text_size_second</item>
+        <item name="android:textColor">@color/dust_grey</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="JournalFormEditTextStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">3</item>
+        <item name="android:background">@null</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@drawable/sel_edit_text</item>
+        <item name="android:gravity">start</item>
+        <item name="android:layout_marginLeft">8dp</item>
+    </style>
+
+    <!--<style name="PatrolMainTextTag">-->
+    <!--<item name="android:layout_width">18dp</item>-->
+    <!--<item name="android:layout_height">18dp</item>-->
+    <!--<item name="android:background">@drawable/round_bg_red</item>-->
+    <!--<item name="android:textColor">@color/agmobile_white</item>-->
+    <!--<item name="android:gravity">center</item>-->
+    <!--<item name="android:layout_marginLeft">-12dp</item>-->
+    <!--</style>-->
+
+    <declare-styleable name="TimelineView">
+        <attr name="tv_margin" format="dimension" />
+        <attr name="tv_lineThickness" format="dimension" />
+        <attr name="tv_radius" format="dimension" />
+        <attr name="tv_outerRadius" format="dimension" />
+        <attr name="tv_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ScaleDownImageTransition">
+        <attr name="factor" format="integer" />
+    </declare-styleable>
+
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="DialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+
+    <style name="DialogEmptyAnimation" parent="android:Animation">
+        <item name="@android:windowEnterAnimation">@null</item>
+        <item name="@android:windowExitAnimation">@null</item>
+    </style>
+
+    <!--排放口日志 拍视频-->
+    <style name="maskDialog" parent="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@color/colorMask</item>
+    </style>
+
+    <declare-styleable name="PullUpDragLayout">
+        <attr name="PullUpDrag_BottomView" format="reference"/><!--底部View-->
+        <attr name="PullUpDrag_ContentView" format="reference"/><!--内容View-->
+        <attr name="PullUpDrag_BottomBorderAnchorHeigth" format="reference|integer|dimension"/><!--bottomSheet缩放的高度-->
+    </declare-styleable>
+
+    <declare-styleable name="FileCustomRecyclerView">
+        <attr name="file_deleteDrawable" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="AGFilePicker">
+        <attr name="FilePickerTextViewName" format="string"/>
+    </declare-styleable>
+
+    <style name="WidgetRequireTagStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">*</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:textColor">@color/agmobile_text_warn</item>
+        <item name="android:textSize">@dimen/agmobile_text_body</item>
+    </style>
+
+    <style name="WidgetErrorTextStyle">
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginLeft">@dimen/widget_view_margin_left</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/agmobile_text_warn</item>
+    </style>
+    <style name="well_list_item_margin">
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="JbjPsdySewerageUserListHeaderTab"/>
+    <style name="JbjPsdySewerageUserListHeaderTab.Frame">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+    <style name="JbjPsdySewerageUserListHeaderTab.Text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:textSize">13sp</item>
+<!--        <item name="android:stateListAnimator">@animator/drainage_anim_selector_jbjpsdy_swewrage_user_list_header_tab_total_text</item>-->
+    </style>
+    <style name="JbjPsdySewerageUserListHeaderTab.Text2" parent="JbjPsdySewerageUserListHeaderTab.Text">
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:text">0</item>
+    </style>
+</resources>

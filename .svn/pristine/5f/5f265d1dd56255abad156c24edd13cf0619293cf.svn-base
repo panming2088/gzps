@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:background="@drawable/common_sel_recycleritem">
+    <!--android:background="?android:attr/selectableItemBackground"-->
+
+    <View
+        style="@style/AGMobile.Widget.View.DividerHorizontal"
+        android:layout_alignParentBottom="true"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/list_divider"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height">
+
+        <ImageView
+            android:id="@+id/iv_symbol"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginLeft="@dimen/list_symbol_margin_left"
+            android:layout_marginRight="@dimen/list_symbol_margin_left"
+            android:src="@mipmap/common_ic_plus"
+            android:layout_centerVertical="true"/>
+
+        <!--标题-->
+        <TextView
+            android:id="@+id/node_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_symbol"
+            android:textColor="@color/agmobile_black"
+            android:textSize="@dimen/text_size_second"
+            android:text="图层"/>
+
+        <!--数量-->
+        <TextView
+            android:id="@+id/node_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:textColor="@color/agmobile_black"
+            android:textSize="@dimen/text_size_third"
+            android:text="2/4"
+            android:layout_toLeftOf="@+id/ll_node_selectall"/>
+
+        <LinearLayout
+            android:id="@+id/ll_node_selectall"
+            style="@style/AGMobile.Widget.Button.Container.Light"
+            android:layout_marginRight="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_select_all"
+                android:layout_width="@dimen/checkbox_size"
+                android:layout_height="@dimen/checkbox_size"
+                android:button="@null"
+                android:clickable="false"
+                android:src="@mipmap/common_ic_selected"
+                android:background="@drawable/common_sel_checkbox_black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_node_unselectall"
+            style="@style/AGMobile.Widget.Button.Container.Light"
+            android:layout_marginRight="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_unselectall"
+                android:layout_width="@dimen/checkbox_size"
+                android:layout_height="@dimen/checkbox_size"
+                android:button="@null"
+                android:clickable="false"
+                android:src="@mipmap/common_ic_unselected"
+                android:background="@drawable/common_sel_checkbox_black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_node_halfcheck"
+            style="@style/AGMobile.Widget.Button.Container.Light"
+            android:layout_marginRight="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_halfcheck"
+                android:layout_width="@dimen/checkbox_size"
+                android:layout_height="@dimen/checkbox_size"
+                android:button="@null"
+                android:clickable="false"
+                android:src="@mipmap/common_ic_half_check"
+                android:background="@drawable/common_sel_checkbox_black"/>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <!-- 提示文字 -->
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:textSize="28sp"
+        android:textColor="@android:color/black"
+        android:text="正在启动..."
+        />
+
+    <!-- 底部语音按钮 -->
+    <RelativeLayout
+        android:id="@+id/rl_voice_btn_container"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/agmobile_blue"
+            android:text="点击结束"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"/>
+
+        <!--<ImageView-->
+            <!--android:id="@+id/ripple_ring"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_above="@id/tv_hint"-->
+            <!--android:src="@drawable/ripple_ring"/>-->
+
+        <ImageView
+            android:id="@+id/sound_wave_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/tv_hint"
+            android:src="@drawable/speech_lylr_sound_wave_circle"/>
+
+        <ImageButton
+            android:id="@+id/btn_speech"
+            android:layout_width="@dimen/speech_btn_size"
+            android:layout_height="@dimen/speech_btn_size"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/tv_hint"
+            android:scaleType="fitCenter"
+            android:padding="12dp"
+            android:src="@mipmap/speech_ic_keyboard_voice_white"
+            android:background="@drawable/speech_sel_bg_btn_speech"/>
+    </RelativeLayout>
+</RelativeLayout>

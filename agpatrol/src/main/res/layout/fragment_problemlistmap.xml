@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <com.esri.android.map.MapView
+            android:id="@+id/mapview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_layer"
+        android:layout_marginTop="65dp"
+        android:layout_width="@dimen/map_icon_size"
+        android:layout_height="@dimen/map_icon_size"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical"
+        android:scaleType="fitCenter"
+        android:background="@drawable/map_sel_btn">
+
+        <ImageView
+            android:layout_width="@dimen/map_icon_size"
+            android:layout_height="@dimen/map_icon_size"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="1dp"
+            android:src="@drawable/phone_ic_layers_white_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="图层"
+            android:textSize="8sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_legend"
+        android:layout_width="@dimen/map_icon_size"
+        android:layout_height="@dimen/map_icon_size"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/btn_layer"
+        android:orientation="vertical"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:layout_width="@dimen/map_icon_size"
+            android:layout_height="@dimen/map_icon_size"
+            android:src="@mipmap/ic_legend"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="1dp"
+            />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_list"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="80dp"
+        android:background="@mipmap/project_form"
+        android:visibility="gone"/>
+
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@mipmap/common_ic_add"
+        android:visibility="gone"/>
+
+<com.augurit.agmobile.patrolcore.common.widget.LocationButton
+    android:id="@+id/location_button"
+    android:layout_width="56dp"
+    android:layout_height="56dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="24dp"/>
+
+    <com.augurit.agmobile.mapengine.common.widget.scaleview.MapScaleView
+        android:id="@+id/scale_view"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp" />
+
+</RelativeLayout>

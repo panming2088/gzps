@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/photo_controler"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_margin="@dimen/patrol_upload_view_margin_left"
+   >
+
+    <com.augurit.am.cmpt.widget.HorizontalScrollPhotoView.HorizontalScrollPhotoView
+        android:id="@+id/horizontalScrollPhotoView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/ll_pu_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"></LinearLayout>
+    </com.augurit.am.cmpt.widget.HorizontalScrollPhotoView.HorizontalScrollPhotoView>
+
+    <FrameLayout
+        android:id="@+id/action_open_photo"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@id/horizontalScrollPhotoView"
+        android:layout_weight="1"
+        android:foreground="?android:selectableItemBackground">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_open_photo"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/selector_opent_photo" />
+        </RelativeLayout>
+    </FrameLayout>
+</LinearLayout>
+

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_table_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_orange"
+            android:padding="12dp"
+            android:text="标题名称"
+            android:textColor="@color/agmobile_white"
+            android:textSize="18sp"
+            android:visibility="gone"/>
+
+        <com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout
+            android:id="@+id/pb_load_records"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.jcodecraeer.xrecyclerview.XRecyclerView
+                android:id="@+id/rv_records"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_add_records"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="35dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/round_bg_blue"
+        android:text="+"
+        android:textColor="@color/agmobile_white"
+        android:textSize="22dp"
+        />
+</RelativeLayout>

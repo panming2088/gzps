@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/agmobile_white_dark">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:background="@color/agpatrol_blue">
+
+        <!--返回按钮-->
+        <LinearLayout
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/min_touchable_size"
+            android:layout_height="@dimen/min_touchable_size"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/top_icon_margin_horizontal"
+            android:background="@drawable/common_sel_btn_dark"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:gravity="center">
+
+            <ImageButton
+                style="@style/AGMobile.Widget.ImageButton.TopBar"
+                android:src="@mipmap/back_arrow" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/top_bar_height"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:text="专题名称"
+            android:textColor="@color/agmobile_white"
+            android:textSize="@dimen/text_size_first"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:background="@color/agmobile_white_dark">
+
+        <!--<com.augurit.am.cmpt.widget.togglebutton.view.AMSpringSwitchButton-->
+            <!--android:id="@+id/switch_button"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--app:backRectColor="@color/agmobile_blue_dark"-->
+            <!--app:leftText="下载管理"-->
+            <!--app:rightText="图层列表"-->
+            <!--app:textCheckedColor="@color/agmobile_white"-->
+            <!--app:textSize="@dimen/text_size_first"-->
+            <!--app:textUnCheckedColor="@color/agmobile_blue"-->
+            <!--android:layout_marginBottom="5dp"/>-->
+
+        <com.augurit.am.cmpt.widget.segmentControlView.SegmentControlView
+            android:id="@+id/scv"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            app:scv_FrameCornerRadius="4dp"
+            app:scv_BackgroundSelectedColor ="@color/agpatrol_blue"
+            app:scv_BackgroundNormalColor="@color/agmobile_white"
+            app:scv_TextSelectedColor ="@color/agmobile_white"
+            app:scv_TextNormalColor ="@color/agpatrol_blue"
+            app:scv_FrameColor ="@color/agpatrol_blue"
+            app:scv_FrameWidth="1dp"
+            app:scv_Gradient="true"
+            app:scv_SegmentPaddingVertical="5dp"
+            app:scv_TextArray="@array/segment_control_arrays_layer_download" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/agmobile_white_dark">
+
+        <LinearLayout
+            android:id="@+id/dnl_ll_tasklist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/agmobile_white_dark"
+            android:orientation="vertical">
+
+            <com.augurit.am.cmpt.widget.swipemenulistview.SwipeMenuRecyclerView
+                android:id="@+id/dnl_rv_tasklist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/agmobile_white">
+
+            </com.augurit.am.cmpt.widget.swipemenulistview.SwipeMenuRecyclerView>
+
+        </LinearLayout>
+
+        <!--<ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">-->
+
+        <LinearLayout
+            android:id="@+id/dnl_treeview_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="@color/agmobile_white">
+
+        </LinearLayout>
+
+        <!--</ScrollView>-->
+
+    </LinearLayout>
+
+</LinearLayout>

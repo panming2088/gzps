@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item"
+    style="@style/PatrolUploadItemOuterContainerStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_tv"
+            style="@style/PatrolUploadKeyTextStyle"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+            <!--文本框 -->
+            <TextView
+                android:id="@+id/tv_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="地      址"
+                android:textColor="#FF666666"
+                android:textSize="@dimen/partrol_upload_text_size" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_requiredTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="top"
+            android:layout_marginTop="-4dp"
+            android:layout_toRightOf="@id/ll_tv"
+            android:text="*"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="@dimen/text_size_third"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/et_"
+            style="@style/PatrolUploadETItemStyle"
+            android:layout_toLeftOf="@+id/btn"
+            android:layout_toRightOf="@id/ll_tv"
+            android:hint="" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_select_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_tv_location"
+            style="@style/PatrolUploadKeyTextStyle"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+            <!--文本框 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="所在位置"
+                android:textColor="#FF666666"
+                android:textSize="@dimen/partrol_upload_text_size" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="top"
+            android:layout_marginTop="-4dp"
+            android:layout_toRightOf="@id/ll_tv_location"
+            android:text="*"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="@dimen/text_size_third"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_select_location"
+            style="@style/PatrolUploadETItemStyle"
+            android:layout_toRightOf="@id/ll_tv_location"
+            android:background="@drawable/sel_btn_select_location"
+            android:gravity="center"
+            android:padding="4dp"
+            android:clickable="true">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/ic_select_location" />
+
+            <TextView
+                android:id="@+id/tv_select_or_check_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击选择位置" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/ll_table_item_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="6dp"/>
+</LinearLayout>

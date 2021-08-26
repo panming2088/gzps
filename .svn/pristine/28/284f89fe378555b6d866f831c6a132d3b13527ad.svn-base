@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="false">
+
+    <LinearLayout
+        android:id="@+id/ll_tv1"
+        style="@style/PatrolUploadKeyTextStyle"
+        android:layout_width="54dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:clickable="false">
+        <!--文本框 -->
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="填写人"
+            android:textColor="#FF666666"
+            android:textSize="@dimen/partrol_upload_text_size" />
+        <TextView
+            android:id="@+id/tv_requiredTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:text="*"
+            android:visibility="gone"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="@dimen/text_size_third" />
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/et_1"
+        style="@style/PatrolUploadETItemStyle"
+        android:layout_toRightOf="@id/ll_tv1"
+        android:textColor="@color/dust_grey"
+        android:layout_marginLeft="10dp"
+        android:hint=""
+        android:clickable="true"/>
+
+    <!--android:textColor="@drawable/sel_text_item_color"-->
+</RelativeLayout>

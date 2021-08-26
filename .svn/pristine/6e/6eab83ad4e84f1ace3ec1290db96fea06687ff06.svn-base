@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="false"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="窨井名称" />
+        <com.augurit.agmobile.gzps.common.widget.SpinnerTableItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:spinnertextViewName="雨污类别" />
+        <com.augurit.agmobile.gzps.common.widget.SpinnerTableItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:spinnertextViewName="窨井类别" />
+        <com.augurit.agmobile.gzps.common.widget.SpinnerTableItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:spinnertextViewName="所在污水系统" />
+        <com.augurit.agmobile.gzps.common.widget.SpinnerTableItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:spinnertextViewName="所在雨水系统" />
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="所属工程名称" />
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="作业编号" />
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="井室材质" />
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="井盖型号" />
+        <com.augurit.agmobile.gzps.common.widget.SpinnerTableItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:spinnertextViewName="井盖材质" />
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="井盖大小(mm)" />
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="井深" />
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="井深平面面积" />
+        <com.augurit.agmobile.gzps.common.widget.TextFieldTableItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fieldtextViewName="井底状况"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                style="@style/PatrolUploadKeyTextStyle"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:clickable="false"
+                android:gravity="center_vertical">
+                <!--文本框 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="设施状态"
+                    android:textColor="#FF666666"
+                    android:textSize="@dimen/partrol_upload_text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="0dp"
+                    android:text="*"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="@dimen/text_size_third"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:checked="true"
+                android:gravity="center_vertical"
+                android:text="运行" />
+            <CheckBox
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="废弃" />
+            <CheckBox
+                android:visibility="gone"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="维修" />
+        </LinearLayout>
+        <include layout="@layout/layout_attribute_five"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+        <com.augurit.agmobile.gzps.common.widget.SpinnerTableItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:spinnertextViewName="权属单位" />
+        <com.augurit.agmobile.gzps.common.widget.SpinnerTableItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:spinnertextViewName="管理单位" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+
+                android:layout_gravity="center_vertical"
+                android:layout_width="@dimen/patrol_upload_text_width"
+                android:layout_height="wrap_content"
+                android:textColor="#FF666666"
+                android:textSize="@dimen/partrol_upload_text_size"
+                android:text="调查日期"/>
+
+            <RelativeLayout
+                android:layout_gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btn_start_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/shp_green_outline_bg"
+                    android:gravity="center"
+                    android:paddingRight="12dp"
+                    android:stateListAnimator="@null"
+                    android:text="2016-11" />
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/date_picker" />
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/button_shape"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="重置"
+                android:visibility="gone" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+
+                android:layout_gravity="center_vertical"
+                android:layout_width="@dimen/patrol_upload_text_width"
+                android:layout_height="wrap_content"
+                android:textColor="#FF666666"
+                android:textSize="@dimen/partrol_upload_text_size"
+                android:text="竣工日期"/>
+
+            <RelativeLayout
+                android:layout_gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btn_end_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/shp_green_outline_bg"
+                    android:gravity="center"
+                    android:paddingRight="12dp"
+                    android:stateListAnimator="@null"
+                    android:text="2016-11" />
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/date_picker" />
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/button_shape"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="重置"
+                android:visibility="gone" />
+        </LinearLayout>
+        <com.augurit.agmobile.gzps.common.widget.SpinnerTableItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:spinnertextViewName="数据来源" />
+        <com.augurit.agmobile.gzps.common.widget.TextFieldTableItem
+            android:id="@+id/textitem_remark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fieldtextViewName="备注"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.augurit.am.cmpt.widget.popupview.view.SquareLayout
+    android:id="@+id/container_gv"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/gv_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/popupview_shp_grid_item_bg"
+            />
+        <ImageView
+            android:id="@+id/select"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignBottom="@+id/gv_iv"
+            android:layout_alignEnd="@+id/gv_iv"
+            android:layout_alignRight="@+id/gv_iv"
+            android:background="@mipmap/popupview_ic_select"
+            android:visibility="gone"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/gv_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gv_iv"
+        android:layout_centerInParent="true"
+        android:text="aaa"/>
+
+</com.augurit.am.cmpt.widget.popupview.view.SquareLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/agmobile_background"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0dp">
+
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="36dp"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/ic_two_lines" />
+
+        <TextView
+            android:id="@+id/pipe_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/rc_dimen_size_40"
+            android:layout_centerInParent="true"
+            android:textStyle="bold"
+            android:textColor="#3D3C3C"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:text="设置管线信息" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/line"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/agmobile_black" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/agmobile_white"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:orientation="vertical">
+
+        <com.augurit.agmobile.gzps.common.widget.SpinnerTableItem
+            android:id="@+id/sp_ywlx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:spinnertextViewName="管线类型" />
+
+        <com.augurit.agmobile.gzps.common.widget.SpinnerTableItem
+            android:id="@+id/sp_lx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:spinnertextViewName="流向" />
+
+        <com.augurit.agmobile.gzps.common.widget.SpinnerTableItem
+            android:id="@+id/sp_gj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:spinnertextViewName="管径" />
+
+        <com.augurit.agmobile.gzps.common.widget.NumberItemTableItem
+            android:id="@+id/sp_gxcd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="管线长度(m)" />
+
+        <com.augurit.agmobile.gzps.common.widget.CheckBoxItem
+            android:id="@+id/cb_isFacilityOfRedLine"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_cancel2"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:background="@drawable/sel_btn_cancel"
+            android:text="取消"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_first" />
+
+
+        <Button
+            android:id="@+id/btn_save2"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:background="@drawable/sel_btn_popu"
+            android:text="提交"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_first" />
+    </LinearLayout>
+</RelativeLayout>

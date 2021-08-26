@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_item"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="20dp"
+        android:padding="5dp"
+        android:background="@drawable/tag_bg"
+
+        android:gravity="center"
+        android:text="Helloworld"
+        android:id="@+id/flow_tv"
+        android:textColor="@drawable/text_color"
+        android:textSize="@dimen/text_size_third">
+    </TextView>
+    <ImageView
+        android:id="@+id/iv_item_nine_photo_flag"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignRight="@id/flow_tv"
+        android:layout_marginRight="-10dp"
+        android:clickable="true"
+        android:src="@mipmap/bga_pp_ic_delete"
+        tools:visibility="visible" />
+</RelativeLayout>

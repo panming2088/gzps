@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/rootView"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#ffffff"
+              android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/fl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/ll_lowwarn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/amspinner_sel_spinner"
+            android:minHeight="40dp" >
+
+            <TextView
+                android:id="@+id/tv_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:minHeight="40dp"
+                android:layout_centerVertical="true"
+                android:textSize="18sp"
+                android:textColor="#ff000000"
+                android:gravity="left|center"
+                android:clickable="false">
+            </TextView>
+
+
+            <ImageButton
+                android:id="@+id/bt_dropdown"
+                android:layout_width="12dp"
+                android:layout_height="7dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/spinner_ic_down_arrow"
+                android:clickable="false"/>
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
+
+</LinearLayout>

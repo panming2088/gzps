@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--右侧滑入LayoutAnimation-->
+<layoutAnimation xmlns:android="http://schemas.android.com/apk/res/android"
+    android:delay="12%"
+    android:animationOrder="normal"
+    android:animation="@anim/view_slide_in_right"
+    android:interpolator="@android:anim/decelerate_interpolator">
+</layoutAnimation>

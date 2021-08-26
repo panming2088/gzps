@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/agmobile_white_dark"
+    android:orientation="vertical">
+
+    <!--
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height"
+        android:background="@color/agmobile_white_dark">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+
+            <ImageView
+
+                style="@style/BottomToggleImageView"
+                android:layout_marginBottom="@dimen/bottom_toggle_margin_vertical"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/agmobile_blue"
+                android:textSize="@dimen/text_size_second"
+                android:text="@string/title_project"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/min_touchable_size"
+            android:layout_height="@dimen/min_touchable_size"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/common_sel_btn_light"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="@dimen/top_icon_size"
+                android:layout_height="@dimen/top_icon_size"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ic_close_grey"/>
+        </LinearLayout>
+    </RelativeLayout>
+    -->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_title_height"
+        android:background="@color/agmobile_white_dark">
+        <!--返回按钮-->
+        <LinearLayout
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/min_touchable_size"
+            android:layout_height="@dimen/min_touchable_size"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/top_icon_margin_horizontal"
+            android:background="@drawable/common_sel_btn_dark"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_download_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:src="@mipmap/common_ic_back_blue" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/AGMobile.Widget.ImageView.BottomToggle"
+                android:layout_marginBottom="@dimen/bottom_toggle_margin_vertical"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_project"
+                android:textColor="@color/agmobile_blue"
+                android:textSize="@dimen/text_size_second" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_close"
+            android:layout_width="@dimen/min_touchable_size"
+            android:layout_height="@dimen/min_touchable_size"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/common_sel_btn_light"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="@dimen/top_icon_size"
+                android:layout_height="@dimen/top_icon_size"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/common_ic_close_gray" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/agmobile_grey_0"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/agmobile_white_dark"
+        android:gravity="center_horizontal">
+
+        <com.augurit.am.cmpt.widget.segmentControlView.SegmentControlView
+            android:id="@+id/scv"
+            style="@style/AGMobile.Widget.SegmentControlView.Light"
+            android:layout_centerInParent="true"
+            app:scv_TextArray="@array/segment_control_arrays_layer_download"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/agmobile_white_dark"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/dnl_ll_tasklist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/agmobile_white_dark"
+            android:orientation="vertical">
+
+            <com.augurit.am.cmpt.widget.swipemenulistview.SwipeMenuRecyclerView
+                android:id="@+id/dnl_rv_tasklist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/agmobile_white">
+
+            </com.augurit.am.cmpt.widget.swipemenulistview.SwipeMenuRecyclerView>
+
+        </LinearLayout>
+
+        <!--<ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">-->
+
+        <LinearLayout
+            android:id="@+id/dnl_treeview_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/agmobile_white"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+        </LinearLayout>
+
+        <!--</ScrollView>-->
+
+    </LinearLayout>
+
+</LinearLayout>

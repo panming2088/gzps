@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="com.augurit.agmobile.gzps.SewerageTableFourData">
+
+        <variable
+            name="checkchangelistener"
+            type="android.widget.RadioGroup.OnCheckedChangeListener" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/common_rectangle_with_shadow"
+            android:orientation="vertical"
+            android:paddingBottom="13dp"
+            android:paddingTop="13dp">
+
+            <!--隔油池START-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="58dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/patrol_upload_view_margin_left"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/partrol_upload_text_size"
+                        android:textColor="#FF666666"
+                        android:text="隔油池"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tv_notice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:text="*"
+                        android:visibility="gone"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textSize="@dimen/text_size_third" />
+                </LinearLayout>
+
+                <RadioGroup
+                    android:id="@+id/rg_isClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/tv"
+                    android:layout_alignParentRight="true"
+                    android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="8dp">
+                    <RadioButton
+                        android:id="@+id/rb_close"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="无"/>
+                    <RadioButton
+                        android:id="@+id/rb_open"
+                        android:layout_marginLeft="14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="有"/>
+                </RadioGroup>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_rb1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_stroke"
+                android:orientation="vertical"
+                android:paddingBottom="13dp"
+                android:paddingTop="13dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/run_one"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="运行情况"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_table_seweragefour_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="20dp">
+
+                        <RadioButton
+                            android:id="@+id/rb_table_seweragefour_one_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="开启" />
+
+                        <RadioButton
+                            android:id="@+id/rb_table_seweragefour_one_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="关闭" />
+
+                        <RadioButton
+                            android:id="@+id/rb_table_seweragefour_one_three"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="故障" />
+
+                        <RadioButton
+                            android:id="@+id/rb_table_seweragefour_one_four"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="其他" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edt_table_seweragefour_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="描述"
+                    android:maxLength="50"
+                    android:visibility="gone"
+                    android:layout_marginLeft="70dp"
+                    android:textSize="14sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/protect_one"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="是否进行养护"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_table_seweragefour_yanghu_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/yanghu_one_yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="是" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="14dp"
+                            android:text="否" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/protect_record_one"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="养护记录及台账"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_table_seweragefour_yanghujilu_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="有" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="14dp"
+                            android:text="无" />
+
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+            <!--隔油池END-->
+
+
+            <!--格栅START-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="58dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/patrol_upload_view_margin_left"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/partrol_upload_text_size"
+                        android:textColor="#FF666666"
+                        android:text="格栅"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tv_notice2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:text="*"
+                        android:visibility="gone"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textSize="@dimen/text_size_third" />
+                </LinearLayout>
+                <RadioGroup
+                    android:id="@+id/rg2_isClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/tv"
+                    android:layout_alignParentRight="true"
+                    android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="8dp">
+                    <RadioButton
+                        android:id="@+id/rb2_close"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="无"/>
+                    <RadioButton
+                        android:id="@+id/rb2_open"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:text="有"/>
+
+                </RadioGroup>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_rb2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_stroke"
+                android:orientation="vertical"
+                android:paddingBottom="13dp"
+                android:paddingTop="13dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/run_two"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="运行情况"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_table_seweragefour_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="20dp">
+
+                        <RadioButton
+                            android:id="@+id/rb_table_seweragefour_two_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="开启" />
+
+                        <RadioButton
+                            android:id="@+id/rb_table_seweragefour_two_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="关闭" />
+
+                        <RadioButton
+                            android:id="@+id/rb_table_seweragefour_two_three"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="故障" />
+
+                        <RadioButton
+                            android:id="@+id/rb_table_seweragefour_two_four"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="其他" />
+                    </RadioGroup>
+                </LinearLayout>
+
+
+                <EditText
+                    android:id="@+id/edt_table_seweragefour_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="描述"
+                    android:maxLength="50"
+                    android:visibility="gone"
+                    android:layout_marginLeft="70dp"
+                    android:textSize="14sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/protect_two"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="是否进行养护"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_table_seweragefour_yanghu_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="是" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:text="否" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/protect_record_two"
+                        android:layout_width="59dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="养护记录及台账"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_table_seweragefour_yanghujilu_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="有" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:text="无" />
+
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+            <!--格栅END-->
+
+
+            <!--沉淀池START-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="58dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/patrol_upload_view_margin_left"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/partrol_upload_text_size"
+                        android:textColor="#FF666666"
+                        android:text="沉淀池"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tv_notice3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:text="*"
+                        android:visibility="gone"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textSize="@dimen/text_size_third" />
+                </LinearLayout>
+                <RadioGroup
+                    android:id="@+id/rg3_isClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/tv"
+                    android:layout_alignParentRight="true"
+                    android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="8dp">
+                    <RadioButton
+                        android:id="@+id/rb3_close"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="无"/>
+                    <RadioButton
+                        android:id="@+id/rb3_open"
+                        android:layout_marginLeft="14dp"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="有"/>
+
+                </RadioGroup>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_rb3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_stroke"
+                android:orientation="vertical"
+                android:paddingBottom="13dp"
+                android:paddingTop="13dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/run_three"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="运行情况"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_table_seweragefour_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="20dp">
+
+                        <RadioButton
+                            android:id="@+id/rb_table_seweragefour_three_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="开启" />
+
+                        <RadioButton
+                            android:id="@+id/rb_table_seweragefour_three_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="关闭" />
+
+                        <RadioButton
+                            android:id="@+id/rb_table_seweragefour_three_three"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="故障" />
+
+                        <RadioButton
+                            android:id="@+id/rb_table_seweragefour_three_four"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="其他" />
+                    </RadioGroup>
+                </LinearLayout>
+
+
+                <EditText
+                    android:id="@+id/edt_table_seweragefour_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="描述"
+                    android:maxLength="50"
+                    android:visibility="gone"
+                    android:layout_marginLeft="70dp"
+                    android:textSize="14sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/protect_three"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="是否进行养护"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                        android:id="@+id/rg_table_seweragefour_yanghu_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="是" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:text="否" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/protect_record_three"
+                        android:layout_width="59dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="养护记录及台账"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                        android:id="@+id/rg_table_seweragefour_yanghujilu_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="有" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:text="无" />
+
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+            <!--沉淀池END-->
+
+            <!--其他预处理设施START-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="58dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/patrol_upload_view_margin_left"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/partrol_upload_text_size"
+                        android:textColor="#FF666666"
+                        android:text="其他预处理设施"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tv_notice4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:visibility="gone"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textSize="@dimen/text_size_third" />
+                </LinearLayout>
+
+                <RadioGroup
+                    android:id="@+id/rg4_isClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/tv"
+                    android:layout_alignParentRight="true"
+                    android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="8dp">
+                    <RadioButton
+                        android:id="@+id/rb4_close"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="无"/>
+                    <RadioButton
+                        android:id="@+id/rb4_open"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:text="有"/>
+
+                </RadioGroup>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_rb4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_stroke"
+                android:orientation="vertical"
+                android:paddingBottom="13dp"
+                android:paddingTop="13dp"
+                android:visibility="gone"
+                >
+
+                <com.augurit.agmobile.gzps.common.widget.PSHTextItemTableItem
+                    android:id="@+id/tv_sewerage_four_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    app:textViewName="设施名称"
+                    android:gravity="left"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/run_four"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="运行情况"
+                        android:textSize="14sp" />
+                    <RadioGroup
+                        android:id="@+id/rg_table_seweragefour_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="20dp">
+
+                        <RadioButton
+                            android:id="@+id/rb_table_seweragefour_four_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="开启" />
+
+                        <RadioButton
+                            android:id="@+id/rb_table_seweragefour_four_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="关闭" />
+
+                        <RadioButton
+                            android:id="@+id/rb_table_seweragefour_four_three"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="故障" />
+
+                        <RadioButton
+                            android:id="@+id/rb_table_seweragefour_four_four"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="其他" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edt_table_seweragefour_four"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="描述"
+                    android:maxLength="50"
+                    android:visibility="gone"
+                    android:layout_marginLeft="70dp"
+                    android:textSize="14sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/protect_four"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="是否进行养护"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_table_seweragefour_yanghu_four"
+                        android:layout_width="wrap_content"
+                        android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="是" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:text="否" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/protect_record_four"
+                        android:layout_width="59dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="养护记录及台账"
+                        android:textSize="14sp" />
+                    <RadioGroup
+                        android:id="@+id/rg_table_seweragefour_yanghujilu_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onCheckedChanged="@{checkchangelistener::onCheckedChanged}"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="有" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:text="无" />
+
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+            <!--其他预处理措施END-->
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

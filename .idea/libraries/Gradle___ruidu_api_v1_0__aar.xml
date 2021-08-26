@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: :ruidu-api-v1.0:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/9b79a20dc6415e444a07672a54f84329/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/9b79a20dc6415e444a07672a54f84329/res" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/9b79a20dc6415e444a07672a54f84329/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/9b79a20dc6415e444a07672a54f84329/jars/libs/lite-orm-1.9.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

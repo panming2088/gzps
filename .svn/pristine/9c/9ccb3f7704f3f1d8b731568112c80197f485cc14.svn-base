@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_tv"
+        style="@style/PatrolUploadKeyTextStyle"
+        android:layout_centerVertical="true">
+        <!--文本框 -->
+        <TextView
+            android:id="@+id/tv_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="文本框"
+            android:textColor="#FF666666"
+            android:textSize="@dimen/partrol_upload_text_size" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_requiredTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="top"
+        android:layout_marginTop="-4dp"
+        android:layout_toRightOf="@id/ll_tv"
+        android:text="*"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="@dimen/text_size_third" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        style="@style/spinner_style"
+        android:layout_height="36dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="14dp"
+        android:layout_toRightOf="@id/ll_tv"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/tv_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/ll_tv"
+        android:visibility="gone"/>
+
+    <EditText
+        android:id="@+id/et_"
+        style="@style/PatrolUploadETItemStyle"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/ll_tv"
+        android:background="@null"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/ll_tv"
+        android:layout_marginTop="40dp">
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/agpatrol_blue"
+            android:text="详情"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <include
+        layout="@layout/include_table_divide_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/spinner"
+        android:layout_marginTop="4dp"/>
+</RelativeLayout>

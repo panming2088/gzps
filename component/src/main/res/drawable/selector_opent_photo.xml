@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+    android:state_enabled 能够接受触摸或者点击事件 ;android:state_focused 是否取得焦点;android:state_multiline 是否多行;
+    android:state_activated 被激活;android:state_window_focused 应用程序是否在前台，当有通知栏被拉下来或者一个对话框弹出的时候应用程序就不在前台了;
+    android:state_pressed 是否按下，如一个按钮触摸或者点击
+
+    -->
+    <item android:drawable="@drawable/select_photo" android:state_pressed="true"/>
+    <item android:drawable="@drawable/select_photo"/>
+
+</selector><!-- From: file:/D:/QiuYue/Android/enviroment/used/AndroidStudioProjects/MyApplication/ACCPatrol/src/main/res/drawable/selector_opent_photo.xml -->

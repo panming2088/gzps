@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <script src="jquery-2.1.0.js"></script>
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        th, td {
+            font-size: 14px;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+            padding-top: 0.1rem;
+            padding-bottom: 0.1rem;
+            margin-left: 0;
+            border-bottom: 1px solid #cccccc
+        }
+
+        img {
+            vertical-align: middle;
+            margin-left: 0.2rem;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        span {
+            background-color: #2196F3;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 0.6rem;
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            letter-spacing: 0.5rem;
+        }
+
+        .button {
+            background-color: #2196F3;
+            white-space: nowrap;
+            padding: 0.3rem;
+            margin: 0.3rem;
+            color: white;
+            text-align: center;
+            font-size: 16px;
+        } 
+
+        table {
+            margin-bottom: 15%;
+        }
+    </style>
+</head>
+<body>
+<h3 style="text-align: center">网格员巡查事件(综治)类巡查类型</h3>
+<div >
+    <div id="choosed" style="color: #ff5050; display: inline; padding: 0.6rem"> </div>
+    <div class="button" style="float: right" onclick="clearClick()">清空选择</div>
+</div>
+<table width="100%" border="1" cellspacing="0" id="table">
+    <tr id="head">
+        <th width="10%">序号</th>
+        <th width="70%">事件类型</th>
+        <th width="20%">承办单位</th>
+    </tr>
+    <!--<tr>-->
+    <!--<td>1</td>-->
+    <!--<td>-->
+    <!--<ul>-->
+    <!--<li><input type="checkbox" name="bb">广州奥格智能科技有限公司<img-->
+    <!--src="service/patrol/web/General/Common/image/arrow.png"-->
+    <!--style="width:1.5rem;height: 1.5rem" onclick="expand()"></li>-->
+    <!--<li><input type="radio" name="bb">广州奥格智能科技有限公司</li>-->
+    <!--<li><input type="radio" name="bb">广州奥格智能科技有限公司</li>-->
+    <!--</ul>-->
+    <!--</td>-->
+    <!--<td>办事处</td>-->
+    <!--</tr>-->
+
+</table>
+<span onclick="confirm()">确定</span>
+<script>
+    var mData;
+    // $.ajax({
+    //     method: 'get',
+    //     url: 'http://192.168.32.7:3001/sbss/saftyData',
+    //     dataType: 'json',
+    //     success: function (data) {
+    //         parseData(data, false);
+    //     },
+    //     error: function (e) {
+
+    //     }
+    // });
+
+    function parseData(data, isOnlyReady) {
+
+        for (var i = 0; i < data.length; i++) {
+
+            var selectedCode = data[i].selectedCode;
+
+            var isSelected = data[i].isSelected;
+            var trId = data[i].item.code + 'tr';
+            $('#table').append('<tr id="' + trId + '"></tr>');
+
+            var tr = $('#' + trId);
+
+            tr.append('<td style="text-align: center">' + (i+1) + '</td>');
+
+            tr.append('<td id="' + data[i].item.id + '"></td>');
+
+            $('#' + data[i].item.id).append('<ul></ul>');
+
+            var note = data[i].item.note != undefined? data[i].item.note : '';
+            tr.append('<td style="text-align: center">' + note + '</td>');
+
+            $('#' + data[i].item.id).find('ul').append('<li id="' + data[i].item.code + '"> <input type="checkbox" name="" class="parent" onclick="checkClick(this,\'' + data[i].item.code + '\')">' + data[i].item.name + '<img src="image/arrow.png" onclick=expand(this,"' + data[i].item.code + '")></li>');
+
+            if (isSelected) {
+
+                $('#' + data[i].item.code).find('input').prop('checked', true);
+            }
+            for (var j = 0; j < data[i].childItems.length; j++) {
+
+                $('#' + data[i].item.id).find('ul').append('<li id="' + data[i].childItems[j].code + '" ><input type="checkbox" name="' + data[i].childItems[j].typeCode + '" class="child" onclick="childClick(this,\'' + data[i].childItems[j].code + '\')">' + data[i].childItems[j].name + '</li>');
+
+                // 子项是否选中
+                for (k in selectedCode) {
+                    if (data[i].childItems[j].code == selectedCode[k]) {
+                        $('#' + data[i].childItems[j].code).find('input').prop('checked', true);
+                        break;
+                    }
+                }
+
+                if (j == data[i].childItems.length - 1) {
+                    $('#' + data[i].childItems[j].code).removeAttr('border-bottom');
+                }
+            }
+        }
+        if (isOnlyReady) {
+            var isChecked = $('li').find('input').prop('checked');
+            if (isChecked) {
+
+            }
+            $('input').attr('disabled', true);
+        }
+        updateChoosedText();
+    }
+    //伸缩列表
+    var deg = 0;
+    function expand(img, liId) {
+        deg += 180;
+        $(img).css('transform', "rotate(" + deg + "deg)");
+        $('#' + liId).nextAll().slideToggle();
+    }
+
+    /**
+     * 父项点击
+     */
+    function checkClick(ipt, liId) {
+        var attr = $(ipt).prop('checked');
+
+        if (attr == false) {
+            $('#' + liId).siblings('li').find('input').prop('checked', false);
+        } else {    // 目前父项选中即选中子项第一项
+            $('#' + liId).siblings('li:eq(0)').find('input').prop('checked', true);
+        }
+        // 更新已选择文字        
+        updateChoosedText();
+    }
+
+    /**
+     * 子项点击
+     */
+    function childClick(ipt, liId) {
+        var isChildCheckd = false;
+        if ($(ipt).prop('checked')) {   // 自身选中则父项选中
+            isChildCheckd = true;
+        } else {    // 判断是否还有其他子项选中
+            $('#' + liId).siblings('li').find('input.child').each(function(index, elem) {
+                if (elem.checked) {
+                    isChildCheckd = true;
+                }
+            });
+        }
+        // 设置父项选中状态
+        $('#' + liId).siblings('li:eq(0)').find('input').prop('checked', isChildCheckd);        
+
+        // 更新已选择文字        
+        updateChoosedText();
+    }
+
+    /**
+     * 清空所有选择
+     */
+    function clearClick() {
+        for (i in mData) {
+            $('#' + mData[i].item.code).find('input').prop('checked', false);
+            $('#' + mData[i].item.code).siblings('li').find('input').prop('checked', false);
+        }
+        updateChoosedText();
+    }
+
+    /**
+     * 更新已选择文字 
+     */ 
+    function updateChoosedText() {
+        var choosed = '';
+        $('li').each(function (index, element) {
+            var isChecked = $(this).find('input').prop('checked');
+            var clazz = $(this).find('input').prop('class');
+            if (clazz == 'parent' && isChecked == true) {
+                var selected;
+                for (i in mData) {
+                    if (mData[i].item.code == element.id) {
+                        selected = i;
+                    }
+                }
+                choosed += (eval(selected) + 1) + ',';
+            }
+        });
+        if (choosed.length != 0) {
+            choosed = '已选择：' + choosed.substring(0, choosed.length - 1);
+        }
+        $('#choosed').text(choosed);
+    }
+
+    var itemCodeArr = new Array();
+    var childItemsArr = new Array();
+    function confirm() {
+        // 重新new一遍
+        itemCodeArr = new Array();
+        childItemsArr = new Array();
+        $('li').each(function () {
+            var isChecked = $(this).find('input').prop('checked');
+            if (isChecked == true) {
+                var clazz = $(this).find('input').prop('class');
+                if (clazz == 'child') {
+                    childItemsArr.push($(this).attr('id'));
+                } else {
+                    itemCodeArr.push($(this).attr('id'));
+                }
+            }
+        });
+        for (i in mData) {
+            mData[i].selectedCode = new Array(); // 清空所有选择
+            mData[i].isSelected = false;
+            for (j in itemCodeArr) {
+                if (mData[i].item.code == itemCodeArr[j]) { // 父项
+                    mData[i].isSelected = true;
+                    for (k in mData[i].childItems) {    // 子项
+                        for (l in childItemsArr) {
+                            if (mData[i].childItems[k].code == childItemsArr[l]) {
+                                mData[i].selectedCode.push(childItemsArr[l]);
+                            }
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+        console.dir(mData);
+        window.Android.callback(JSON.stringify(mData));
+    }
+
+    function acceptAndroidData(jsonData, isOnlyReady) {
+        //var data = JSON.parse(jsonData);
+        mData=jsonData;
+        var data = jsonData;
+        if (isOnlyReady == false) {
+            parseData(data, false);
+        } else {
+            $('span').css('display', 'none');
+            parseData(data, true);
+        }
+
+    }
+</script>
+</body>
+</html>

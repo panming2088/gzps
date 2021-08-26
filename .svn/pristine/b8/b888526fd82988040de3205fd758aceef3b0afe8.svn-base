@@ -1,0 +1,112 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    //-------日志相关--------
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        ndk {
+            // 设置支持的 SO 库构架，注意这里要根据你的实际情况来设置
+            abiFilters 'armeabi','x86'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:design:$rootProject.supportLibraryVersion"
+
+    //------------网络部分-----------------
+
+    //okhttp大小334kb
+    compile 'com.squareup.okhttp3:okhttp:3.4.0'
+
+    //大小8kb
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.0'
+
+    //大小85.4kb
+    compile 'com.squareup.retrofit2:retrofit:2.0.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0'
+    compile files('libs/ksoap2-android-assembly-3.0.0-jar-with-dependencies.jar')
+
+    //---------------数据库部分------------------
+
+    //compile 'net.zetetic:android-database-sqlcipher:3.5.2@aar'  //加密版的sqlite数据库
+
+    //加密版的sqlite数据库
+
+    //引入amdatabase时，必须在project（不是module）下的build.gradle配置faltDir, 如下所示：
+
+    //allprojects {
+
+    //    repositories {
+
+    //        jcenter()
+
+    //
+
+    //        //关键
+
+    //        flatDir {
+
+    //            dirs '../amdatabase/libs'
+
+    //        }
+
+    //    }
+
+    //}
+    compile(name: 'android-database-sqlcipher-3.5.2', ext: 'aar')
+
+    //-----------------Utils部分-------------------
+
+    //log打印的第三方库
+
+    // compile 'com.github.zhaokaiqiang.klog:library:1.5.0'
+
+    /* compile 'com.google.code.gson:gson:2.7'*/
+
+    //  compile files('libs/qcode.jar')
+    compile files('libs/pinyin4j-2.5.0.jar')
+
+    //用于文件读写操作
+
+    //okhhtp 3.4.0中已依赖okio 1.9.0
+
+    //    compile 'com.squareup.okio:okio:1.9.0'
+
+    //commons-io 用于文件删除复制等操作
+    compile 'commons-io:commons-io:2.0.1'
+
+    //------------图片加载和缓存部分-------------
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
+
+    //文件加解密
+    compile 'com.facebook.conceal:conceal:1.1.3@aar'
+
+    // compile 'com.android.support:design:23.4.0'
+
+    /**
+     * 打印Log的第三方库，地址是：https://github.com/orhanobut/logger
+     */
+    compile 'com.orhanobut:logger:1.15'
+}
+

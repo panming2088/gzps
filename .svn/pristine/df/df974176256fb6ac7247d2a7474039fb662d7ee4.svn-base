@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+        <include layout="@layout/common_patrol_toolbar"/>
+        <LinearLayout
+            android:id="@+id/share_wx"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:gravity="center"
+            android:visibility="visible"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分享至微信"
+                android:textColor="#fff"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+      >
+
+        <com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout
+
+            android:id="@+id/pb_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/agmobile_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@mipmap/ic_problem_origin"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text="问题来源"
+                    android:textColor="@color/dust_grey"
+                    android:textStyle="bold"/>
+
+
+
+                <RelativeLayout
+                    android:id="@+id/ll_edit"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="40dp"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+
+                    >
+                    <Button
+                        android:id="@+id/btn_edit"
+                        android:layout_width="80dp"
+                        android:layout_height="32dp"
+                        android:layout_marginRight="15dp"
+
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/radio_bg2"
+                        android:textColor="#fff"
+                        android:text="编辑问题"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ll_delete"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="15dp"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+
+                    >
+                    <Button
+                        android:id="@+id/btn_delete"
+                        android:layout_width="80dp"
+                        android:layout_height="32dp"
+                        android:layout_marginRight="15dp"
+
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/radio_red_bg"
+                        android:textColor="#fff"
+                        android:text="删除任务"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/textitem_upload_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                app:textViewName="上报人"/>
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/textitem_parent_org"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                app:textViewName="上报单位" />
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/textitem_upload_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                app:textViewName="上报时间"/>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_select_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/ll_tv_location"
+                    style="@style/PatrolUploadKeyTextStyle"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true">
+                    <!--文本框 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="上报地点"
+                        android:textColor="#FF666666"
+                        android:textSize="@dimen/partrol_upload_text_size"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="-4dp"
+                    android:layout_toRightOf="@id/ll_tv_location"
+                    android:text="*"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="@dimen/text_size_third"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_report_addr"
+                    style="@style/PatrolUploadETItemStyle"
+                    android:layout_marginBottom="6dp"
+                    android:layout_toRightOf="@id/ll_tv_location"
+                    android:background="@drawable/sel_btn_select_location"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:padding="4dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@mipmap/ic_select_location"/>
+
+                    <TextView
+                        android:id="@+id/tv_check_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="查看上报地点"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_tv_component_location"
+                    style="@style/PatrolUploadKeyTextStyle"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true">
+                    <!--文本框 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="问题地点"
+                        android:textColor="#FF666666"
+                        android:textSize="@dimen/partrol_upload_text_size"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="-4dp"
+                    android:layout_toRightOf="@id/ll_tv_component_location"
+                    android:text="*"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="@dimen/text_size_third"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_addr"
+                    style="@style/PatrolUploadETItemStyle"
+                    android:layout_marginBottom="6dp"
+                    android:layout_toRightOf="@id/ll_tv_component_location"
+                    android:background="@drawable/sel_btn_select_location"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:padding="4dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@mipmap/ic_select_location"/>
+
+                    <TextView
+                        android:id="@+id/tv_check_component_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="查看问题地点"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/textitem_upload_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                app:textViewName="问题地点"
+                android:visibility="gone"/>
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/textitem_upload_compttype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                app:textViewName="设施类型"/>
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/textitem_upload_eventtype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                app:textViewName="问题类型"/>
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/textitem_upload_urgency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                app:textViewName="紧急程度"/>
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/textitem_upload_deal_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:visibility="gone"
+                app:textViewName="预计处理完成时间"/>
+
+            <com.augurit.agmobile.gzps.common.widget.TextFieldTableItem
+                android:id="@+id/textfield_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                app:fieldtextViewName="问题描述"/>
+
+            <com.augurit.agmobile.gzps.common.MultiTakePhotoTableItem
+                android:id="@+id/photo_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:photoText="现场图片"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/agmobile_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@mipmap/ic_process"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text="处理情况"
+                    android:textColor="@color/dust_grey"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_event_process"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_isbyself"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="已自行处理"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginRight="30dp"
+                    android:text="上一页"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="下一页"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="管理层意见："
+                    android:textColor="@color/dust_grey"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_advice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/ll_signevent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/btn_signevent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/radio_bg"
+                    android:textColor="#fff"
+                    android:text="领取"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_eventhandle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/btn_rollback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/radio_bg"
+                    android:textColor="#fff"
+                    android:layout_margin="5dp"
+                    android:text="回退"/>
+
+                <Button
+                    android:id="@+id/btn_reassign"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/radio_bg"
+                    android:textColor="#fff"
+                    android:text="转派"
+                    android:layout_margin="5dp"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/radio_bg"
+                    android:textColor="#fff"
+                    android:layout_margin="5dp"
+                    android:text="提交"/>
+
+                <Button
+                    android:id="@+id/btn_add_journal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/radio_bg"
+                    android:textColor="#fff"
+                    android:text="填写日志"
+                    android:layout_margin="5dp"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/ll_retrieve"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+           >
+                <Button
+                    android:id="@+id/btn_retrieve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:paddingRight="15dp"
+                    android:paddingLeft="15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/radio_bg"
+                    android:textColor="#fff"
+                    android:text="撤回"/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/ll_add_advice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+            >
+
+                <Button
+                    android:id="@+id/btn_addvice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/radio_bg"
+                    android:paddingRight="15dp"
+                    android:paddingLeft="15dp"
+                    android:textColor="#fff"
+                    android:text="填写管理层意见"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"/>
+
+
+            <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/rv_handle_process"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_marginLeft="16dp"/>-->
+
+            <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/rv_advice"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="4dp"/>-->
+        </com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout>
+    </ScrollView>
+</LinearLayout>

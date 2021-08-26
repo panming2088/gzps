@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height"
+        android:background="@color/agmobile_white_dark">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+
+            <!--拖动的那个条-->
+            <ImageView
+                style="@style/AGMobile.Widget.ImageView.BottomToggle"
+                android:layout_marginBottom="@dimen/bottom_toggle_margin_vertical"/>
+
+            <TextView
+                android:id="@+id/tv_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/agmobile_blue"
+                android:textSize="@dimen/text_size_second"
+                android:text="@string/query_result"/>
+        </LinearLayout>
+
+        <!--关闭按钮-->
+        <LinearLayout
+            android:id="@+id/btn_close"
+            android:layout_width="@dimen/min_touchable_size"
+            android:layout_height="@dimen/min_touchable_size"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/common_sel_btn_light"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="@dimen/top_icon_size"
+                android:layout_height="@dimen/top_icon_size"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/common_ic_close_gray"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/agmobile_white">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+</LinearLayout>

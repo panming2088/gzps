@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="6dp"
+    android:orientation="vertical">
+
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/fl_item_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_view_facility_problem"
+        android:orientation="vertical"
+        app:flexWrap="wrap">
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <TextView
+        android:id="@+id/tv_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"
+        android:padding="4dp"
+        android:text="" />
+
+
+    <EditText
+        android:id="@+id/et_other"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fl_item_container"
+        android:gravity="center"
+        android:hint="请填写其他问题"
+        android:maxLength="20"
+        android:textSize="14dp"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

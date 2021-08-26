@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#F8F8F8"
+    >
+
+        <!--内容-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F8F8F8">
+
+            <!--顶栏容器-->
+            <LinearLayout
+                android:id="@+id/ll_top_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_alignParentTop="true">
+
+                    <Button
+                        android:id="@+id/btn_unaccept_task"
+                        android:layout_width="0dp"
+                        android:layout_height="28dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_template_candidate"
+                        android:text="待签收"
+                        android:textColor="#d148b4ff"
+                        android:layout_marginRight="30dp"/>
+
+                    <Button
+                        android:id="@+id/btn_accepted_task"
+                        android:layout_width="0dp"
+                        android:layout_height="28dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_template_candidate"
+                        android:text="已签收"
+                        android:textColor="#d148b4ff"
+                        android:layout_marginLeft="30dp"/>
+
+                </LinearLayout>
+
+                <!--搜索栏-->
+                <LinearLayout
+                    android:visibility="visible"
+                    android:id="@+id/ll_root_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/agpatrol_blue"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!--返回按钮-->
+                    <LinearLayout
+                        android:id="@+id/btn_back_search"
+                        style="@style/AGMobile.Widget.Button.Container.Dark"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/top_icon_margin_horizontal"
+                        android:layout_marginRight="@dimen/top_icon_margin_horizontal"
+                        android:elevation="5dp"
+                        android:layout_width="@dimen/min_touchable_size"
+                        android:layout_height="@dimen/min_touchable_size"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+                        <ImageView
+                            style="@style/AGMobile.Widget.ImageButton.TopBar"
+                            android:src="@mipmap/back_arrow"/>
+                    </LinearLayout>
+
+                    <include
+                        android:id="@+id/search_root"
+                        layout="@layout/search_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/patrol_search_search_bar_height"
+                        />
+                </LinearLayout>
+
+                <!--筛选条件容器-->
+                <LinearLayout
+                    android:id="@+id/filterview_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/list_divider"/>
+
+                    <com.augurit.agmobile.patrolcore.search.view.filterview.FilterView
+                        android:id="@+id/filter_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:background="@color/agmobile_white">
+
+                    </com.augurit.agmobile.patrolcore.search.view.filterview.FilterView>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/list_divider"/>
+                </LinearLayout>
+
+                <!--普通标题栏-->
+                <include layout="@layout/common_patrol_toolbar"
+                         android:visibility="gone"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/ll_top_container"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="0dp"
+                android:orientation="vertical">
+
+                <!--@Deprecated 目前不使用DropDownMenu做筛选控件 -->
+                <com.augurit.am.cmpt.widget.dropdownmenu.DropDownMenu
+                    android:visibility="gone"
+                    android:id="@+id/dropDownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/ll_root_container"
+                    android:background="@color/drop_down_background_color"
+                    android:orientation="horizontal"
+                    android:padding="3dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/dropDownMenu"
+                    >
+
+                    <com.augurit.am.cmpt.widget.loadinglayout.ProgressRelativeLayout
+                        android:id="@+id/fr_search_progressrl"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+
+                        <Button
+                            android:id="@+id/btn_retry"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="刷新"/>
+
+                        <com.jcodecraeer.xrecyclerview.XRecyclerView
+                            android:id="@+id/search_result_list_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                    </com.augurit.am.cmpt.widget.loadinglayout.ProgressRelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@mipmap/common_ic_add"
+        android:drawableTint="@color/colorAccent"
+        />
+</RelativeLayout>

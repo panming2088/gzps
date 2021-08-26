@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--图层模块-->
+    <dimen name="layer_child_margin_left">60dp</dimen><!--列表中子图层左侧Margin-->
+    <dimen name="layer_opacity_btn_width">10dp</dimen><!--透明度按钮宽度-->
+    <dimen name="layer_opacity_btn_height">14dp</dimen><!--透明度按钮高度-->
+    <dimen name="layer_opacity_btn_margin_horizontal">16dp</dimen><!--透明度按钮水平Margin-->
+    <dimen name="layer_opacity_text_margin_left">16dp</dimen><!--透明度文字左侧Margin-->
+    <dimen name="layer_number_margin_horizontal">10dp</dimen><!--图层数字水平Margin-->
+    <dimen name="layer_check_box_margin_right">5dp</dimen><!--CheckBox右侧Margin--> <!--xcl 修改大小，从0dp改成5dp-->
+</resources>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--FilePicker-->
+    <attr name="mfp_toolbar_theme" format="reference"/>
+    <!--进度条-->
+    <declare-styleable name="FlikerProgressBar">
+        <attr name="pbTextSize" format="dimension|reference"/>
+        <attr name="pbLoadingColor" format="color|reference"/>
+        <attr name="pbStopColor" format="color|reference"/>
+    </declare-styleable>
+
+    <!--SpringSwitchButton-->   <!--不再使用，使用SegmentControlView替代此控件-->
+    <declare-styleable name="MySwitchButton">
+        <attr name="leftText" format="string"/>
+        <attr name="rightText" format="string"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="textPadding" format="dimension"/>
+        <attr name="textCheckedColor" format="color"/>
+        <attr name="textUnCheckedColor" format="color"/>
+        <attr name="backRectColor" format="color"/>
+    </declare-styleable>
+
+    <!--SegmentControlView-->
+    <declare-styleable name="SegmentControlView">
+        <attr name="scv_BackgroundSelectedColor" format="reference|color" />
+        <attr name="scv_BackgroundNormalColor" format="reference|color" />
+        <attr name="scv_TextSelectedColor" format="reference|color" />
+        <attr name="scv_TextNormalColor" format="reference|color" />
+        <attr name="scv_FrameColor" format="reference|color" />
+        <attr name="scv_FrameWidth" format="reference|dimension" />
+        <attr name="scv_FrameCornerRadius" format="reference|dimension" />
+        <attr name="scv_TextSize" format="reference|dimension" />
+        <attr name="scv_TextArray" format="reference" />
+        <attr name="scv_SelectedIndex" format="reference|integer" />
+        <attr name="scv_SegmentPaddingHorizontal" format="reference|dimension" />
+        <attr name="scv_SegmentPaddingVertical" format="reference|dimension" />
+        <attr name="scv_Gradient" format="reference|boolean" />
+    </declare-styleable>
+
+
+    <!--progresslayout-->
+    -<declare-styleable name="ProgressActivity">
+
+    <attr name="loadingProgressBarWidth" format="dimension"/>
+
+    <attr name="loadingProgressBarHeight" format="dimension"/>
+
+    <attr name="loadingProgressBarColor" format="color"/>
+
+    <attr name="loadingBackgroundColor" format="color"/>
+
+    <attr name="emptyImageWidth" format="dimension"/>
+
+    <attr name="emptyImageHeight" format="dimension"/>
+
+    <attr name="emptyTitleTextSize" format="dimension"/>
+
+    <attr name="emptyContentTextSize" format="dimension"/>
+
+    <attr name="emptyTitleTextColor" format="color"/>
+
+    <attr name="emptyContentTextColor" format="color"/>
+
+    <attr name="emptyBackgroundColor" format="color"/>
+
+    <attr name="errorImageWidth" format="dimension"/>
+
+    <attr name="errorImageHeight" format="dimension"/>
+
+    <attr name="errorTitleTextSize" format="dimension"/>
+
+    <attr name="errorContentTextSize" format="dimension"/>
+
+    <attr name="errorTitleTextColor" format="color"/>
+
+    <attr name="errorContentTextColor" format="color"/>
+
+    <attr name="errorButtonTextColor" format="color"/>
+
+    <attr name="errorButtonBackgroundColor" format="color"/>
+
+    <attr name="errorBackgroundColor" format="color"/>
+
+</declare-styleable>
+
+    <declare-styleable name="FloatingSearchView">
+        <attr name="floatingSearch_searchBarWidth" format="dimension"/>
+        <attr name="floatingSearch_searchBarMarginTop" format="dimension"/>
+        <attr name="floatingSearch_searchBarMarginLeft" format="dimension"/>
+        <attr name="floatingSearch_searchBarMarginRight" format="dimension"/>
+        <attr name="floatingSearch_searchSuggestionTextSize" format="dimension"/>
+        <attr name="floatingSearch_showMenuAction" format="boolean"/>
+        <attr name="floatingSearch_leftActionMode">
+            <enum name="showHamburger" value="1" />
+            <enum name="showSearch" value="2" />
+            <enum name="showHome" value="3" />
+            <enum name="noLeftAction" value="4" />
+        </attr>
+        <attr name="floatingSearch_showVoiceInput" format="boolean"/>
+        <attr name="floatingSearch_showSearchKey" format="boolean"/>
+        <attr name="floatingSearch_voiceRecHint" format="string"/>
+        <attr name="floatingSearch_searchHint" format="string"/>
+        <attr name="floatingSearch_dismissOnOutsideTouch" format="boolean"/>
+        <attr name="floatingSearch_showMoveSuggestionUp" format="boolean"/>
+        <attr name="floatingSearch_suggestionsListAnimDuration" format="integer"/>
+        <attr name="floatingSearch_hideOverflowMenuWhenFocused" format="boolean"/>
+        <attr name="floatingSearch_showOverFlowMenu" format="boolean"/>
+        <attr name="floatingSearch_close_search_on_keyboard_dismiss" format="boolean"/>
+        <attr name="floatingSearch_menu" format="reference"/>
+        <attr name="floatingSearch_leftActionColor" format="color"/>
+        <attr name="floatingSearch_menuItemIconColor" format="color"/>
+        <attr name="floatingSearch_actionMenuOverflowColor" format="color"/>
+        <attr name="floatingSearch_clearBtnColor" format="color"/>
+        <attr name="floatingSearch_backgroundColor" format="color"/>
+        <attr name="floatingSearch_dividerColor" format="color"/>
+        <attr name="floatingSearch_viewTextColor" format="color"/>
+        <attr name="floatingSearch_hintTextColor" format="color"/>
+        <attr name="floatingSearch_dimBackground" format="boolean"/>
+        <attr name="floatingSearch_suggestionRightIconColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="AMSpinner">
+        <attr name="spinnerLayout" format="reference"/>
+        <attr name="itemLayout" format="reference"/>
+        <attr name="windowLayout" format="reference"/>
+        <attr name="itemTextSize" format="dimension"/>
+    </declare-styleable>
+
+    <!--抽屉控件-->
+    <declare-styleable name="AMDrawerLayout">
+        <attr name="drawerToggleWidth" format="dimension"/>
+        <attr name="drawerDarkBackground" format="boolean"/>
+        <attr name="drawerPosition" format="enum">
+            <enum name="left" value="1"/>
+            <enum name="right" value="3"/>
+        </attr>
+    </declare-styleable>
+</resources>

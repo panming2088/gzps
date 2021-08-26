@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <ImageButton
+        android:id="@+id/camera"
+        android:layout_margin="@dimen/partrol_upload_camera_margin"
+        android:layout_width="@dimen/partrol_upload_camera_width"
+        android:layout_height="@dimen/partrol_upload_camera_height"
+        android:background="@mipmap/common_ic_camera"/>
+    <ImageButton
+        android:id="@+id/photo"
+        android:layout_margin="@dimen/partrol_upload_photo_margin"
+        android:layout_width="@dimen/partrol_upload_photo_width"
+        android:layout_height="@dimen/partrol_upload_photo_height"
+        android:background="@mipmap/common_ic_photo"/>
+    </LinearLayout>
+    <!--<Button android:id="@+id/camera"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/camera"/>-->
+
+    <!--<Button android:id="@+id/photo"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/netPhoto"/>-->
+
+    <!--<Button android:id="@+id/close"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/close"/>-->
+
+    <!--  </LinearLayout> -->
+
+</RelativeLayout>

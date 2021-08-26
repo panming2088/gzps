@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/common_patrol_toolbar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@drawable/common_rectangle_with_shadow"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/tableitem_checkstate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:textViewName="审核状态" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@drawable/common_rectangle_with_shadow"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/tableitem_correct_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:textViewName="纠错类型" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/PatrolUploadItemOuterContainerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/common_rectangle_with_shadow"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <!--下拉框 -->
+            <LinearLayout
+                android:id="@+id/ll_tv_select_title_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/patrol_upload_view_margin_left"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/PatrolUploadKeyTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="纠错类型"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/grey_dot_line"
+                android:layerType="software" />
+
+            <RadioGroup
+                android:id="@+id/rg_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="4dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_component_not_exist"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:text="设施不存在" />
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="位置错误"
+
+                    />
+            </RadioGroup>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="信息错误" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="位置与信息错误" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@drawable/common_rectangle_with_shadow"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:orientation="vertical" />
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:visibility="gone"
+                android:id="@+id/textitem_upload_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:textViewName="@string/manage_state" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@drawable/common_rectangle_with_shadow"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/textitem_addr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:textViewName="设施位置" />
+        </LinearLayout>
+        <!--设施问题-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@drawable/common_rectangle_with_shadow"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.augurit.agmobile.gzps.common.widget.TextFieldTableItem
+                android:id="@+id/textitem_facility_problem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:fieldtextViewName="设施问题" />
+        </LinearLayout>
+        <!--排水口 视频-->
+        <LinearLayout
+            android:id="@+id/ll__psk_video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@drawable/common_rectangle_with_shadow"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:orientation="vertical"
+                android:padding="@dimen/rc_dimen_size_5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="排水口视频"
+                    android:textColor="#FF666666"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/iv_video"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_video" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <!--标识描述-->
+        <LinearLayout
+            android:id="@+id/ll_decription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/common_rectangle_with_shadow"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.augurit.agmobile.gzps.common.widget.TextFieldTableItem
+                android:id="@+id/textitem_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fieldtextViewName="上报说明" />
+        </LinearLayout>
+
+
+        <com.augurit.agmobile.gzps.common.MultiTakePhotoTableItem
+            android:id="@+id/take_photo_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:photoText="添加照片"
+            android:visibility="gone"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@drawable/common_rectangle_with_shadow"
+            android:orientation="vertical">
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/tableitem_current_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:textViewName="上报人" />
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/tableitem_group_person"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:textViewName="班组人员"
+                android:visibility="gone"
+                />
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/tableitem_parent_Org"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:textViewName="业主单位" />
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/tableitem_direct_org"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:textViewName="上报单位" />
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/tableitem_current_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:textViewName="上报时间" />
+
+            <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+                android:id="@+id/tableitem_last_modified_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:textViewName="最后修改时间" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

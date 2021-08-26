@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Mapengine</string>
+
+    <string name="title_project">专题选择</string>
+    <string name="title_layer">图层</string>
+
+    <!-- 定位相关 -->
+    <string name="location_not_in_map">定位结果不在当前地图范围内</string>
+    <string name="query_result">查询结果</string>
+
+    <!--图层模块-->
+    <string name="title_layer_list">图层选择</string>
+</resources>

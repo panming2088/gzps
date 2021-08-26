@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="dnl_string_geometry_is_null">请选择下载区域！</string>
+    <string name="dnl_string_start_download">开始下载图层数据</string>
+    <string name="dnl_string_download_success">下载完成！</string>
+</resources>

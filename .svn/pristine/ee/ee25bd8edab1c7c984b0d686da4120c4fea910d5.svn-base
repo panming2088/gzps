@@ -1,0 +1,272 @@
+package com.augurit.agmobile.gzps.monitor;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
+
+import com.augurit.agmobile.gzps.R;
+import com.augurit.agmobile.gzps.common.model.Result2;
+import com.augurit.agmobile.gzps.common.util.Attachment2PhotoUtil;
+import com.augurit.agmobile.gzps.common.util.LoadDataConstant;
+import com.augurit.agmobile.gzps.monitor.adapter.WellMonitorListAdapter;
+import com.augurit.agmobile.gzps.monitor.model.WellMonitorInfo;
+import com.augurit.agmobile.gzps.monitor.service.WellMonitorService;
+import com.augurit.agmobile.gzps.setting.view.myupload.Result3;
+import com.augurit.agmobile.gzps.uploadfacility.view.myuploadlist.UploadFacilitySumEvent;
+import com.augurit.agmobile.gzps.uploadfacility.view.uploadnewfacility.RefreshMyUploadList;
+import com.augurit.agmobile.mapengine.common.base.BaseRecyclerAdapter;
+import com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout;
+import com.augurit.am.fw.utils.ListUtil;
+import com.augurit.am.fw.utils.view.ToastUtil;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
+/**
+ * 我的门牌新增列表
+ *
+ * @author 创建人 ：luobiao
+ * @version 1.0
+ * @package 包名 ：com.augurit.agmobile.gzpssb.uploadfacility.view.tranship
+ * @createTime 创建时间 ：18/4/17
+ * @modifyBy 修改人 ：luobiao
+ * @modifyTime 修改时间 ：18/4/17
+ * @modifyMemo 修改备注：
+ */
+
+public class WellMonitorListFragment extends Fragment {
+
+    private WellMonitorListAdapter mSearchResultAdapter;
+    private ProgressLinearLayout pb_loading;
+    private XRecyclerView rv_component_list;
+    private String checkState = null;
+    private Context mContext;
+    private WellMonitorService wellMonitorService;
+    private int page = 1;
+    private Button addBtn;
+    private String usid,jbjObjectId,type,X,Y;
+    public static WellMonitorListFragment newInstance(Bundle bundle) {
+        WellMonitorListFragment wellMonitorListFragment = new WellMonitorListFragment();
+        wellMonitorListFragment.setArguments(bundle);
+        return wellMonitorListFragment;
+    }
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View inflate = inflater.inflate(R.layout.fragment_well_monitor, null);
+        EventBus.getDefault().register(this);
+        return inflate;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.mContext = context;
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        this.mContext = null;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        wellMonitorService = new WellMonitorService(getContext());
+        rv_component_list = (XRecyclerView) view.findViewById(R.id.rv_component_list);
+        pb_loading = (ProgressLinearLayout) view.findViewById(R.id.pb_loading);
+        rv_component_list.setPullRefreshEnabled(true);
+        rv_component_list.setLoadingMoreEnabled(true);
+        rv_component_list.setLayoutManager(new LinearLayoutManager(mContext));
+        usid = getArguments().getString("usid");
+        jbjObjectId = getArguments().getString("objectid");
+        type = getArguments().getString("type");
+        X = getArguments().getString("X");
+        Y = getArguments().getString("Y");
+        mSearchResultAdapter = new WellMonitorListAdapter(mContext, new ArrayList<WellMonitorInfo>(),type);
+        rv_component_list.setAdapter(mSearchResultAdapter);
+
+
+
+
+
+        mSearchResultAdapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position, long id) {
+                rv_component_list.setEnabled(false);
+                int selectPosition = position;
+                if (page > 1) {
+                    selectPosition = position - mSearchResultAdapter.getDataList().size() - page * LoadDataConstant.LOAD_ITEM_PER_PAGE;
+                }
+                Intent intent = new Intent(mContext, WellMonitorActivity.class);
+                WellMonitorInfo wellMonitorInfo  = mSearchResultAdapter.getDataList().get(position - 1);
+                wellMonitorInfo.setPhotos(Attachment2PhotoUtil.toPhotos(wellMonitorInfo.getAttachments()));
+                intent.putExtra("WellMonitorInfo", (Serializable) wellMonitorInfo);
+                intent.putExtra("type", TextUtils.isEmpty(wellMonitorInfo.getJbjType())?type:wellMonitorInfo.getJbjType());
+                intent.putExtra("objectid",wellMonitorInfo.getJbjObjectId());
+                intent.putExtra("usid",wellMonitorInfo.getUsid());
+                intent.putExtra("X",X);
+                intent.putExtra("Y",Y);
+                mContext.startActivity(intent);
+            }
+        });
+
+        rv_component_list.setLoadingListener(new XRecyclerView.LoadingListener() {
+            @Override
+            public void onRefresh() {
+                page = 1;
+                loadDatas(false);
+            }
+
+            @Override
+            public void onLoadMore() {
+                page++;
+                loadDatas(false);
+            }
+        });
+
+        addBtn = (Button) view.findViewById(R.id.btn_add);
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            Intent intent  = new Intent(getContext(),WellMonitorActivity.class);
+            intent.putExtra("usid",usid);
+            intent.putExtra("objectid",jbjObjectId);
+            intent.putExtra("type",type);
+            intent.putExtra("X",X);
+            intent.putExtra("Y",Y);
+            intent.putExtra("gj",ListUtil.isEmpty(mSearchResultAdapter.getDataList())?
+                    null:mSearchResultAdapter.getDataList().get(0).getGdgj());
+            startActivity(intent);
+            }
+        });
+
+        loadDatas(true);
+    }
+
+
+
+    public void showLoadedError(String errorReason) {
+        pb_loading.showError("获取数据失败", errorReason, "刷新", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadDatas(true);
+            }
+        });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    if(rv_component_list!=null){
+        rv_component_list.setEnabled(true);
+       }
+    }
+
+    public void showLoadedEmpty() {
+        pb_loading.showError("", "暂无数据", "刷新", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadDatas(true);
+            }
+        });
+    }
+
+    public void loadDatas(boolean ifShowPb) {
+        if (ifShowPb)
+            pb_loading.showLoading();
+        wellMonitorService.getWellMonitors(page,15,usid,jbjObjectId)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<Result3<List<WellMonitorInfo>>>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        if (page == 1) {
+                            showLoadedError(e.getLocalizedMessage());
+                            }
+                        ToastUtil.iconShortToast(mContext, R.mipmap.ic_alert_yellow, "获取数据失败，请稍后重试");
+                    }
+
+                    @Override
+                    public void onNext(Result3<List<WellMonitorInfo>> listResult2) {
+                        UploadFacilitySumEvent uploadFacilitySumEvent = new UploadFacilitySumEvent();
+                        if (listResult2.getCode() == 200) {
+                            if(ListUtil.isEmpty(listResult2.getData())){
+                                uploadFacilitySumEvent.setSum(0);
+                                EventBus.getDefault().post(uploadFacilitySumEvent);
+                                showLoadedEmpty();
+                                return;
+                            }
+                            if (ListUtil.isEmpty(listResult2.getData()) && page > 1) {
+                                rv_component_list.setNoMore(true);
+                                return;
+                            }
+                            uploadFacilitySumEvent.setSum(Integer.valueOf(listResult2.getTotal()));
+                            EventBus.getDefault().post(uploadFacilitySumEvent);
+                            pb_loading.showContent();
+                            rv_component_list.loadMoreComplete();
+                            rv_component_list.refreshComplete();
+                            if (page > 1) {
+                                mSearchResultAdapter.addData(listResult2.getData());
+                                mSearchResultAdapter.notifyDataSetChanged();
+                            } else if (page == 1) {
+                                mSearchResultAdapter.notifyDataChanged(listResult2.getData());
+                                rv_component_list.scrollToPosition(0);
+                            }
+                        } else {
+//                            CrashReport.postCatchedException(new Exception("删除失败，上报用户是：" +
+//                                    BaseInfoManager.getUserName(mContext) + "原因是：" + s.getMessage()));
+                            Toast.makeText(mContext, listResult2.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        if (EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this);
+        }
+    }
+
+    @Subscribe
+    public void RefreshMyModificationListEvent(RefreshMyUploadList refreshMyModificationListEvent) {
+        page = 1;
+        loadDatas(true);
+    }
+//    @Subscribe
+//    public void RefreshMyModificationListEvent1(RefreshMyModificationListEvent refreshMyModificationListEvent) {
+//        page = 1;
+//        loadDatas(true);
+//    }
+//
+//    @Subscribe
+//    public void refreshList1(RefreshMyUploadList refreshMyUploadList) {
+//        page = 1;
+//        loadDatas(true);
+//    }
+}

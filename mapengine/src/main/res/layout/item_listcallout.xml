@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="@dimen/callout_width"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tv_listcallout_key"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:textColor="@color/agmobile_grey_2"
+        android:text="键名："/>
+
+    <LinearLayout
+        android:layout_marginLeft="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_listcallout_value"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:textColor="@color/agmobile_grey_2"
+            android:text="键值"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="1dp"
+            android:textColor="@color/agmobile_black"
+            />
+    </LinearLayout>
+</LinearLayout>

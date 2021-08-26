@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="@dimen/callout_width"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/agmobile_grey_2"
+        android:text="标题"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_listcallout_attributelist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/tv_moreattribute"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_weight="0"
+        android:gravity="center"
+        android:text="更多属性"
+        android:textColor="@color/agmobile_blue"/>
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_candidate_list_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_more_attribute_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/agmobile_white"
+        android:visibility="gone"/>
+</RelativeLayout>

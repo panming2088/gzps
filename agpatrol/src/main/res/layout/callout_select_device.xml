@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="150dp"
+              android:layout_height="65dp">
+    <TextView
+        android:id="@+id/tv_listcallout_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="这是标题"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+    <Button
+        android:id="@+id/btn_select_device"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="确定"
+        android:layout_gravity="center"
+        android:background="@color/transparent"
+        android:textColor="@color/agmobile_blue"/>
+</LinearLayout>

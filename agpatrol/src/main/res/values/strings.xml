@@ -1,0 +1,134 @@
+<resources>
+    <string name="app_name">广州排水巡检</string>
+    
+    <!--登录-->
+    <string name="login_account">用户名</string>
+    <string name="login_password">密码</string>
+    <string name="login_error_max_length">长度不能超过16位</string>
+    <string name="login_setting_save">保&#160;&#160;存</string>
+    <string name="login_save_password">记住密码</string>
+    <string name="login_machine_ip">服务器地址</string>
+    <string name="login_update_project">字典同步：</string>
+    
+    <!--转场动画-->
+    <string name="textview_transition_name">textview_transition_name</string>
+    <string name="title_activity_street_collection">StreetCollectionActivity</string>
+    <string name="title_activity_building_collection">BuildingCollectionActivity</string>
+    <string name="title_activity_building_address_collection">BuildingAddressCollectionActivity
+    </string>
+    
+    
+    <!--巡查上报地图-->
+    <string name="the_current_address_is_near">%s附近</string>
+    <string name="the_current_location_latitude">%d</string>
+    <string name="the_current_location_longitude">%d</string>
+    
+    <!--查询界面-->
+    
+    <!--设施选取界面-->
+    <string name="select_device">%s选择</string>
+    <string name="show_selected_device">%s展示</string>
+    
+    <!-- 新增部件 -->
+    <string name="ok">确定</string>
+    <string name="yes">确定</string>
+    <string name="no">取消</string>
+    <string name="saved">保存成功</string>
+    <string name="action_add">添加部件</string>
+    <string name="action_save">保存</string>
+    <string name="action_discard">取消</string>
+    <string name="action_delete">删除</string>
+    <string name="action_undo">回退</string>
+    <string name="title_add_point">正在添加点</string>
+    <string name="title_add_polyline">正在添加线</string>
+    <string name="title_add_polygon">正在添加面</string>
+    <string name="title_feature_type">请选择一种部件类型</string>
+    <string name="title_confirm_discard">取消添加</string>
+    <string name="title_edit_failed">保存失败</string>
+    <string name="msg_confirm_discard">确定取消添加部件吗？</string>
+    <string name="btn_edit_apply">保存</string>
+    <string name="btn_edit_discard">取消</string>
+
+    <!-- 设施图层初始化失败时的提示 -->
+    <string name="layer_url_init_fail_msg">网络信号弱，请检查网络设置</string>
+    
+    <!--bottomsheet滑动设置-->
+    <string name="bottom_sheet_behavior_not_default">com.augurit.am.cmpt.widget.bottomsheet.BottomSheetBehavior</string>
+    <string name="bottom_sheet_behavior_with_anchor">com.augurit.am.cmpt.widget.bottomsheet.AnchorSheetBehavior</string>
+    <string name="bottom_sheet_behavior_default">android.support.design.widget.BottomSheetBehavior</string>
+    
+    <!--即时通讯-->
+    <string name="rc_voip_call_audio_start_fail">Call is on. Try again later.</string>
+    <string name="rc_voip_call_video_start_fail">Video call is on. Try again later.</string>
+
+    <!--数据上报-->
+    <string name="is_checking_if_has_been_uploaded_before"></string>
+
+    <!--测量相关 -->
+    <!--<string name="the_area_has_crossed"></string>-->
+
+    <string-array name="parentDepts">
+        <item>天河区住房和建设水务局</item>
+        <item>番禺区水务局</item>
+        <item>黄埔区水务局</item>
+        <item>白云区水务局</item>
+        <item>南沙区环保水务局</item>
+        <item>海珠区住房和建设水务局</item>
+        <item>荔湾区水务和农业局</item>
+        <item>花都区水务局</item>
+        <item>越秀区建设和水务局</item>
+        <item>增城区水务局</item>
+        <item>从化区水务局</item>
+        <item>广州市净水有限公司</item>
+        <item>广州市花都净水有限公司</item>
+        <item>广州市城市排水有限公司</item>
+        <!--<item>城中村</item>-->
+        <!--<item>三不管</item>-->
+    </string-array>
+
+    <string-array name="parentPFKDepts">
+        <item>天河区住房和建设水务局</item>
+        <item>番禺区水务局</item>
+        <item>黄埔区水务局</item>
+        <item>白云区水务局</item>
+        <item>南沙区环保水务局</item>
+        <item>海珠区住房和建设水务局</item>
+        <item>荔湾区水务和农业局</item>
+        <item>花都区水务局</item>
+        <item>越秀区建设和水务局</item>
+        <item>增城区水务局</item>
+        <item>从化区水务局</item>
+        <item>水投集团</item>
+        <item>市环保局</item>
+        <item>其他</item>
+        <!--<item>城中村</item>-->
+        <!--<item>三不管</item>-->
+    </string-array>
+
+    <string name="inner_city">城中村</string>
+    <string name="dont_know_where">三不管</string>
+    <string name="manage_state">管理状态</string>
+
+    <!--路径-->
+    <string name="form_route_start">开始</string>
+    <string name="form_route_stop">暂停</string>
+    <string name="form_route_continue">继续</string>
+    <string name="form_route_stopped">已暂停</string>
+    <string name="form_route_start_record_routes">开始记录运动轨迹</string>
+    <string name="form_route_stop_record_routes">停止记录运动轨迹</string>
+    <!--排水户-->
+    <string name="multicheck_select_hint">请选择</string>
+    <string name="validate_file_number_full">文件选择数量已达上限</string>
+    <string name="multicheck_select_something">已选：</string>
+    <string name="multicheck_select_title">选择(%1$d/%2$d)</string>
+
+    <string name="validate_check_file_open_fail">没有检测到可以打开此文件的应用</string>
+
+
+    <!--SewerageTab1中除现场照片以外的其他拍照须知-->
+    <string name="sew_tab1_photo_exam">工商营业执照正面全照，能够看清执照上面信息包括注册号、名称、法人(经营者)、经营范围等信息</string>
+    <string name="sew_tab1_photo_exam2">排水许可证正面全照，能够看清排水户名称、有效期、排水许可证编号等信息</string>
+    <string name="sew_tab1_photo_exam3">排污许可证正面全照，能够看清排水户名称、有效期、排污许可证编号等信息</string>
+    <string name="ip_all_images">所有图片</string>
+    <string name="validate_check_name">选择</string>
+</resources>

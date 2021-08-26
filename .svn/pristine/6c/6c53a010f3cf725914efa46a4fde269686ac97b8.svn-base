@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--位置-->
+    <LinearLayout
+        style="@style/PatrolUploadItemOuterContainerStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:background="@drawable/common_rectangle_with_shadow"
+        android:orientation="vertical">
+
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:id="@+id/tableitem_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="养护计划名称" />
+
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:id="@+id/textitem_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="养护计划内容" />
+
+
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:id="@+id/textitem_start_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="计划开始日期" />
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:id="@+id/textitem_end_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="计划结束日期" />
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:id="@+id/textitem_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="养护管道类型" />
+
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:id="@+id/textitem_remark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="备注" />
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:id="@+id/textitem_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="计划制定人 " />
+        <com.augurit.agmobile.gzps.common.widget.TextItemTableItem
+            android:id="@+id/textitem_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewName="联系电话 " />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--通用的撤销按钮-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:enterFadeDuration="@android:integer/config_shortAnimTime"
+    android:exitFadeDuration="@android:integer/config_shortAnimTime">
+    <item android:drawable="@drawable/common_ic_undo_nor2"/>
+
+    <!--<item android:drawable="@drawable/ic_undo_press"-->
+          <!--android:state_pressed="true" />-->
+</selector>

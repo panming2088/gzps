@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/common_patrol_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginBottom="0dp" />
+
+    <com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout
+        android:id="@+id/pb_load_projects"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@color/agmobile_white">
+
+        <include layout="@layout/common_patrol_tablayout"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+        </android.support.v4.view.ViewPager>
+
+    </com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout>
+    <Button
+        android:id="@+id/btn_sure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="完成"
+        android:visibility="gone"
+        android:textColor="@color/agmobile_white"
+        />
+
+</LinearLayout>

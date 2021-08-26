@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout
+            android:id="@+id/pb_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_component_counts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:padding="16dp"
+                android:gravity="center"/>
+
+            <com.jcodecraeer.xrecyclerview.XRecyclerView
+                android:id="@+id/rv_component_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginRight="16dp"
+        android:background="@mipmap/common_ic_add"
+        android:drawableTint="@color/colorAccent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="18dp"
+        android:visibility="gone"
+       />
+
+
+
+</RelativeLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/rl_layerdirectory_outer_container"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical">
+
+    <View
+        android:id="@+id/scrim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/trans_dark"/>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/layerdir_layout_margin_right"
+        android:layout_marginTop="@dimen/layerdir_close_button_margin_top"
+        android:layout_gravity="end">
+
+        <ImageView
+            android:id="@+id/iv_close_show_layerdir"
+            android:layout_width="@dimen/layerdir_close_button_size"
+            android:layout_height="@dimen/layerdir_close_button_size"
+            android:background="@android:color/white"
+            android:src="@mipmap/common_ic_close_no_round"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/layerdir_layout_margin_right"
+        android:layout_marginRight="@dimen/layerdir_layout_margin_right"
+        android:layout_marginTop="@dimen/layerdir_treeview_margin_top"
+        android:background="@android:color/white"
+        android:orientation="vertical"/>
+</FrameLayout>

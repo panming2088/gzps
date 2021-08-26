@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#F8F8F8"
+              android:orientation="vertical">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:background="@drawable/ic_my_setting_bg"
+        android:orientation="vertical">
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="16dp">
+            
+            <LinearLayout
+                android:id="@+id/ll_setting"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:clickable="true">
+                
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@mipmap/gpstrace_ic_setting"
+                    android:tint="@color/agmobile_white"
+                    android:visibility="gone"/>
+            </LinearLayout>
+            
+            <ImageView
+                android:id="@+id/iv_person_image"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_below="@id/ll_setting"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@id/ll_setting"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_patroller"/>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_setting"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@id/iv_person_image"
+                android:orientation="vertical">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
+                    
+                    <TextView
+                        android:id="@+id/mine_tv_userName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:text="张三"
+                        android:textColor="@color/agmobile_white"
+                        android:textSize="@dimen/text_size_first"/>
+                    
+                    <!--<TextView-->
+                    <!--android:id="@+id/user_title"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:text="道路巡查员"-->
+                    <!--android:textColor="@color/agmobile_white" />-->
+                </LinearLayout>
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentRight="true"
+                android:clickable="true"
+                android:gravity="right">
+                
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@mipmap/ic_message"
+                    android:tint="@color/agmobile_white"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        
+        </RelativeLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#2fbcd7"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            >
+            
+            <LinearLayout
+                android:id="@+id/ll_my_signin"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/ic_mysignin"
+                    android:text="30"
+                    />
+                
+                <!--<TextView-->
+                <!--style="@style/FragmentMePatrolRecordTextStyle"-->
+                <!--android:text="我的签到"-->
+                <!--android:textSize="16sp"-->
+                <!--android:textColor="@color/agmobile_white"/>-->
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/ll_my_track"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/ic_my_track"
+                    android:text="30"
+                    />
+                
+                <!--<TextView-->
+                <!--style="@style/FragmentMePatrolRecordTextStyle"-->
+                <!--android:text="我的轨迹"-->
+                <!--android:textSize="16sp" />-->
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"/>
+        </LinearLayout>
+    
+    
+    </LinearLayout>
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                
+                android:background="@drawable/rectangle_with_top_and_bottom_shadow"
+                android:orientation="vertical">
+                
+                <RelativeLayout
+                    android:id="@+id/rl_my_drainage_facility"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:visibility="gone">
+                    
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:src="@mipmap/ic_drip"/>
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="50dp"
+                        android:text="我的排水设施"
+                        android:textSize="16sp"/>
+                    
+                    <ImageView
+                        android:layout_width="@dimen/mine_right_arrow_img_size"
+                        android:layout_height="@dimen/mine_right_arrow_img_size"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/common_ic_right_arrow_grey"/>
+                </RelativeLayout>
+                
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/agmobile_grey_0"
+                    android:visibility="gone"/>
+                
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/agmobile_grey_0"
+                    android:visibility="gone"/>
+                
+                <RelativeLayout
+                    android:id="@+id/rl_my_leak_filling"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:visibility="gone">
+                    
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:src="@mipmap/ic_my_check_and_upload"/>
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="50dp"
+                        android:text="我的查漏补缺"
+                        android:textSize="16sp"/>
+                    
+                    <ImageView
+                        android:layout_width="@dimen/mine_right_arrow_img_size"
+                        android:layout_height="@dimen/mine_right_arrow_img_size"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/common_ic_right_arrow_grey"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rl_my_correct_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:visibility="gone">
+                    
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:src="@mipmap/ic_correct_data_small"/>
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="50dp"
+                        android:text="我的数据修正"
+                        android:textSize="16sp"/>
+                    
+                    <ImageView
+                        android:layout_width="@dimen/mine_right_arrow_img_size"
+                        android:layout_height="@dimen/mine_right_arrow_img_size"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/common_ic_right_arrow_grey"/>
+                </RelativeLayout>
+                
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/agmobile_grey_0"
+                    android:visibility="gone"/>
+                
+                <RelativeLayout
+                    android:id="@+id/rl_my_uploaded_problems"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:visibility="gone">
+                    
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:src="@mipmap/ic_my_upload"/>
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="50dp"
+                        android:text="我的问题上报"
+                        android:textSize="16sp"/>
+                    
+                    <ImageView
+                        android:layout_width="@dimen/mine_right_arrow_img_size"
+                        android:layout_height="@dimen/mine_right_arrow_img_size"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/common_ic_right_arrow_grey"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rl_user_info_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp">
+                    
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:padding="3dp"
+                        android:src="@mipmap/usr"/>
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="50dp"
+                        android:text="个人资料"
+                        android:textSize="16sp"/>
+                    
+                    <ImageView
+                        android:layout_width="@dimen/mine_right_arrow_img_size"
+                        android:layout_height="@dimen/mine_right_arrow_img_size"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/common_ic_right_arrow_grey"/>
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/agmobile_grey_0"/>
+                
+                <RelativeLayout
+                    android:id="@+id/rl_my_upload_statisc"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:src="@mipmap/my_upload_statisc"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="50dp"
+                        android:text="我的数据上报"
+                        android:textSize="16sp"/>
+
+                    <ImageView
+                        android:layout_width="@dimen/mine_right_arrow_img_size"
+                        android:layout_height="@dimen/mine_right_arrow_img_size"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/common_ic_right_arrow_grey"/>
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/agmobile_grey_0"/>
+                <RelativeLayout
+                    android:id="@+id/rl_my_question"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:src="@mipmap/icon_my_doubt"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="50dp"
+                        android:text="我的存疑"
+                        android:textSize="16sp"/>
+
+                    <ImageView
+                        android:layout_width="@dimen/mine_right_arrow_img_size"
+                        android:layout_height="@dimen/mine_right_arrow_img_size"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/common_ic_right_arrow_grey"/>
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/agmobile_grey_0"/>
+                <RelativeLayout
+                    android:id="@+id/rl_my_system_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp">
+                    
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:src="@mipmap/mysetting"/>
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="50dp"
+                        android:text="系统设置"
+                        android:textSize="16sp"/>
+                    
+                    <ImageView
+                        android:layout_width="@dimen/mine_right_arrow_img_size"
+                        android:layout_height="@dimen/mine_right_arrow_img_size"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/common_ic_right_arrow_grey"/>
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/agmobile_grey_0"/>
+
+
+                <RelativeLayout
+                    android:id="@+id/legal_notice"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp">
+
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:src="@mipmap/legal_notice" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="50dp"
+                        android:text="法律声明"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/common_ic_right_arrow_grey" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/agmobile_grey_0"/>
+
+                <RelativeLayout
+                    android:id="@+id/system_exit"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp">
+
+
+                    <ImageView
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:src="@mipmap/exit"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="50dp"
+                        android:text="退出登陆"
+                        android:textSize="16sp"/>
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/common_ic_right_arrow_grey"/>
+
+
+                </RelativeLayout>
+
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/agmobile_grey_0"/>
+            </LinearLayout>
+            
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+
+        <!-- <android.support.v7.widget.RecyclerView
+             android:id="@+id/mine_rv"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_marginTop="16dp"
+             android:background="@color/agmobile_white"/>
+ -->
+    
+    </ScrollView>
+</LinearLayout>

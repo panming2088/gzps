@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/common_rectangle_with_shadow"
+    android:orientation="vertical">
+    <!--下拉框 -->
+    <RelativeLayout
+        android:id="@+id/ll_tv_select_title_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/patrol_upload_view_margin_left"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/PatrolUploadKeyTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加照片"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_requiredTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginTop="0dp"
+            android:text="*"
+            android:visibility="gone"
+            android:layout_toRightOf="@id/title"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="@dimen/text_size_third" />
+
+        <TextView
+            android:id="@+id/tv_photo_num"
+            style="@style/PatrolUploadKeyTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/tv_requiredTag"
+            android:textSize="@dimen/text_size_third"
+            android:textColor="@color/agmobile_red"
+            android:text="(0/15)"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="@dimen/login_et_text_padding_left"
+            android:layout_marginRight="@dimen/login_et_text_padding_left"
+            android:background="@color/list_divider"
+            android:visibility="gone" />
+        <TextView
+            android:layout_gravity="right"
+            android:id="@+id/example"
+            style="@style/PatrolUploadKeyTextStyle"
+            android:layout_width="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:clickable="true"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:padding="5dp"
+            android:background="@drawable/round_color_primary_rectangle"
+            android:text="拍照须知"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/grey_dot_line"
+        android:layerType="software" />
+
+    <RelativeLayout
+        android:id="@+id/item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+
+        <LinearLayout
+            android:id="@+id/photo_controler"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="@dimen/patrol_upload_view_margin_left"
+            android:background="@color/agmobile_white">
+
+            <com.augurit.am.cmpt.widget.HorizontalScrollPhotoView.HorizontalScrollPhotoView
+                android:id="@+id/horizontalScrollPhotoView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/ll_pu_gallery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal" />
+            </com.augurit.am.cmpt.widget.HorizontalScrollPhotoView.HorizontalScrollPhotoView>
+
+            <FrameLayout
+                android:id="@+id/action_open_photo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@id/horizontalScrollPhotoView"
+                android:layout_weight="1"
+                android:foreground="?android:selectableItemBackground">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_open_photo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/selector_opent_photo" />
+                </RelativeLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

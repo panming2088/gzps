@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ECharts</title>
+		<style>
+		html,body { height:100%; width:100%; margin:0; padding:0;align:left;valign:left;}
+		</style>
+		<script src="echarts.min.js"></script>
+	</head>
+	<body>
+		<div id="pie"
+			 style="height:100%;width:100%;border:0px;text-align:center;align:center;valign:center;margin:0 auto"></div>
+		<script type="text/javascript">
+			var myChart = echarts.init(document.getElementById('pie'));
+			var option = null;
+
+			// 格式化坐标轴数值
+			function formatter(value, index) {
+        		var str = value;
+        		if (value>=100000000) {
+        		    temp = parseInt(value/100000000);
+        		    str = temp + "亿";
+        		}
+        		/*else if (value>=10000000) {
+        		    temp = parseInt(value/10000000);
+        		    str = temp + "千万";
+        		} else if (value>=1000000) {
+        		    temp = parseInt(value/1000000);
+        		    str = temp + "百万";
+        		} else if (value>=100000) {
+        		    temp = parseInt(value/100000);
+        		    str = temp + "十万";
+        		}*/
+        		else if (value>=10000) {
+        		    temp = parseInt(value/10000);
+        		    str = temp + "万";
+        		}
+        		return str;
+        	}
+
+			// 创建柱状图
+			function createBarChart(xAxisJson, seriesJson) {
+				var xAxis = JSON.parse(xAxisJson);
+				var series = JSON.parse(seriesJson);
+				console.dir(xAxis);
+				console.dir(series);
+				option = {
+					grid: {
+						left: '14%',
+						top: '5%',
+						right: '8%'
+					},
+					tooltip: {
+            			trigger: 'axis'
+        			},
+					dataZoom: [{
+						start: 0	
+					}, {
+						type: 'inside'
+					}],
+					xAxis: {
+						type: 'category',
+						data: xAxis
+					},
+					yAxis : {
+						axisLabel: {
+							margin: 2,
+        				    formatter: formatter
+        				},
+						axisTick: {
+							length: 2
+						}
+					},
+					series: series
+				}
+			}
+			
+			// 创建图表
+			function createChart(xAxis, series) {
+				xAxis = xAxis.replace(/'/g, '"');
+				series = series.replace(/'/g, '"');
+				createBarChart(xAxis, series);
+				if (option != null) {
+					myChart.setOption(option);
+				}
+			}
+			
+			//createChart("['0~200','201~500','501~1000']","[{'name':'雨水管线','type':'bar','data':[9.0,5.0,9.0]},\
+			//{'name':'供电管线','type':'bar','data':[7.0,6.0]}]");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/ll_tv1"
+        style="@style/PatrolUploadKeyTextStyle"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical">
+        <!--文本框 -->
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设施类型"
+            android:textColor="#FF666666"
+            android:textSize="@dimen/partrol_upload_text_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.augurit.agmobile.gzps.common.widget.FlexRadioGroup
+            android:id="@+id/rg_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="4dp"
+            android:gravity="left"
+            app:flexWrap="wrap">
+
+            <RadioButton
+                android:id="@+id/rb_yinjing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:text="窨井" />
+
+            <RadioButton
+                android:id="@+id/rb_yushuikou"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="雨水口"
+                android:layout_marginRight="8dp"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_paifangkou"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="排水口" />
+
+        </com.augurit.agmobile.gzps.common.widget.FlexRadioGroup>
+    </LinearLayout>
+</LinearLayout>

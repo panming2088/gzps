@@ -1,0 +1,5 @@
+
+
+主界面的事务公开功能,包括设施事务公开和事件上报事务公开两个tab，功能入口：PublicAffairActivity
+
+事务公开数据上报详情 MyModificationMapAcitivty（ModiedFacilityDetailFragment）

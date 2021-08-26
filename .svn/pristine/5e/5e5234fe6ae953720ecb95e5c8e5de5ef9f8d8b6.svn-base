@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--togglebutton的尺寸设置-->
+    <dimen name="fonts_size">20dp</dimen>
+    <!-- 图标icon大小 -->
+    <dimen name="fonts_icon_size">24dp</dimen>
+    <!-- MySpringSwitchButton字体大小 -->
+    <dimen name="measure_swtich_text_size">12sp</dimen>
+    <!-- measure控件高度 -->
+    <dimen name="measure_tool_view_height">30dp</dimen>
+    <!-- MySpringSwitchButton宽度 -->
+    <dimen name="measure_switch_width">80dp</dimen>
+    <!-- 外边距 -->
+    <dimen name="measure_margin">10dp</dimen>
+    <!-- 图标顶部外边距 -->
+    <dimen name="measure_margin2">12dp</dimen>
+</resources>

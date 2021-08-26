@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/patrol_upload_view_margin_left"
+    android:background="@color/agmobile_white">
+
+    <!--文本域 -->
+    <TextView
+        android:id="@+id/tv_"
+        style="@style/PatrolUploadKeyTextStyle"
+        android:text="上报说明" />
+
+
+    <TextView
+        android:id="@+id/tv_size"
+        style="@style/PatrolUploadKeyTextStyle"
+        android:layout_alignParentRight="true"
+        android:layout_toStartOf="@+id/txt_mark"
+        android:gravity="right"
+        android:paddingRight="8dp"
+        android:text="0/100"
+        android:visibility="gone"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/et_"
+        style="@style/PatrolUploadETItemStyle"
+        android:layout_below="@id/tv_"
+        android:enabled="true"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:maxLines="10"
+        android:minLines="3"
+        android:scrollbars="vertical" />
+
+</RelativeLayout>

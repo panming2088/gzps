@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.augurit.agmobile.gzps">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+    <!-- 获取机型信息权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 录音 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <!-- arcgis sdk 运行需要参数,没有会报运行时错误 -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name=".BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_patrol"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+
+        <!--&lt;!&ndash;-    百度地图 start       &ndash;&gt;-->
+        <!--<meta-data-->
+        <!--android:name="com.baidu.lbsapi.API_KEY"-->
+        <!--android:value="Pery3TI7E0M0gHz25LGG1VMTy7W47g4C"-->
+
+        <!--/>-->
+        <!---    百度地图 sdb测试 start       -->
+
+
+        <!---潘 2Rp7Hbaes0E9IxYmmh3pgaBQQlGfybr0-->
+        <!-- 谢 qBws2TQYfKbdcc5tq6Zd4gHi5PijDBsP-->
+        <!-- 黄崇武 M14uq46oHCGAD9gvzcmonyDFVh5Mwp3S-->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="IGpAOTcWzaB4W3mbGZoGYmqSdpnTtZT0"/>
+
+        <!--IGpAOTcWzaB4W3mbGZoGYmqSdpnTtZT0-->
+        <!--    android:value="0UPvABmTucvcemnORVw2dd77ijuj0QWs"  -->
+        <!-- 正式发布key android:value="Pery3TI7E0M0gHz25LGG1VMTy7W47g4C" >-->
+        <!--</meta-data>-->
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"></service>
+
+        <!---    百度地图 end       -->
+
+        <!-- tools:replace="android:icon, android:theme,android:authorities"- -->
+
+        <!--  android:name=".TestBaiduLocationWithArcgisActivity" -->
+        <activity
+            android:name=".LoginActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".test.TestBaiduLocationWithArcgisActivity">
+
+        </activity>
+        <!--
+        <activity
+            android:name=".LoginActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        -->
+        <!--
+             <activity android:name="com.augurit.agmobile.patrolcore.selectlocation.view.SelectLocationActivity"
+             android:configChanges="orientation|screenSize|keyboardHidden"/>
+        -->
+        <activity
+            android:name="com.augurit.agmobile.patrolcore.upload.view.EditTableActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <!-- 目录图层 -->
+        <!-- <activity -->
+        <!-- android:name="com.augurit.agmobile.patrolcore.layer.view.LayerDirectoryActivity" -->
+        <!-- android:configChanges="orientation|screenSize|keyboardHidden" -->
+        <!-- android:theme="@style/transparent"/> -->
+        <activity
+            android:name="com.augurit.agmobile.patrolcore.localhistory.view.LocalProblemActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name="com.augurit.agmobile.patrolcore.upload.view.ReadTableActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.augurit.agmobile.patrolcore.project.view.ProjectListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name="com.augurit.agmobile.patrolcore.upload.view.ReEditTableActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".setting.MyUploadStatisticActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name="com.augurit.agmobile.patrolcore.selectdevice.view.SelectDeviceActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".track.view.ShowTrackActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".track.view.TrackActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".track.view.TrackRecordActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".statistic.view.StatisticActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".trackmonitor.view.OnlineMonitorActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".trackmonitor.view.SubordinateListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".track.view.TrackListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".statistic.view.SignDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".addcomponent.MapActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".common.base.BaseProblemActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".addcomponent.AddComponentActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity android:name=".componentmaintenance.ComponentMaintenanceActivityBase" />
+        <activity android:name=".newaddedcomponent.NewAddedComponentActivityBase" />
+        <activity
+            android:name=".addcomponent.AddComponentActivity2"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".PatrolMainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity android:name=".common.webview.WebViewActivity" />
+        <activity
+            android:name=".journal.JournalsActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".journal.JournalsDetailListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".journal.DayPatrollDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".common.selectcomponent.SelectLimitedComponentActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.augurit.agmobile.patrolcore.common.ComponentAttributeListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".journal.ReadOnlyJounalActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".statistic.view.SignTodayAndYesActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".common.project.EditTableActivity2"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".common.project.ProjectListActivity2"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".common.editmap.BottomsheetEditMapFeatureActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <!-- <activity -->
+        <!-- android:name=".identification.UploadModificationActivity" -->
+        <!-- android:configChanges="orientation|screenSize|keyboardHidden" -->
+        <!-- android:windowSoftInputMode="stateAlwaysHidden" /> -->
+        <!--<activity-->
+        <!--android:name=".uploadFacility.UploadFacilityActivity"-->
+        <!--android:configChanges="orientation|screenSize|keyboardHidden"-->
+        <!--android:windowSoftInputMode="stateAlwaysHidden" />-->
+        <!--<activity-->
+        <!--android:name=".uploadFacility.UploadFacilityListActivity"-->
+        <!--android:configChanges="orientation|screenSize|keyboardHidden"-->
+        <!--android:windowSoftInputMode="stateAlwaysHidden" />-->
+        <activity
+            android:name=".uploadfacility.view.facilitydetail.UploadFacilityDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".test.PhotoExampleActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <!--<activity-->
+        <!--android:name=".modifyFacility.view.ModifyFacilityListActivity"-->
+        <!--android:configChanges="orientation|screenSize|keyboardHidden"-->
+        <!--android:windowSoftInputMode="stateAlwaysHidden" />-->
+        <activity
+            android:name=".uploadfacility.view.facilitydetail.ModifyFacilityDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".journal.ReadOnlyJounalActivity2"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".journal.WriteJournalActivity2"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".common.selectcomponent.SelectComponentOrAddressActivity" />
+        <!--<activity-->
+        <!--android:name=".modifyFacility.view.ModifyFacilityTabActivity"-->
+        <!--android:configChanges="orientation|screenSize|keyboardHidden"-->
+        <!--android:windowSoftInputMode="stateAlwaysHidden" />-->
+        <activity android:name=".statistic.view.AppInstallDetailActivity" />
+        <!-- <activity -->
+        <!-- android:name=".myupload.MyUploadedFacilityListActivity" -->
+        <!-- android:configChanges="orientation|screenSize|keyboardHidden" -->
+        <!-- android:windowSoftInputMode="stateAlwaysHidden"/> -->
+
+        <activity android:name=".im.UserDetailActivity" />
+        <activity android:name=".im.GroupDetailActivity" />
+        <activity
+            android:name=".uploadfacility.view.correctorconfirmfacility.CorrectOrConfirimFacilityActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <!-- 会话界面 -->
+        <activity
+            android:name=".im.ConversationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.augurit.agmobile.gzps"
+                    android:pathPrefix="/conversation/"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity>
+
+        <!-- <activity android:name=".identification.ModifiedIdentificationActivity3" -->
+        <!-- android:configChanges="orientation|screenSize|keyboardHidden" -->
+        <!-- android:windowSoftInputMode="stateAlwaysHidden"/> -->
+
+        <activity
+            android:name=".uploadevent.view.uploadevent.EventUploadActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadevent.view.eventlist.EventDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadevent.view.eventlist.EventListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <!--<activity-->
+        <!--android:name=".upload.view.correctfacility.UploadModifiedFacilityActivity"-->
+        <!--android:configChanges="orientation|screenSize|keyboardHidden"-->
+        <!--android:windowSoftInputMode="stateAlwaysHidden" />-->
+        <activity
+            android:name=".uploadevent.view.eventflow.AddEventJournalActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".common.selectcomponent.SelectAllComponentActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadevent.view.eventflow.SendNextLinkActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".publicaffair.view.eventaffair.EventAffairDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".workcation.view.LocalDraftActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadevent.view.eventdraft.EventDraftDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadevent.view.eventlist.MyUploadEventListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".setting.SystemSettingActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".uploadevent.view.eventedit.EventEditActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <!--<activity android:name=".uploadFacility.UploadFacilityTabActivity" />-->
+        <activity
+            android:name=".uploadevent.view.eventlist.EventDetailMapActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".lawsandregulation.LawsAndRegulationsActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".billboard.BillboardActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".publicaffair.PublicAffairActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".publicaffair.view.facilityaffair.PublicAffairModifiedFacilityDetailAcitivty"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".publicaffair.view.facilityaffair.PublicAffairUploadFacilityDetailAcitivty"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".publicaffair.view.eventaffair.EventAffairActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadfacility.UploadFacilityMapActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <!--<activity-->
+        <!--android:name=".uploadfacility.view.uploadnewfacility.UploadNewFacilityActivity"-->
+        <!--android:configChanges="orientation|screenSize|keyboardHidden"-->
+        <!--android:windowSoftInputMode="stateAlwaysHidden" />-->
+
+        <activity
+            android:name=".uploadfacility.view.myuploadlist.MyUploadListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".common.baiduselectlocation.BaiduSelectLocationActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name="io.rong.callkit.MultiVideoCallActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="io.rong.intent.action.voip.MULTIVIDEO" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="io.rong.callkit.SingleCallActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="io.rong.intent.action.voip.SINGLEVIDEO" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="io.rong.intent.action.voip.SINGLEAUDIO" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="io.rong.callkit.MultiAudioCallActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="io.rong.intent.action.voip.MULTIAUDIO" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="io.rong.callkit.CallSelectMemberActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".publicaffair.view.distribute.FacilityAffairDistributeMapActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+
+        <activity
+            android:name=".uploadfacility.view.reeditfacility.ReEditModifiedFacilityActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".uploadfacility.view.reeditfacility.ReEditUploadFacilityActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <!-- 会话列表 -->
+        <!-- <activity -->
+        <!-- android:name=".im.ConversationActivity" -->
+        <!-- android:launchMode="singleTask" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:windowSoftInputMode="stateHidden|adjustResize"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.VIEW" /> -->
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- <data -->
+        <!-- android:host="com.augurit.agmobile.gzps" -->
+        <!-- android:path="/conversationlist" -->
+        <!-- android:scheme="rong" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <receiver
+            android:name=".im.receiver.NotificationReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="io.rong.push.intent.MESSAGE_ARRIVED" />
+                <action android:name="io.rong.push.intent.MI_MESSAGE_ARRIVED" />
+                <action android:name="io.rong.push.intent.MESSAGE_CLICKED" />
+                <action android:name="io.rong.push.intent.MI_MESSAGE_CLICKED" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.augurit.agmobile.gzps.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/rc_file_path" />
+        </provider>
+
+        <activity
+            android:name=".setting.UserInfoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".setting.SignActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".uploadfacility.view.uploadnewfacility.UploadNewFacilityActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".uploadfacility.view.drainageentity.SelectDrainageEntityActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".uploadfacility.view.drainageentity.DrainageEntityActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".uploadfacility.view.drainageentity.DrainageEntityDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".uploadfacility.view.feedback.FacilityFeedbackActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".uploadfacility.view.feedback.FacilityFeedbackListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadfacility.view.feedback.FeedbackEventUploadActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".maintain.view.MaintainMapActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <!--<activity-->
+        <!--android:name=".professionreparation.ReparationFacilityMapActivity"-->
+        <!--android:configChanges="orientation|screenSize|keyboardHidden"-->
+        <!--android:windowSoftInputMode="stateAlwaysHidden" />-->
+        <!--<activity-->
+        <!--android:name=".professionreparation.reparationnewfacility.ReparationNewFacilityActivity"-->
+        <!--android:configChanges="orientation|screenSize|keyboardHidden"-->
+        <!--android:windowSoftInputMode="stateAlwaysHidden" />-->
+
+        <activity
+            android:name=".uploadfacility.view.feedback.UploadFeedbackActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadfacility.view.feedback.FeedbackEventMapActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadevent.view.eventdraft.FeedBackEventDraftDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".journal.view.uploadnewjournal.AddNewJournalActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".journal.view.uploadevent.JournalEventUploadActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".journal.view.reeditjournal.ReEditModifiedJournalActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".journal.view.journallist.MyJournalListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadevent.view.eventdraft.JournalEventDraftDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".maintain.view.uploadnewmaintain.MaintainNewActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".maintain.view.miantianlist.MaintainListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".maintain.view.detail.MaintainDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".maintain.view.reedit.MaintainReEditActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".journal.view.pfkjournal.AddNewPfkJournalActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".common.selectcomponent.SelectRiverFlowActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadfacility.view.facilitydetail.UploadPipeDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".common.selectcomponent.SelectMenPaiActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".journal.RoutineInspectionActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadfacility.view.myuploadlist.MyDoubtListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadfacility.view.doorno.UploadDoorNoDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadfacility.view.doorno.UploadDoorNoListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadfacility.view.doorno.UploadDoorNoMapActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadfacility.view.doorno.UploadNewDoorNoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadfacility.view.facilitydetail.UploadHookDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+
+        <activity android:name=".monitor.WellMonitorActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name=".monitor.WellMonitorListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name=".monitor.InspectionWellMonitorEditOrDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name=".monitor.InspectionWellMonitorListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name=".jbjpsdy.JbjPsdyMapActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity
+            android:name=".jbjpsdy.MyJbjListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadfacility.view.facilitydetail.UploadJbjMonitorDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".uploadfacility.view.facilitydetail.UploadKeyNodeMonitorDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".doorno.view.SewerageTableActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".doorno.view.SewerageDoorMapActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".doorno.view.SewerageSelectWellActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".doorno.view.SewerageTableThreeAddAvtivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <!--桌面角标通知服务-->
+        <service
+            android:name=".im.BadgeIntentService"
+            android:exported="false" />
+
+        <receiver
+            android:name=".im.ImNotificationReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="io.rong.push.intent.MESSAGE_ARRIVED" />
+                <action android:name="io.rong.push.intent.MI_MESSAGE_ARRIVED" />
+                <action android:name="io.rong.push.intent.MESSAGE_CLICKED" />
+                <action android:name="io.rong.push.intent.MI_MESSAGE_CLICKED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".track.service.TrackNewService"/>
+
+    </application>
+
+</manifest>

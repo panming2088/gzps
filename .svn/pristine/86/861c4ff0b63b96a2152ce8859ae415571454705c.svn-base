@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/track_locate"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_toLeftOf="@+id/tv_track_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:src="@drawable/locate"
+                android:layout_width="42dp"
+                android:layout_height="42dp" />
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:text="定位"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/tv_track_start"
+            android:src="@drawable/start"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"/>
+
+        <LinearLayout
+            android:id="@+id/track_list"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/trace"
+            android:layout_toRightOf="@+id/tv_track_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:src="@drawable/trace"
+                android:layout_width="42dp"
+                android:layout_height="42dp" />
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:text="历史轨迹"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:text="轨迹记录"
+                android:textColor="@color/agpatrol_blue"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/down_arrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+        </LinearLayout>
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/agmobile_grey_0" />
+    </LinearLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+
+            <LinearLayout
+
+               android:layout_centerInParent="true"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="累计时间"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@android:color/black" />
+
+                <ImageView
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/time"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+                <TextView
+                    android:id="@+id/track_time"
+                    android:layout_marginTop="5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:text="00:00:00"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+
+            <LinearLayout
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="轨迹长度"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@android:color/black" />
+
+                <ImageView
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/length"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+                <TextView
+                    android:id="@+id/track_length"
+                    android:layout_marginTop="5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:text="0米"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <View
+        android:visibility="gone"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/agmobile_grey_0" />
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/track_start"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/img3"
+                android:layout_centerInParent="true"
+                android:src="@drawable/start"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+            <TextView
+
+                android:layout_marginTop="25dp"
+                android:text="开始"
+                android:textColor="@android:color/black"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/img3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/track_stop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/img4"
+                android:layout_centerInParent="true"
+                android:src="@drawable/stop"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+            <TextView
+                android:layout_marginTop="25dp"
+                android:text="停止记录"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/img4"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/img5"
+                android:layout_centerInParent="true"
+                android:src="@drawable/location"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+            <TextView
+                android:layout_marginTop="25dp"
+                android:text="定位"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/img5"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <View
+        android:visibility="gone"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/agmobile_grey_0" />
+
+    <RelativeLayout
+        android:visibility="gone"
+
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:text="轨迹记录详情"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <ImageView
+           android:layout_alignParentRight="true"
+            android:src="@drawable/right_arrow"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+          />
+    </RelativeLayout>
+
+    <View
+        android:visibility="gone"
+        android:layout_marginTop="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/agmobile_grey_0" />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!--
+                <TextView
+                    style="@style/tracerecord_textview_style"
+                    android:text="上次结束" />
+
+                <TextView
+                    style="@style/tracerecord_textview_style"
+                    android:text="14:32"
+                    android:textSize="@dimen/text_size_time" />
+
+                <TextView
+                    style="@style/tracerecord_textview_style"
+                    android:text="2017-03-06"
+                    android:textSize="@dimen/text_size_fourth" />
+                    -->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!--
+                <TextView
+                    style="@style/tracerecord_textview_style"
+                    android:text="巡查天数" />
+
+                <TextView
+                    style="@style/tracerecord_textview_style"
+                    android:text="13"
+                    android:textSize="@dimen/text_size_time" />
+
+                <TextView
+                    style="@style/tracerecord_textview_style"
+                    android:text="工作日：22"
+                    android:textSize="@dimen/text_size_fourth" />
+                    -->
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/patrol_tracerecord_start_record_margin_bottom"
+            android:layout_marginTop="@dimen/patrol_tracerecord_start_record_margin_top"
+            android:gravity="center_vertical"
+            android:weightSum="1">
+
+            <!--<ImageView-->
+            <!--android:layout_width="@dimen/patrol_tracerecord_start_record_left_icon_size"-->
+            <!--android:layout_height="@dimen/patrol_tracerecord_start_record_left_icon_size"-->
+            <!--android:src="@mipmap/common_ic_round_grey"/>-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="@dimen/patrol_tracerecord_start_record_margin_left"-->
+            <!--android:textColor="@color/agmobile_white"-->
+            <!--/>-->
+
+            <!--
+            <ImageButton
+                android:textAlignment="center"
+
+                android:id="@+id/btn_collect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/collect" />
+            <TextView
+                android:layout_below="@id/btn_collect"
+                android:text="采集"
+               android:layout_marginLeft="12dp"
+                android:textColor="@color/color_white"
+                android:textSize="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               />
+               -->
+            <com.augurit.agmobile.gzps.home.CustomImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@mipmap/collect"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:visibility="gone">
+
+            </com.augurit.agmobile.gzps.home.CustomImageButton>
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

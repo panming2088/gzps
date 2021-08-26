@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/common_patrol_toolbar" />
+
+        <fragment
+            class="com.augurit.agmobile.gzps.publicaffair.view.eventaffair.EventAffairFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:tag="event"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/progress_linearlayout"
+        android:layout_width="@dimen/drawer_layout_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/agmobile_white"
+        android:orientation="vertical">
+
+        <!--<include-->
+            <!--android:id="@+id/ll_facility_condition"-->
+            <!--layout="@layout/view_facility_affair_failter_condition"-->
+            <!--android:visibility="visible" />-->
+        <include
+            android:id="@+id/ll_event_condition"
+            layout="@layout/view_event_affair_filter_condition"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

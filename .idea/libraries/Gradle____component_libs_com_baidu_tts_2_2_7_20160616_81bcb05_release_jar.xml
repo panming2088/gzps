@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./component/libs/com.baidu.tts_2.2.7.20160616_81bcb05_release.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/component/libs/com.baidu.tts_2.2.7.20160616_81bcb05_release.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

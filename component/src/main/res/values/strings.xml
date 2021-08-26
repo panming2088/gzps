@@ -1,0 +1,85 @@
+<resources>
+    <string name="clear_cache">清理缓存(%1$s)</string>
+
+    <!--FilePicker-->
+    <string name="empty_directory_hint">Empty directory</string>
+    <string name="start_path_name">Device</string>
+    <string name="type_archive">Archive</string>
+    <string name="type_certificate">Certificate</string>
+    <string name="type_directory">Directory</string>
+    <string name="type_document">File</string>
+    <string name="type_drawing">Picture</string>
+    <string name="type_excel">Spreadsheet</string>
+    <string name="type_image">Image</string>
+    <string name="type_music">Music</string>
+    <string name="type_video">Video</string>
+    <string name="type_pdf">PDF document</string>
+    <string name="type_power_point">Presentation</string>
+    <string name="type_word">Document</string>
+    <string name="type_apk">APK</string>
+
+    <!--SegmentControlView文字-->
+    <string-array name="segment_control_arrays_1">
+        <item>属性</item>
+        <item>图形</item>
+        <item>附件</item>
+    </string-array>
+
+    <!--搜索-->
+    <string-array name="segment_control_arrays_search">
+        <item>地名查询</item>
+        <item>图层查询</item>
+    </string-array>
+
+    <!--测量-->
+    <string-array name="segment_control_arrays_measure">
+        <item>测距</item>
+        <item>测面</item>
+    </string-array>
+
+    <!--存疑-->
+    <string-array name="segment_control_arrays_doubt">
+        <item>存疑修改</item>
+        <item>存疑区域设置</item>
+    </string-array>
+
+    <!--下载-->
+    <string-array name="segment_control_arrays_layer_download">
+        <item>下载管理</item>
+        <item>图层列表</item>
+    </string-array>
+    <!--_____________________-->
+
+    <string name="name_null">未命名</string>
+
+    <!--运维统计-->
+    <string name="operational_cache_stats">缓存统计</string>
+    <string name="operational_memory_stats">内存占用统计</string>
+    <string name="operational_traffic_stats">流量统计</string>
+
+    <!--定位-->
+    <string name="gps_improve">提高位置精度提醒</string>
+    <string name="gps_note">如需要获取更精确的位置服务，请您在室外时执行以下操作：</string>
+    <string name="gps_note_please">在位置设置中打开</string>
+    <string name="gps_note_not_again">不再显示此内容</string>
+    <string name="gps">GPS</string>
+    <string name="set">设置</string>
+    <string name="cancel">取消</string>
+
+    <string name="permission_ok">确定</string>
+    <string name="permission_close">确定</string>
+    <string name="permission_cancel">取消</string>
+    <string name="permission_setting">设置</string>
+    <string name="permission_denied_msg_default">可以到app设置界面开启权限</string>
+
+    <!--progressLayout使用到的文字-->
+    <string name="progressActivityErrorButton">请重试</string>
+
+    <string name="progressActivityEmptyTitlePlaceholder">查无数据</string>
+
+    <string name="progressActivityEmptyContentPlaceholder">We couldn\'t find anything. Tap the button to take your first image</string>
+
+    <string name="progressActivityErrorTitlePlaceholder">网络无连接</string>
+
+    <string name="progressActivityErrorContentPlaceholder">连接到服务器出错，请确保当前设备可以访问网络</string>
+</resources>

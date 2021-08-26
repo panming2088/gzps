@@ -1,0 +1,88 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            // 设置支持的 SO 库构架，注意这里要根据你的实际情况来设置
+            abiFilters 'armeabi'//,'x86'
+//            moduleName "BundleJni"
+        }
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    sourceSets{
+        main{
+            jni.srcDirs=[]
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/rxjava.properties'
+    }
+
+    /*configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+    }*/
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+    compile project(':component')
+    //  compile project(':baidutransformlib')
+    /**
+     *    Arcgis sdk
+     */
+    compile "com.esri.arcgis.android:arcgis-android:$rootProject.arcgisLibraryVersion"
+    /**
+     *    eventbus事件总线
+     */
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile files('libs/panoramagl.jar')
+    compile files('libs/commons-httpclient-3.1.jar')
+    /
+    **
+    * RxJava和RxAndroid库
+    */
+    //RxAndroid 大小10kb
+    compile "io.reactivex:rxandroid:$rootProject.rxAndroidVersion"
+    //Rxjava 大小1MB
+    compile "io.reactivex:rxjava:$rootProject.rxJavaVersion"
+    compile "com.squareup.retrofit2:adapter-rxjava:$rootProject.retrofitAdapterVersion"
+    /**
+     *  Guava 是一个 Google 的基于java1.6的类库集合的扩展项目
+     *  瓦片缓存中有用到
+     */
+    compile 'com.google.guava:guava:18.0'
+    /**
+     *  用于绑定view
+     */
+    compile 'com.jakewharton.rxbinding:rxbinding:1.0.0'
+    compile files('libs/BaiduLBS_Android.jar')
+}

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        android:visibility="gone" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/ll_intro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/entity_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="项目名称"
+                            android:textColor="@color/agmobile_black"
+                            android:textSize="@dimen/text_size_second" />
+
+                        <TextView
+                            android:id="@+id/entity_degree"
+                            android:layout_width="40dp"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="16dp"
+                            android:background="@drawable/location_symbol"
+                            android:gravity="center"
+                            android:text="重点"
+                            android:textColor="@color/agmobile_white"
+                            android:textSize="@dimen/text_size_fourth" />
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/entity_liscode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="许可证号"
+                        android:textColor="@color/agmobile_black"
+                        android:textSize="@dimen/text_size_second" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_sel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/btn_2"
+                    android:text="选择"
+                    android:visibility="gone" />
+
+                <CheckBox
+                    android:id="@+id/cb_sel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center_vertical" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_files"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:visibility="gone">
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/fl_files"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    app:flexWrap="wrap">
+
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

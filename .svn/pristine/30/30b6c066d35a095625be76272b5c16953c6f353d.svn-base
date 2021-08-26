@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mark_red">#e12727</color>
+    <color name="mark_blue">#4a6bd7</color>
+
+    <color name="pink">#f2c5f1</color>
+    <color name="mark_dark_green">#BAD4D8</color>
+    <color name="mark_orange">#F28853</color>
+    <color name="mark_light_blue">#39C6F7</color>
+    <color name="mark_dark_purple">#708AED</color>
+    <color name="mark_drak_yellow">#D8CE16</color>
+    <color name="mark_drak_orange">#F4AB00</color>
+    <color name="mark_green">#008DAF</color>
+    <color name="mark_light_yellow">#E7F400</color>
+    <color name="mark_light_purple">#BD93FF</color>
+
+
+</resources>

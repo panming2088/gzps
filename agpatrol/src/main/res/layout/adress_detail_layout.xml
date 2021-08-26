@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:background="#f6f6f9">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="36dp"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/ic_two_lines" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/door_detail_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/round_orange_rectangle2"
+                    android:textColor="@color/agmobile_white"
+                    android:singleLine="true"
+                    android:padding="4dp"
+                    android:textSize="18sp"
+                    android:text="排水户上报" />
+                <TextView
+                    android:id="@+id/wrong_door_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/round_orange_rectangle2"
+                    android:textColor="@color/agmobile_white"
+                    android:singleLine="true"
+                    android:padding="4dp"
+                    android:textSize="18sp"
+                    android:text="门牌不存在" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/dis_detail_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/dust_grey"
+                        android:textSize="18sp"/>
+
+                <com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout
+                    android:id="@+id/pb_loading"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:id="@+id/ll_item1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <!--房屋使用性质  | 房屋结构  |  房屋类别 | 房屋用途-->
+                            <TextView
+                                android:id="@+id/tv_house_Property"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/text_size_third"
+                                android:textColor="@color/dust_grey"
+                                android:paddingTop="5dp" />
+                            <TextView
+                                android:id="@+id/tv_floor"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="5dp"
+                                android:textColor="@color/dust_grey"
+                                android:textSize="@dimen/text_size_third"/>
+                    </LinearLayout>
+                </com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout>
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/ll_next_and_prev_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="4dp">
+                <TextView
+                   android:layout_alignParentLeft="true"
+                    android:id="@+id/dis_prev"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="上一个"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/colorPrimary" />
+                <TextView
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/dis_next"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="下一个"
+                    android:textColor="@color/colorPrimary" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

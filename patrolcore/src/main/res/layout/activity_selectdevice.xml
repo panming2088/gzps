@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                        android:id="@+id/drawer_layout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/ly_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout
+        android:id="@+id/progress_linearlayout"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/agmobile_white"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="图层列表"
+            android:textSize="@dimen/text_size_first"
+            android:padding="8dp"
+            android:textColor="@color/agmobile_white"
+            android:background="@color/agmobile_blue"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_right_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:choiceMode="singleChoice"
+        android:divider="#FFFFFF"
+        android:dividerHeight="1dp" />
+    </com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

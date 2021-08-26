@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <script src="jquery-2.1.0.js"></script>
+    <title>消防情况</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            list-style: none;
+            padding-top: 0.1rem;
+            padding-bottom: 0.1rem;
+            margin-left: 0;
+            border-bottom: 1px solid #cccccc
+        }
+        img {
+            vertical-align: middle;
+            margin-left: 0.2rem;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        .numberInput {
+            width: 3rem; 
+            text-align: center;
+        }
+        .confirmButton {
+            background-color: #2196F3;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 0.6rem;
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            letter-spacing: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <table id="table" width="100%" border="1" cellspacing="0" >
+        <th colspan="2">使用功能基本信息</th>
+        <tr>
+            <td width="20%" style="text-align: center">
+                使用功能类别
+            </td>
+            <td id="funcType" width="80%">
+                <input type="checkbox" onclick="checkClick()" value="宾馆">宾馆</input>
+                <input type="checkbox" onclick="checkClick()" value="饭店">饭店</input>
+                <input type="checkbox" onclick="checkClick()" value="商场">商场</input>
+                <input type="checkbox" onclick="checkClick()" value="集贸市场">集贸市场</input>
+                <input type="checkbox" onclick="checkClick()" value="客运车站候车室">客运车站候车室</input>
+                <input type="checkbox" onclick="checkClick()" value="客运码头候船厅">客运码头候船厅</input>
+                <input type="checkbox" onclick="checkClick()" value="民用机场航站楼">民用机场航站楼</input>
+                <input type="checkbox" onclick="checkClick()" value="体育场馆、会堂">体育场馆、会堂</input>
+                <input type="checkbox" onclick="checkClick()" value="商铺">商铺</input>
+                <input type="checkbox" onclick="checkClick()" value="门诊楼">门诊楼</input>
+                <input type="checkbox" onclick="checkClick()" value="病房楼">病房楼</input>
+                <input type="checkbox" onclick="checkClick()" value="教学楼">教学楼</input>
+                <input type="checkbox" onclick="checkClick()" value="图书馆">图书馆</input>
+                <input type="checkbox" onclick="checkClick()" value="食堂">食堂</input>
+                <input type="checkbox" onclick="checkClick()" value="集体宿舍">集体宿舍</input>
+                <input type="checkbox" onclick="checkClick()" value="儿童游乐厅">儿童游乐厅</input>
+                <input type="checkbox" onclick="checkClick()" value="展览厅">展览厅</input>
+                <input type="checkbox" onclick="checkClick()" value="旅游场所">旅游场所</input>
+                <input type="checkbox" onclick="checkClick()" value="寺庙">寺庙</input>
+                <input type="checkbox" onclick="checkClick()" value="教堂">教堂</input>
+                <input type="checkbox" onclick="checkClick()" value="住宅">住宅</input>
+                <input type="checkbox" onclick="checkClick()" value="公寓">公寓</input>
+                <input type="checkbox" onclick="checkClick()" value="健身房">健身房</input>
+                <input type="checkbox" onclick="checkClick()" value="棋牌室">棋牌室</input>
+                <input type="checkbox" onclick="checkClick()" value="美容美发室">美容美发室</input>
+                <input type="checkbox" onclick="checkClick()" value="歌舞厅">歌舞厅</input>
+                <input type="checkbox" onclick="checkClick()" value="录像厅">录像厅</input>
+                <input type="checkbox" onclick="checkClick()" value="放映厅">放映厅</input>
+                <input type="checkbox" onclick="checkClick()" value="卡拉ＯＫ厅">卡拉ＯＫ厅</input>
+                <input type="checkbox" onclick="checkClick()" value="夜总会">夜总会</input>
+                <input type="checkbox" onclick="checkClick()" value="游艺厅">游艺厅</input>
+                <input type="checkbox" onclick="checkClick()" value="桑拿浴室">桑拿浴室</input>
+                <input type="checkbox" onclick="checkClick()" value="汗蒸房">汗蒸房</input>
+                <input type="checkbox" onclick="checkClick()" value="网吧">网吧</input>
+                <input type="checkbox" onclick="checkClick()" value="酒吧">酒吧</input>
+                <input type="checkbox" onclick="checkClick()" value="具有娱乐功能的餐馆">具有娱乐功能的餐馆</input>
+                <input type="checkbox" onclick="checkClick()" value="茶馆">茶馆</input>
+                <input type="checkbox" onclick="checkClick()" value="咖啡厅">咖啡厅</input>
+                <input type="checkbox" onclick="checkClick()" value="办公">办公</input>
+                <input type="checkbox" onclick="checkClick()" value="电力调度楼">电力调度楼</input>
+                <input type="checkbox" onclick="checkClick()" value="电信楼">电信楼</input>
+                <input type="checkbox" onclick="checkClick()" value="邮政楼">邮政楼</input>
+                <input type="checkbox" onclick="checkClick()" value="防灾指挥调度楼">防灾指挥调度楼</input>
+                <input type="checkbox" onclick="checkClick()" value="广播电视楼">广播电视楼</input>
+                <input type="checkbox" onclick="checkClick()" value="档案楼">档案楼</input>
+                <input type="checkbox" onclick="checkClick()" value="发电厂">发电厂</input>
+                <input type="checkbox" onclick="checkClick()" value="变配电站">变配电站</input>
+                <input type="checkbox" onclick="checkClick()" value="汽车库">汽车库</input>
+                <input type="checkbox" onclick="checkClick()" value="非机动车库">非机动车库</input>
+                <input type="checkbox" onclick="checkClick()" value="厂房">厂房</input>
+                <input type="checkbox" onclick="checkClick()" value="仓库">仓库</input>
+                <input type="checkbox" onclick="checkClick()" value="易燃易爆气体和液体的充装站">易燃易爆气体和液体的充装站</input>
+                <input type="checkbox" onclick="checkClick()" value="供应站">供应站</input>
+                <input type="checkbox" onclick="checkClick()" value="调压站">调压站</input>
+            </td>
+        </tr>
+        <tr>
+            <td width="20%" style="text-align: center">
+                具体信息
+            </td>
+            <td id="info" width="80%">
+                <ul>
+                    <li id="hotel">宾馆(旅馆、饭店)：客房数<input type="text"  onkeyup="integerFilter(this)" onblur="integerFilter(this)" class="numberInput"/>间</li>
+                    <li id="public">公共的体育场(馆)、会堂；座位数<input type="text"  onkeyup="integerFilter(this)" onblur="integerFilter(this)" class="numberInput"/>个</li>
+                    <li id="hospital">医院；住院床位<input type="text"  onkeyup="integerFilter(this)" onblur="integerFilter(this)" class="numberInput"/>张</li>
+                    <li id="nursingHome">养老院；老人住宿床位<input type="text"  onkeyup="integerFilter(this)" onblur="integerFilter(this)" class="numberInput"/>张</li>
+                    <li id="college">寄宿制高等院校；学生住宿床位<input type="text"  onkeyup="integerFilter(this)" onblur="integerFilter(this)" class="numberInput"/>张</li>
+                    <li id="middleSchool">寄宿制中小学校；学生住宿床位<input type="text"  onkeyup="integerFilter(this)" onblur="integerFilter(this)" class="numberInput"/>张</li>
+                    <li id="kindergarten">托儿所、幼儿园：幼儿住宿床位<input type="text"  onkeyup="integerFilter(this)" onblur="integerFilter(this)" class="numberInput"/>张</li>
+                    <li id="workshop">服装、鞋帽、玩具等劳动密集型企业：生产车间员工<input type="text"  onkeyup="integerFilter(this)" onblur="integerFilter(this)" class="numberInput"/>人</li>
+                    <li id="library">图书馆：藏书数量<input type="text"  onkeyup="integerFilter(this)" onblur="integerFilter(this)" class="numberInput"/>册</li>
+                    <li id="relic">文物保护单位：
+                        <input name="0" type="checkbox" onclick="singleChoose(this)">国家级</input>
+                        <input name="1" type="checkbox" onclick="singleChoose(this)">省级</input>
+                        <input name="2" type="checkbox" onclick="singleChoose(this)">市级</input>
+                        <input name="3" type="checkbox" onclick="singleChoose(this)">县（市、区）级</input>
+                    </li>
+                    <li id="grainDepot">粮库：总储量<input type="text"  onkeyup="decimalFilter(this)" onblur="decimalFilter(this)" class="numberInput"/>吨</li>
+                    <li id="cottonDepot">棉库：总储量<input type="text"  onkeyup="decimalFilter(this)" onblur="decimalFilter(this)" class="numberInput"/>吨</li>
+                    <li id="explosive">易燃易爆物品生产、储存单位：占地面积<input type="text"  onkeyup="decimalFilter(this)" onblur="decimalFilter(this)" class="numberInput"/>立方米</li>
+                    <li id="liquid">生产、储存甲、乙类液体总储量<input type="text"  onkeyup="decimalFilter(this)" onblur="decimalFilter(this)" class="numberInput"/>立方米</li>
+                    <li id="gas">生产、储存甲、乙类气体总储量<input type="text"  onkeyup="decimalFilter(this)" onblur="decimalFilter(this)" class="numberInput"/>立方米</li>
+                    <li id="solid">生产、储存甲、乙类固体、纤维总储量<input type="text"  onkeyup="decimalFilter(this)" onblur="decimalFilter(this)" class="numberInput"/>吨</li>
+                    <li id="prodin">丙、丁类工厂企业：总产值<input type="text"  onkeyup="decimalFilter(this)" onblur="decimalFilter(this)" class="numberInput"/>亿元</li>
+                    <li id="let">出租屋：住宿房间数量<input type="text"  onkeyup="integerFilter(this)" onblur="integerFilter(this)" class="numberInput"/>间；住宿人员
+                        <input type="text"  onkeyup="integerFilter(this)" onblur="integerFilter(this)" class="numberInput"/>人；
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <!-- <span class="confirmButton" onclick="confirm()">确定</span> -->
+
+    <script>
+        /**
+         * 设置数据
+         */ 
+        function setData(funcTypes, infos, isReadOnly) {
+            // 选中功能类别
+            $('#funcType').find('input').each(function (index, elem) {
+                for (i in funcTypes) {
+                    if (funcTypes[i] == $(this).val()) {
+                        $(this).prop('checked', true);
+                        break;
+                    }
+                }
+            });
+            // 填写具体信息
+            for (i in infos) {
+                var value = infos[i];
+                if (i == 'relic') {
+                    // 文物保护单位
+                    $('#relic').find("input[name=" + value + "]").prop('checked', true);
+                } else if (i == 'let') {
+                    // 出租屋
+                    if (value) {
+                        var split = value.split(',');
+                        $('#let').find('input:eq(0)').val(split[0]);
+                        $('#let').find('input:eq(1)').val(split[1]);
+                    }
+                } else {
+                    $('#' + i).find('input').val(value);
+                }
+            }
+            if (isReadOnly) {
+                $('.confirmButton').css('display', 'none');
+                $('input').attr('disabled', true);
+            }
+        }
+
+        /**
+         * 确定按钮
+         */ 
+        function confirm() {
+            // 功能类别
+            var funcTypes = new Array();
+            $('#funcType').find('input').each(function (index, elem) {
+                var isChecked = $(this).prop('checked');
+                if (isChecked) {
+                    funcTypes.push($(this).val());
+                }
+            });
+            console.dir(funcTypes);
+            console.info(JSON.stringify(funcTypes));
+            // 具体信息
+            var info = {};
+            $('#info').find('li').each(function (index, elem){
+                var value = '';
+                var id = $(this).attr('id');
+                if (id == 'relic') {
+                    // 文物保护单位                    
+                    $(this).find('input').each(function (index, elem) {
+                        var isChecked = $(this).prop('checked');
+                        if (isChecked) {
+                            value = $(this).prop('name');
+                            return false;
+                        }
+                    });
+                } else if (id == 'let') {
+                    // 出租屋
+                    $(this).find('input').each(function (index, elem) {
+                        value +=  $(this).val() + ',';
+                    });
+                    if (value != '') {
+                        value = value.substring(0, value.length - 1);
+                    }
+                } else {
+                    // 其他
+                    value = $(this).find('input').val();
+                }
+                if (value == '') value = null;
+                info[id] = value;
+            });
+            console.dir(info);
+            console.info(JSON.stringify(info));
+
+            window.Android.callback(JSON.stringify(funcTypes), JSON.stringify(info));       
+        }
+
+        /**
+         * 单选
+         */
+        function singleChoose(input) {
+            $(input).siblings().prop('checked', false);
+            confirm();                      
+        }
+
+        function checkClick() {
+            confirm();
+        }
+
+        /**
+         * 小数输入过滤
+         */ 
+        function decimalFilter(input) {
+            // input.value=input.value.replace(/[^0-9-\.]+/,'');
+            input.value = input.value.replace(/[^\d.]/g, "");  //清除“数字”和“.”以外的字符  
+            input.value = input.value.replace(/\.{2,}/g, "."); //只保留第一个. 清除多余的  
+            input.value = input.value.replace(".", "$#$").replace(/\./g, "").replace("$#$", ".");
+            if (input.value.indexOf(".") < 0 && input.value != "") {//以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额 
+                input.value = parseFloat(input.value);
+            } 
+            confirm();                      
+        }
+
+        /**
+         * 整数输入过滤
+         */ 
+         function integerFilter(input) {
+            input.value=input.value.replace(/[^0-9-]+/,'');  
+            confirm();          
+         }
+
+         function resize() {
+             var scrollHeight = $('#table')[0].scrollHeight;
+             console.dir(scrollHeight);
+             window.Android.resize(scrollHeight);
+         }
+    </script>
+</body>
+</html>

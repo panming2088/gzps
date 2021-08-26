@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#fff">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/agmobile_blue">
+
+        <!--返回按钮-->
+        <LinearLayout
+            android:id="@+id/btn_back"
+            style="@style/AGMobile.Widget.Button.Container.Dark"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/top_icon_margin_horizontal"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical">
+
+            <ImageButton
+                style="@style/AGMobile.Widget.ImageButton.TopBar"
+                android:src="@mipmap/common_ic_back" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/top_bar_height"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:text="内存占用统计"
+            android:textColor="@color/agmobile_white"
+            android:textSize="@dimen/text_size_first"
+            />
+
+    </RelativeLayout>
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clickable="true"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eeeeee"/>
+
+</LinearLayout>

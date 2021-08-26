@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--AGMobile设计统一颜色-->
+    <!--无特殊说明时，应用中的白色统一使用该颜色，包括：有内容（文字、列表）的背景色、暗底色上的文字、暗底色上的内容描边等-->
+    <!--<color name="agmobile_white">#fcfcfc</color>-->
+    <color name="agmobile_white">#fffeff</color>        <!--新的UI中用fff-->
+    <!--无内容的背景色，作为底色用于体现空白及层次感，例如：图层查询中的背景、平板抽屉背景-->
+    <color name="agmobile_white_dark">#f6f6f9</color> <!--246,246,249-->
+    <!--半透明白色，目前用于暗底色上的按钮点击背景-->
+    <color name="agmobile_white_trans">#60fcfcfc</color>
+    <!--无特殊说明时，应用中的黑色统一使用该颜色，包括：亮底色上的文字颜色-->
+    <color name="agmobile_black">#565656</color>    <!--86,86,86-->
+    <!--半透明黑色，目前用于亮底色上的按钮点击背景-->
+    <color name="agmobile_black_trans">#50333333</color>
+    <!--亮灰色，用于分割线、描边、输入框提示文字-->
+    <color name="agmobile_grey_0">#d3d3d3</color>               <!--193,193,193-->
+    <!--用于菜单文字-->
+    <color name="agmobile_grey_1">#aaaaaa</color>               <!--170,170,170-->
+    <!--暗灰色，用于搜索框描边、搜索输入框文字-->
+    <color name="agmobile_grey_2">#4b4b4b</color>               <!--75,75,75-->
+    <!--无特殊说明，应用中的蓝色统一使用该颜色,colorPrimary-->
+    <!--<color name="agmobile_blue">#2ca9e1</color>-->
+    <color name="agmobile_blue">#48b4ff</color>                 <!--72,180,255-->
+    <!--淡蓝色，暂时没有用到-->
+    <color name="agmobile_blue_light">#66c4e0</color>
+    <!--暗蓝色，平板的按钮按下背景,colorPrimaryDark-->
+    <!--<color name="agmobile_blue_dark">#1476b2</color>-->
+    <color name="agmobile_blue_dark">#379be1</color>
+    <!--功能标题颜色-->
+    <color name="agmobile_cyan">#4ba8aa</color>
+    <!--红色-->
+    <color name="agmobile_red">#ff5050</color>              <!--255,80,80-->
+
+
+    <!--登录界面-->
+    <!--登录背景颜色-->
+    <color name="login_bg">#fbfbfb</color>
+    <!--整个登录表单底色--><!--目前用不到了-->
+    <color name="login_form_bg">#33fcfcfc</color>
+    <!--登录框描边-->
+    <color name="login_frame_stroke">#dbdbdb</color>         <!--219,219,219-->
+    <!--输入框文字颜色-->
+    <!--<color name="login_edt_text">#fcfcfcfc</color>-->
+    <!--<color name="login_edt_text">#898989</color>-->     <!--137,137,137-->
+    <color name="login_edt_text">@color/agmobile_grey_2</color>
+    <!--输入框提示文字颜色-->
+    <!--<color name="login_edt_hint">#99fcfcfc</color>-->
+    <color name="login_edt_hint">#c6c6c6</color>            <!--198,198,198-->
+    <!--输入框下划线颜色-->
+    <color name="login_edt_underline">#898989</color>       <!--137,137,137-->
+    <!--浅色复选框文字颜色-->
+    <color name="login_cb_text">#7c7c7c</color>             <!--124,124,124-->
+    <!--登录按钮颜色-->
+    <color name="login_btn_text">#ffffff</color>            <!--ffffff-->
+    <!--声明文字颜色-->
+    <color name="login_declare_text">#adadad</color>        <!--173,173,173-->
+
+    <!--主界面-->
+    <!--灰背景色-->
+    <color name="background_grey">#efeef4</color>           <!--239,238,244-->
+    <!--底栏背景色-->
+    <color name="background_bottom_bar">#f6f6f9</color>     <!--246,246,249-->
+    <!--分割线-->
+    <color name="list_divider">#dbdbdb</color>              <!--219,219,219-->
+    <!--功能标题-->
+    <color name="func_title">@color/agmobile_cyan</color>
+    <!--对话框按钮-->
+    <!--<color name="dialog_button">#6f9fe9</color>-->
+    <!--输入框描边-->
+    <color name="edittext_stroke">#2974ce</color>
+    <!--输入框提示文字-->
+    <color name="edittext_hint">@color/agmobile_grey_0</color>
+    <!--输入框文字-->
+    <color name="edittext_text">@color/agmobile_black</color>
+    <!--选中的列表项背景-->
+    <color name="list_item_selected">#e0e4e8</color>        <!--224,228,232-->
+
+    <color name="colorPrimary">@color/agmobile_blue</color>
+    <color name="colorPrimaryDark">@color/agmobile_blue_dark</color>
+    <color name="colorAccent">@color/agmobile_blue</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="light_blue">#95d7f1</color>
+    <color name="dark_blue">#2391ed</color>
+    <color name="bg_drak_gray">#787878</color>
+
+    <color name="item_file_title_color">#424242</color>
+    <color name="empty_directory_hint">#c7c7c7</color>
+    <color name="compatibility_pressed_color">#1a000000</color>
+    <color name="compatibility_focus_color">#48000000</color>
+
+    <color name="recycler_item_selected_color">#e0e4e8</color>
+
+    <color name="creamy_white">#f9f9f9</color>
+    <color name="gray">#D3D3D3</color>
+
+
+<!--dropdownmenu-->
+    <color name="dropdown_default_menu_back">#f1f1f1</color>
+    <color name="dropdown_default_menu_press_back">#fafafa</color>
+    <color name="dropdown_default_menu_press_text">#000000</color>
+    <color name="dropdown_default_menu_text">#00cf9b</color>
+    <color name="dropdown_divider">#f1f1f1</color>
+    <color name="dropdown_white">#ffffff</color>
+
+
+    <!-- searchview -->
+    <color name="divider_color">#F0F0F0</color>
+    <color name="black">#000000</color>
+
+    <color name="semi_transparent">#33000000</color>
+    <color name="suggestion_item_regular_color">#FAFAFA</color>
+    <color name="suggestion_item_pressed_color">#bbbbbb</color>
+    <color name="suggestion_list_color">#FFFFFF</color>
+    <color name="search_input_background_color">#FFFFFF</color>
+    <color name="light_gray_inactive_icon">#BEBEBE</color>
+    <color name="gray_active_icon">#787878</color>
+    <color name="dark_gray">#787878</color>
+    <color name="light_gray">#e9e9e9</color>
+    <color name="pressed_color">#E7E7E7</color>
+    <color name="background">#FFFFFF</color>
+    <color name="divider">#F0F0F0</color>
+    <color name="menu_icon_color">#787878</color>
+    <color name="left_action_icon">#787878</color>
+    <color name="clear_btn_color">#787878</color>
+    <color name="overflow_icon_color">#787878</color>
+    <color name="hint_color">#808080</color>
+
+</resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_background_color"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/common_rectangle_with_shadow"
+        android:orientation="vertical">
+
+       <!-- &lt;!&ndash;下拉框 &ndash;&gt;
+        <LinearLayout
+            android:id="@+id/ll_tv_select_title_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/patrol_upload_view_margin_left"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_"
+                style="@style/PatrolUploadKeyTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="详细信息"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_requiredTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:text="*"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="@dimen/text_size_third"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@+id/ll_tv_select_title_container"
+                android:layout_marginLeft="@dimen/login_et_text_padding_left"
+                android:layout_marginRight="@dimen/login_et_text_padding_left"
+                android:background="@color/list_divider"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/grey_dot_line"
+            android:layerType="software" />-->
+
+
+        <LinearLayout
+            android:id="@+id/ll_container_for_other_Items_exclude_map_and_photos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:orientation="vertical"
+            />
+
+        <!--android:background="@drawable/common_rectangle_with_shadow"-->
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8"/>
+    <style>
+        html,body { height:100%; width:100%; margin:0; padding:0;align:left;valign:left;}
+    </style>
+</head>
+<body>
+
+<div id="bar"
+     style="width: 100%;height:400px;margin-bottom: 10px;margin-top:-20px"></div>
+
+<!-- ECharts单文件引入 -->
+<script src="echarts.min.js"></script>
+<script type="text/javascript">
+
+ //声明Echarts实例
+   var myBarChart;
+ //声明图表配置项和数据
+ var barOptions;
+
+ var seriesLabel = {
+    normal: {
+        show: true,
+        position: 'insideRight',
+        formatter: function (params, ticket, callback) {
+                        return (params.value || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
+                    },
+        textBorderColor: '#333',
+        textStyle:{color:'#000'},
+        textBorderWidth: 2
+    }
+}
+
+// 格式化坐标轴数值
+			function formatter(value, index) {
+        		var str = value;
+        		if (value>=100000000) {
+        		    temp =  parseFloat(value/100000000.0);
+        		    str = temp.toFixed(1) + "亿";
+        		}
+        		/*else if (value>=10000000) {
+        		    temp = parseInt(value/10000000);
+        		    str = temp + "千万";
+        		} else if (value>=1000000) {
+        		    temp = parseInt(value/1000000);
+        		    str = temp + "百万";
+        		} else if (value>=100000) {
+        		    temp = parseInt(value/100000);
+        		    str = temp + "十万";
+        		}*/
+        		else if (value>=10000) {
+        		    temp = parseFloat(value/10000.0);
+        		    str = temp.toFixed(1) + "万";
+        		}
+        		return str;
+        	}
+
+
+ //创建柱状图
+    function createBChart(obj){
+
+    barOptions = {
+    color: ['#76c87b'],
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+
+    legend: {
+        data: ['上报数(个)'],
+        selectedMode:false,
+        x: 'right',
+        top:'25px'
+    },
+
+    grid: {
+        left: '3%',
+        right: '8%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        axisLabel: {
+			margin: 2,
+        	formatter: formatter
+        	},
+		axisTick: {
+			length: 2
+			},
+        type: 'value',
+        show: true
+
+    },
+    yAxis: {
+        type: 'category',
+        data: obj.times
+    },
+    series: [
+        {
+            name: '上报数(个)',
+            type: 'bar',
+            label: seriesLabel,
+            data: obj.data
+        }
+
+    ]
+
+};
+
+}
+
+   function createBarChart(title,barJson){
+        myBarChart = echarts.init(document.getElementById('bar'));
+
+        myBarChart.on('click', function (params) {
+
+        android.toDetailPage(params.name);
+});
+	    createBChart(barJson);
+
+	    myBarChart.setOption(barOptions);
+    }
+
+
+
+
+
+
+
+
+</script>
+</body>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/agmobile_background"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/common_rectangle_with_shadow"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text=""
+            android:textColor="@color/dust_grey"
+            android:textSize="@dimen/text_size_first" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/dust_grey"
+            android:textSize="@dimen/text_size_third"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/btn_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_upload_event_journal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_upload"
+                android:text="保存草稿"
+                android:textColor="@color/agmobile_white"
+                android:textSize="@dimen/text_size_first"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_upload_journal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/sel_btn_upload"
+                android:text="提交"
+                android:textColor="@color/agmobile_white"
+                android:textSize="@dimen/text_size_first" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btn_layout"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/intro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/common_rectangle_with_shadow"
+                            android:layout_marginRight="0dp"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="4dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginRight="4dp"
+                                    android:padding="4dp"
+                                    android:text="请添加该设施的上下游窨井"
+                                    android:textColor="@color/dust_grey"
+                                    android:textSize="@dimen/partrol_upload_text_size"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_upstream_add"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_gravity="right"
+                                    android:layout_margin="10dp"
+                                    android:text=" +添加"
+                                    android:textColor="@color/agmobile_blue_light"
+                                    android:textSize="18sp" />
+                            </RelativeLayout>
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:background="@drawable/grey_dot_line"
+                                android:layerType="software" />
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/rv_upstream"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/common_rectangle_with_shadow"
+                            android:orientation="vertical">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="4dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginRight="4dp"
+                                    android:padding="4dp"
+                                    android:text="请添加该设施的下游窨井"
+                                    android:textColor="@color/dust_grey"
+                                    android:textSize="@dimen/partrol_upload_text_size"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_downstream_add"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_gravity="right"
+                                    android:layout_margin="10dp"
+                                    android:text=" +添加"
+                                    android:textColor="@color/agmobile_blue_light"
+                                    android:textSize="18sp" />
+                            </RelativeLayout>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:background="@drawable/grey_dot_line"
+                                android:layerType="software" />
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/rv_downstream"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

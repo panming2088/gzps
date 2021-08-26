@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ECharts</title>
+		<style>
+		html,body { height:100%; width:100%; margin:0; padding:0;align:left;valign:left;}
+		</style>
+		<script src="echarts.min.js"></script>
+	</head>
+	<body>
+		<div id="main" style="height:100%;width:100%;border:0px;text-align:center;align:center;valign:center;margin:0 auto"></div>
+		<script type="text/javascript">
+			var myChart = echarts.init(document.getElementById('main'));
+			var option = null;
+
+			// 格式化坐标轴数值
+			function formatter(value, index) {
+        		var str = value;
+        		if (value>=100000000) {
+        		    temp = parseInt(value/100000000);
+        		    str = temp + "亿";
+        		}
+        		/*else if (value>=10000000) {
+        		    temp = parseInt(value/10000000);
+        		    str = temp + "千万";
+        		} else if (value>=1000000) {
+        		    temp = parseInt(value/1000000);
+        		    str = temp + "百万";
+        		} else if (value>=100000) {
+        		    temp = parseInt(value/100000);
+        		    str = temp + "十万";
+        		}*/
+        		else if (value>=10000) {
+        		    temp = parseInt(value/10000);
+        		    str = temp + "万";
+        		}
+        		return str;
+        	}
+
+			// 创建柱状图
+			function createBarChart(xVals, yVals) {
+				option = {
+					grid: {
+						left: '14%',
+						top: '5%',
+						right: '8%'
+					},
+					tooltip: {
+            			trigger: 'axis'
+        			},
+					dataZoom: [{
+						start: 0	
+					}, {
+						type: 'inside'
+					}],
+					xAxis: {
+						data: xVals
+					},
+					yAxis : {
+						axisLabel: {
+							margin: 2,
+        				    formatter: formatter
+        				},
+						axisTick: {
+							length: 2
+						}
+					},
+					series: [{
+						name: '',
+						type: 'bar',
+						data: yVals
+					}]
+				}
+			}
+			
+			// 创建折线图
+			function createLineChart(xVals, yVals) {
+				option = {
+					grid: {
+						left: '14%',
+						top: '5%',
+						right: '8%'
+					},
+					tooltip: {
+            			trigger: 'axis'
+        			},
+					dataZoom: [{
+						start: 0	
+					}, {
+						type: 'inside'
+					}],
+					xAxis: {
+						data: xVals
+					},
+					yAxis: {
+						axisLabel: {
+							margin: 2,
+        				    formatter: formatter
+        				},
+						axisTick: {
+							length: 2
+						}
+					},
+					series: [{
+						name: '',
+						type: 'line',
+						smooth: true,
+						data: yVals
+					}]
+				}
+			}
+			
+			// 创建分组柱状图
+			function createGroupBarChart(xAxisJson, seriesJson) {
+				var xAxis = JSON.parse(xAxisJson);
+				var series = JSON.parse(seriesJson);
+				console.dir(xAxis);
+				console.dir(series);
+				option = {
+					grid: {
+						left: '14%',
+						top: '5%',
+						right: '8%'
+					},
+					tooltip: {
+            			trigger: 'axis'
+        			},
+					dataZoom: [{
+						start: 0	
+					}, {
+						type: 'inside'
+					}],
+					legend: {
+						data: [' ', ' ']	// TODO 此处数据需手动构建
+					},
+					xAxis: {
+						type: 'category',
+						data: xAxis
+					},
+					yAxis : {
+						axisLabel: {
+							margin: 2,
+        				    formatter: formatter
+        				},
+						axisTick: {
+							length: 2
+						}
+					},
+					series: series
+				}
+			}
+
+			// 创建饼状图
+			function createPieChart(xVals, yVals) {
+				var datas = new Array();
+				for (var i = 0; i < xVals.length; i ++) {
+					var data = new Object();
+					data.name = xVals[i];
+					data.value = yVals[i];
+					datas.push(data);
+				}
+				option = {
+					grid: {
+						left: '14%',
+						top: '14%',
+						right: '14%',
+						bottom: '14%'
+					},
+					tooltip: {
+						trigger :'item'
+					},
+					series:[{
+						name: '',
+						type: 'pie',
+						data: datas,
+						labelLine: {
+							normal: {
+								length: 5
+							}
+						}
+					}]
+				}
+			}
+			
+			// 创建图表
+			function createChart(chartType, xVals, yVals) {
+				if (chartType=='bar') {
+					createBarChart(xVals, yVals);
+				}
+				if (chartType=='line') {
+					createLineChart(xVals, yVals);
+				}
+				if (chartType=='pie') {
+					createPieChart(xVals, yVals);
+				}
+				if (chartType=='group_bar') {
+					xVals = xVals.replace(/'/g, '"');
+					yVals = yVals.replace(/'/g, '"');
+					createGroupBarChart(xVals, yVals);
+				}
+				if (option != null) {
+					myChart.setOption(option);
+				}
+			}
+
+			// createChart('bar', ['一','二','三'], [213,232,200]);
+			// createChart('line', ['一','二','三'], [213,232,200]);
+			// createChart('pie', ['一','二','三'], [213,232,200]);
+			//createChart('group_bar', "['张三', '李四','王大锤']","[{'name':'计划完成','type':'bar','data':[20,15,30]},\
+			//{'name':'已经完成','type':'bar','data':[18,6,16]}]");
+		</script>
+	</body>
+</html>

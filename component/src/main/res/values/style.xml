@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AGMobile" />
+    <style name="AGMobile.Widget" /> <!--控件-->
+    <style name="AGMobile.Animation" />  <!--动画-->
+    <style name="AGMobile.TextAppearance" /> <!--文字样式-->
+
+    <!--___________控件____________-->
+
+    <!--Button-->
+    <style name="AGMobile.Widget.Button" parent="Base.Widget.AppCompat.Button" />
+
+    <!--Button确认，例如登录、保存设置、对话框中确定等-->
+    <style name="AGMobile.Widget.Button.Positive" parent="Widget.AppCompat.Button.Borderless">  <!--无阴影-->
+        <item name="android:background">@drawable/common_sel_btn_positive</item>
+        <item name="android:textColor">@drawable/common_sel_btn_text_positive</item>
+    </style>
+
+    <!--Button取消-->
+    <style name="AGMobile.Widget.Button.Negative" parent="Widget.AppCompat.Button.Borderless">  <!--无阴影-->
+        <item name="android:background">@drawable/common_sel_btn_negative</item>
+        <item name="android:textColor">@drawable/common_sel_btn_text_negative</item>
+    </style>
+
+    <!--各功能中的底部按钮-->
+    <style name="AGMobile.Widget.Button.Function">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/func_btn_height</item>
+        <item name="android:layout_marginLeft">@dimen/func_btn_margin_horizontal</item>
+        <item name="android:layout_marginRight">@dimen/func_btn_margin_horizontal</item>
+        <item name="android:layout_marginTop">@dimen/func_btn_margin_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/func_btn_margin_vertical</item>
+        <!--<item name="android:background">@drawable/common_sel_round_btn</item>-->
+        <item name="android:background">@drawable/common_sel_btn_positive</item>
+        <item name="android:textSize">@dimen/text_size_button</item>
+        <item name="android:textColor">@color/agmobile_white</item>
+    </style>
+
+    <!--按钮容器父样式，作为按钮使用，大小为最小可点击大小，
+        用于嵌套大小不易于点击的控件，例如顶栏图标、返回按钮、CheckBox、RadioButton、ImageView等；
+        未定义背景选择器，根据控件所在背景使用Light或Dark样式-->
+    <style name="AGMobile.Widget.Button.Container">
+        <item name="android:layout_width">@dimen/min_touchable_size</item>
+        <item name="android:layout_height">@dimen/min_touchable_size</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--亮底色上的按钮容器-->
+    <style name="AGMobile.Widget.Button.Container.Light">
+        <item name="android:background">@drawable/common_sel_btn_light</item>
+    </style>
+
+    <!--暗底色上的按钮容器-->
+    <style name="AGMobile.Widget.Button.Container.Dark">
+        <item name="android:background">@drawable/common_sel_btn_dark</item>
+    </style>
+
+    <!--地图按钮容器-->
+    <style name="AGMobile.Widget.Button.Container.Map">
+        <item name="android:layout_width">@dimen/map_btn_size</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">@dimen/map_btn_margin_horizontal</item>
+        <item name="android:layout_marginLeft">@dimen/map_btn_margin_horizontal</item>
+        <item name="android:layout_marginBottom">@dimen/map_btn_spacing_vertical</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!--ImageButton-->
+    <style name="AGMobile.Widget.ImageButton" />
+
+    <!--顶栏及BottomSheet顶栏中的ImageButton，嵌套在AGMobile.Widget.Button.Container中使用-->
+    <style name="AGMobile.Widget.ImageButton.TopBar">
+        <item name="android:layout_height">@dimen/top_icon_size</item>
+        <item name="android:layout_width">@dimen/top_icon_size</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:background">@null</item>
+        <item name="android:clickable">false</item>
+    </style>
+
+    <!--地图按钮，嵌套在AGMobile.Widget.Button.Container.Map中-->
+    <style name="AGMobile.Widget.ImageButton.Map">
+        <item name="android:layout_height">@dimen/map_btn_size</item>
+        <item name="android:layout_width">@dimen/map_btn_size</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <!--CheckBox-->
+    <style name="AGMobile.Widget.CheckBox">
+        <item name="android:layout_height">@dimen/checkbox_size</item>
+        <item name="android:layout_width">@dimen/checkbox_size</item>
+    </style>
+
+    <!--CheckBox蓝色-->   <!--统一使用此CheckBox-->
+    <style name="AGMobile.Widget.CheckBox.Blue">
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/common_sel_checkbox_blue</item>
+    </style>
+
+    <!--CheckBox灰色-->   <!--目前不使用-->
+    <style name="AGMobile.Widget.CheckBox.Grey">
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/common_sel_checkbox_grey</item>
+    </style>
+
+    <!--CheckBox黑色-->   <!--目前不使用-->
+    <style name="AGMobile.Widget.CheckBox.Black">
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/common_sel_checkbox_black</item>
+    </style>
+
+    <!--ImageView-->
+    <style name="AGMobile.Widget.ImageView" />
+
+    <!--列表项前的点-->
+    <style name="AGMobile.Widget.ImageView.ListSymbol">
+        <item name="android:layout_width">@dimen/list_symbol_size</item>
+        <item name="android:layout_height">@dimen/list_symbol_size</item>
+        <item name="android:layout_marginLeft">@dimen/list_symbol_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/list_symbol_margin_right</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:src">@mipmap/common_ic_list_symbol</item>
+    </style>
+
+    <!--底部列表拖动图标-->
+    <style name="AGMobile.Widget.ImageView.BottomToggle">
+        <item name="android:layout_width">@dimen/bottom_toggle_width</item>
+        <item name="android:layout_height">@dimen/bottom_toggle_height</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:src">@mipmap/common_ic_bottom_toggle</item>
+        <item name="android:layout_marginBottom">@dimen/bottom_toggle_margin_vertical</item>
+    </style>
+
+    <!--部分选择CheckBox图标-->
+    <style name="AGMobile.Widget.ImageView.HalfCheck">
+        <item name="android:layout_height">@dimen/checkbox_size</item>
+        <item name="android:layout_width">@dimen/checkbox_size</item>
+        <item name="android:src">@mipmap/common_ic_half_check</item>
+    </style>
+
+    <!--RadioButton-->
+    <!--RadioButton父样式，系统默认按钮-->
+    <style name="AGMobile.Widget.RadioButton">
+        <item name="android:layout_height">@dimen/radio_btn_size</item>
+        <item name="android:layout_width">@dimen/radio_btn_size</item>
+        <item name="android:layout_marginLeft">@dimen/radio_btn_margin_horizontal</item>
+        <item name="android:layout_marginRight">@dimen/radio_btn_margin_horizontal</item>
+    </style>
+
+    <!--RadioButton蓝色-->   <!--统一使用此RadioButton-->
+    <style name="AGMobile.Widget.RadioButton.Blue">
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/common_sel_radio_btn</item>
+    </style>
+
+    <!--SegmentControlView-->
+    <!--SegmentControlView父样式，未定义颜色-->
+    <style name="AGMobile.Widget.SegmentControlView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/segment_control_view_height</item>
+        <item name="scv_FrameCornerRadius">@dimen/segment_control_view_radius</item>
+        <item name="scv_FrameWidth">1dp</item>
+        <item name="scv_Gradient">true</item>
+        <item name="scv_SegmentPaddingVertical">
+            @dimen/segment_control_view_segment_padding_vertical
+        </item>
+    </style>
+
+    <!--亮底色上的SegmentControlView，选中项为蓝色-->
+    <style name="AGMobile.Widget.SegmentControlView.Light">
+        <item name="scv_BackgroundSelectedColor">@color/agmobile_blue</item>
+        <item name="scv_BackgroundNormalColor">@color/agmobile_white</item>
+        <item name="scv_TextSelectedColor">@color/agmobile_white</item>
+        <item name="scv_TextNormalColor">@color/agmobile_blue</item>
+        <item name="scv_FrameColor">@color/agmobile_blue</item>
+    </style>
+
+    <!--暗底色上的SegmentControlView，选中项为白色-->
+    <style name="AGMobile.Widget.SegmentControlView.Dark">
+        <item name="scv_BackgroundSelectedColor">@color/agmobile_white</item>
+        <item name="scv_BackgroundNormalColor">@color/colorPrimary</item>
+        <item name="scv_TextSelectedColor">@color/colorPrimaryDark</item>
+        <item name="scv_TextNormalColor">@color/agmobile_white</item>
+        <item name="scv_FrameColor">@color/agmobile_white</item>
+    </style>
+
+    <!--搜索框-->
+    <style name="AGMobile.Widget.SearchBox">
+        <!--暂无，目前所有搜索框使用common_search_view.xml-->
+    </style>
+
+    <!--功能副标题/分区标题-->
+    <style name="AGMobile.Widget.Subtitle" />
+
+    <!--标题容器，使用RelativeLayout-->
+    <style name="AGMobile.Widget.Subtitle.Container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/list_item_height</item>
+        <item name="android:background">@color/agmobile_white</item>
+    </style>
+
+    <!--标题TextView，放入标题容器中-->
+    <style name="AGMobile.Widget.Subtitle.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">@dimen/part_title_margin_horizontal</item>
+        <item name="android:padding">@dimen/part_title_padding</item>
+        <item name="android:textColor">@color/agmobile_blue</item>
+        <item name="android:textSize">@dimen/text_size_second</item>
+    </style>
+
+    <!--标题下划线View手机版，放入标题容器，左右与标题TextView对齐来控制长度(alignLeft、alignRight)(考虑固定长度，与平板统一)-->
+    <style name="AGMobile.Widget.Subtitle.ViewUnderline">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/part_title_underline_height</item>
+        <item name="android:background">@color/agmobile_blue</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <!--标题下划线View平板-->
+    <style name="AGMobile.Widget.Subtitle.ViewUnderline.Pad">
+        <item name="android:layout_width">@dimen/part_title_underline_width</item>
+    </style>
+
+    <!--TextView-->
+    <style name="AGMobile.Widget.TextView" />
+
+    <!--顶栏标题TextView-->
+    <style name="AGMobile.Widget.TextView.TopBarTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/agmobile_white</item>
+        <item name="android:textSize">@dimen/text_size_first</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <!--TreeView-->
+    <style name="AGMobile.Widget.TreeView" />
+
+    <!--TreeView默认节点样式-->
+    <style name="AGMobile.Widget.TreeView.TreeNode">
+        <item name="android:paddingLeft">0dp</item>
+        <!--<item name="android:showDividers">middle</item>-->
+        <!--<item name="android:divider">@android:drawable/divider_horizontal_bright</item>-->
+    </style>
+
+    <!--TreeView统计节点样式-->
+    <style name="AGMobile.Widget.TreeView.TreeNode.Statistics">
+        <item name="android:paddingLeft">20dp</item>
+    </style>
+
+    <!--View-->
+    <style name="AGMobile.Widget.View" />
+
+    <!--View横向分割线-->
+    <style name="AGMobile.Widget.View.DividerHorizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/list_divider</item>
+    </style>
+
+    <!--View纵向分割线-->
+    <style name="AGMobile.Widget.View.DividerVertical">
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/list_divider</item>
+    </style>
+
+    <!--___________动画____________-->
+
+    <!--编辑Dialog动画--> <!--不再使用-->
+    <style name="AGMobile.Animation.Dialog.Edit" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_push_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_push_out</item>
+    </style>
+
+    <!--老版本专题列表Popup动画--> <!--不再使用-->
+    <style name="AGMobile.Animation.PopupView">
+        <item name="android:windowEnterAnimation">@anim/popupview_slide_in_from_top</item>
+        <item name="android:windowExitAnimation">@anim/popupview_slide_out_from_bottom</item>
+    </style>
+
+    <!--_________文字样式____________-->
+
+    <!--编辑Dialog文字--> <!--仅用于编辑,且xml不再使用-->
+    <style name="AGMobile.TextAppearance.Dialog.Edit" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20sp</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+
+    <!-- 权限申请相关 -->
+
+    <!-- Base application theme. -->
+    <style name="AppThemeCmpt" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppThemeCmpt.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppThemeCmpt.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppThemeCmpt.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppThemeCmpt.NoActionBar.Permissions" parent="Base.Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="EasyPermissions" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="EasyPermissions.Transparent">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <!-- 权限申请相关end -->
+
+    <!--___________其他_____________-->
+
+    <!--FilePicker-->
+    <style name="MFP_BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="mfp_toolbar_theme">@style/MFP_BaseToolbarTheme</item>
+    </style>
+
+    <style name="MFP_BaseToolbarTheme" parent="@style/ThemeOverlay.AppCompat.Dark">
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="colorControlNormal">#FFFFFF</item>
+    </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@color/transparent</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">false</item><!--模糊-->
+    </style>
+
+</resources>

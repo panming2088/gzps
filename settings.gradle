@@ -1,0 +1,1 @@
+include ':agpatrol', ':patrolcore', 'mapengine', 'framework', 'component', 'multi-image-selector'

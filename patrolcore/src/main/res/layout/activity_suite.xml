@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/common_patrol_toolbar" />
+
+
+        <com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout
+            android:id="@+id/pb_loading"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_buildinglist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_add_records"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_above="@id/btn_sure"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/round_bg_orange"
+        android:text="+"
+        android:textColor="@color/agmobile_white"
+        android:textSize="22dp" />
+
+    <Button
+        android:id="@+id/btn_sure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="完成该套房屋核查"
+        android:textColor="@color/agmobile_white" />
+</RelativeLayout>

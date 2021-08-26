@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/colorPrimary"
+        android:elevation="2dp">
+
+        <!--返回按钮-->
+        <LinearLayout
+            android:id="@+id/ll_back"
+            style="@style/AGMobile.Widget.Button.Container.Dark"
+            android:layout_width="@dimen/min_touchable_size"
+            android:layout_height="@dimen/min_touchable_size"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/top_icon_margin_horizontal"
+            android:elevation="5dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                style="@style/AGMobile.Widget.ImageButton.TopBar"
+                android:src="@mipmap/back_arrow" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_height"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@id/ll_back"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="已提交"
+            android:textColor="@color/agmobile_white"
+            android:textSize="@dimen/text_size_first"
+            android:transitionName="@string/transition_player_avatar" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/mainView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_next_step"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_next_step"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="下一步"
+            android:textSize="@dimen/text_size_first"
+            android:textColor="@color/agmobile_white" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--登录设置对话框背景-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="@color/agmobile_white"/>
+            <corners android:radius="3dp"/>
+        </shape>
+    </item>
+</layer-list>

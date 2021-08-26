@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_survey_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+   >
+    <RelativeLayout
+        android:background="@color/colorPrimary"
+        android:id="@+id/rl_head"
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+        <!--返回按钮-->
+        <LinearLayout
+            android:id="@+id/img_back"
+            style="@style/AGMobile.Widget.Button.Container.Dark"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/top_icon_margin_horizontal"
+            android:elevation="5dp"
+            android:layout_width="@dimen/min_touchable_size"
+            android:layout_height="@dimen/min_touchable_size"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                style="@style/AGMobile.Widget.ImageButton.TopBar"
+                android:src="@mipmap/back_arrow"/>
+        </LinearLayout>
+        <!-- <ImageView
+             android:id="@+id/img_back"
+             android:background="@drawable/left_arrow"
+             android:layout_marginLeft="8dp"
+             android:layout_alignParentLeft="true"
+             android:layout_centerVertical="true"
+             android:layout_width="28dp"
+             android:layout_height="28dp" />-->
+        <TextView
+            android:id="@+id/tv_title"
+            android:text="设施调查表"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_below="@id/rl_head"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/ll_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

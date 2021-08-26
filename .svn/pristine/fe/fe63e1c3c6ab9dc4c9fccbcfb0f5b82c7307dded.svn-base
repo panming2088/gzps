@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/primary_background_color"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="12dp"
+        android:paddingRight="8dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/grey_rectangle">
+
+        <ImageView
+            android:id="@+id/search_result_item_iv"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+           android:layout_margin="8dp"
+            android:src="@mipmap/patrol_ic_loading"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/search_item_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="8dp"
+                    android:text="快车道线裂"
+                    android:textColor="#5B5B5B"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:id="@+id/search_item_addr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="高普路1029号"
+                    android:textSize="16sp"
+                    android:textColor="#AEAEAE"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/search_item_date"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_margin="8dp"
+                    android:gravity="right"
+                    android:text="2017-05-06 11:17:00"
+                    android:textColor="#AEAEAE"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/search_item_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/light_orange"
+                    android:background="@drawable/round_orange_rectangle"
+                    android:textSize="14sp"
+                    android:padding="6dp"
+                    android:text="未处理"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/agmobile_grey_0"
+        android:visibility="gone"/>
+    <CheckBox
+        android:id="@+id/checkbox"
+        style="@style/AGMobile.Widget.CheckBox.Blue"
+        android:layout_width="@dimen/login_checkbox_size"
+        android:layout_height="@dimen/login_checkbox_size"
+        android:layout_alignParentRight="true"
+        android:layout_margin="2dp"
+        android:clickable="false"
+        android:visibility="gone"/>
+</LinearLayout>

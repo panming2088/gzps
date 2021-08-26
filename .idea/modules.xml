@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GZPS.iml" filepath="$PROJECT_DIR$/.idea/modules/GZPS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/agpatrol/GZPS.agpatrol.iml" filepath="$PROJECT_DIR$/.idea/modules/agpatrol/GZPS.agpatrol.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/component/GZPS.component.iml" filepath="$PROJECT_DIR$/.idea/modules/component/GZPS.component.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/framework/GZPS.framework.iml" filepath="$PROJECT_DIR$/.idea/modules/framework/GZPS.framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mapengine/GZPS.mapengine.iml" filepath="$PROJECT_DIR$/.idea/modules/mapengine/GZPS.mapengine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/multi-image-selector/GZPS.multi-image-selector.iml" filepath="$PROJECT_DIR$/.idea/modules/multi-image-selector/GZPS.multi-image-selector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/patrolcore/GZPS.patrolcore.iml" filepath="$PROJECT_DIR$/.idea/modules/patrolcore/GZPS.patrolcore.iml" />
+    </modules>
+  </component>
+</project>

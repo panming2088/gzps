@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <style>
+        html,body { height:100%; width:100%; margin:0; padding:0;align:left;valign:left;}
+        </style>
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="height:100%;width:100%;border:0px;text-align:center;align:center;valign:center;margin:0 auto"></div>
+<script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('main'));
+            var option = null;
+
+            function createHorizontalBarChart(xVals, yVals1, yVals2){
+                option = {
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow'
+                            }
+                    },
+                    legend: {
+                        data: ['数据修正', '数据新增']
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    xAxis: {
+                        type: 'value',
+                        boundaryGap: [0, 0.01]
+                    },
+                    yAxis: {
+                        type: 'category',
+                        data: xVals
+                    },
+                    series: [
+                        {
+                            name: '数据修正',
+                            type: 'bar',
+                            data: yVals1,
+                            label: {
+                                normal: {
+                                    show: true,
+                                    position: "right"
+                                }
+                            }
+                        },
+                        {
+                            name: '数据新增',
+                            type: 'bar',
+                            data: yVals2,
+                            label: {
+                                normal: {
+                                    show: true,
+                                    position: "right"
+                                }
+                            }
+                        }
+                    ]
+                };
+
+            }
+
+            function initChart(xValsJson, yVals1Json, yVals2Json){
+                xValsJson = xValsJson.replace(/'/g, '"');
+                yVals1Json = yVals1Json.replace(/'/g, '"');
+                yVals2Json = yVals2Json.replace(/'/g, '"');
+                var xVals = JSON.parse(xValsJson);
+                var yVals1 = JSON.parse(yVals1Json);
+                var yVals2 = JSON.parse(yVals2Json);
+                createHorizontalBarChart(xVals, yVals1, yVals2);
+                myChart.setOption(option);
+            }
+            //initChart("['巴西','印尼','美国','印度','中国','世界人口(万)']",
+            //    "[18203, 23489, 29034, 104970, 131744, 630230]",
+             //   "[19325, 23438, 31000, 121594, 134141, 681807]");
+        </script>
+</body>
+</html>

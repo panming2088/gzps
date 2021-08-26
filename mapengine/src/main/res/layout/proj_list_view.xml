@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+
+    android:background="@color/agmobile_white">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height"
+        android:background="@color/agmobile_white_dark">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+
+            <ImageView
+                style="@style/AGMobile.Widget.ImageView.BottomToggle"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/agmobile_blue"
+                android:textSize="@dimen/text_size_second"
+                android:text="@string/title_project"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_close"
+            style="@style/AGMobile.Widget.Button.Container.Light"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                style="@style/AGMobile.Widget.ImageButton.TopBar"
+                android:src="@mipmap/common_ic_close_gray"/>
+        </LinearLayout>
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_project"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/list_padding_horizontal"
+        android:paddingRight="@dimen/list_padding_horizontal">
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>

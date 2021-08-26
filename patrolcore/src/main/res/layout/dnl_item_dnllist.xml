@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dnl_tv_dnltitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/text_size_third"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dnl_tv_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="right"
+                android:gravity="center_vertical|right"
+                android:textSize="@dimen/text_size_third"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <!--<ProgressBar
+        android:id="@+id/dnl_pb_dnlingpb"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        style="?android:attr/progressBarStyleHorizontal"/>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:visibility="gone">
+
+        <com.augurit.am.cmpt.widget.flikerprogressbar.FlikerProgressBar
+            android:id="@+id/dnl_pb_dnlingpb"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+
+            android:layout_gravity="center_vertical"
+            app:pbTextSize="12sp"
+            app:pbLoadingColor="#40c4ff"
+            app:pbStopColor="#ff9800"/>
+
+        <Button
+            android:id="@+id/dnl_btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="取消"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e7e9ec" />
+
+
+</LinearLayout>

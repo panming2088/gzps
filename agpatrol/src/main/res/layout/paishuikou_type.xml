@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_tv1"
+        style="@style/PatrolUploadKeyTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+        <!--文本框 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设施类型"
+                android:textColor="#FF666666"
+                android:textSize="@dimen/partrol_upload_text_size" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="top"
+                android:layout_marginTop="-4dp"
+                android:layout_toRightOf="@id/ll_tv_location"
+                android:text="*"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="@dimen/text_size_third" />
+        </LinearLayout>
+
+        <com.augurit.agmobile.gzps.common.widget.MyGridView
+            android:id="@+id/gv_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:horizontalSpacing="10dp"
+            android:numColumns="3"
+            android:padding="6dp"
+            android:verticalSpacing="10dp" />
+
+        <EditText
+            android:id="@+id/other"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:maxLength="20"
+            android:layout_marginRight="15dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:background="@color/agmobile_white">
+
+    <LinearLayout
+        android:id="@+id/ll_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@color/primary_background_color"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:transitionName="@string/transition_shot_background">
+        <ImageView
+
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@mipmap/ic_building" />
+
+        <TextView
+            android:id="@+id/maintitle"
+            style="@style/Base.TextAppearance.AppCompat.Headline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:text="Title"
+            android:textSize="@dimen/text_size_first"
+            android:transitionName="@string/transition_shot" />
+
+        <TextView
+            android:id="@+id/tv_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="8dp"
+            android:background="@color/primary_background_color"
+            android:text="待审核"
+            android:textColor="@color/light_orange" />
+
+        <TextView
+            android:id="@+id/tv_unupload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="8dp"
+            android:background="@color/primary_background_color"
+            android:text="待提交"
+            android:visibility="gone"
+            android:textColor="@color/agmobile_red" />
+
+        <!--       android:background="@drawable/round_bg_orange"-->
+        <ImageView
+            android:id="@+id/iv_finished"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:src="@mipmap/ic_checked"
+            android:visibility="gone" />
+    </LinearLayout>
+</RelativeLayout>

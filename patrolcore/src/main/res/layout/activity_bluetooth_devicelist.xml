@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/agmobile_white_dark">
+
+    <!--顶栏-->
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimary">
+
+        <!--返回按钮-->
+        <LinearLayout
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/min_touchable_size"
+            android:layout_height="@dimen/min_touchable_size"
+            android:clickable="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/common_sel_btn_dark"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleType="fitCenter"
+                android:background="@null"
+                android:clickable="false"
+                android:src="@mipmap/ic_back" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/btn_back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:textSize="18sp"
+            android:textColor="#fff"
+            android:text="连接到定位设备"/>
+
+        <LinearLayout
+            android:id="@+id/btn_scan"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/common_sel_btn_dark"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ic_search"/>
+
+            <TextView
+                android:id="@+id/tv_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="搜索设备"
+                android:textColor="@color/agmobile_white"
+                android:textSize="16sp"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_bluetooth"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp"
+        android:text="蓝牙未开启，点此开启蓝牙"
+        android:textSize="16sp"
+        android:gravity="center_horizontal"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/agmobile_white_dark">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_device"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+</LinearLayout>

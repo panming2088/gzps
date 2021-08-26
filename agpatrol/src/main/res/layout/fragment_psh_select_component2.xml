@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.esri.android.map.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true" />
+
+        <com.augurit.agmobile.patrolcore.editmap.widget.LocationMarker
+            android:id="@+id/locationMarker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/common_patrol_toolbar" />
+
+            <LinearLayout
+                android:id="@+id/ll_layer_url_init_fail"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/layer_url_init_fail_msg_color"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="right|center_vertical"
+                        android:src="@mipmap/ic_alert_yellow" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="left|center_vertical"
+                        android:gravity="center"
+                        android:text="@string/layer_url_init_fail_msg" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/agmobile_white"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/show_all_layer"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:text="选取类别" />
+
+                <TextView
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="8dp"
+                    android:background="@color/agmobile_grey_1"
+                    android:gravity="center" />
+
+                <GridView
+                    android:id="@+id/gridview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="4" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:gravity="right"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="@color/colorPrimary">
+
+                    <Button
+                        android:id="@+id/btn_add"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/ic_action_new" />
+
+                    <Button
+                        android:id="@+id/btn_save"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/ic_action_save" />
+
+                    <Button
+                        android:id="@+id/btn_cancel"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/ic_action_cancel" />
+
+                    <Button
+                        android:id="@+id/btn_delete"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/ic_action_discard" />
+
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/ic_action_undo" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="right"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/btn_layer"
+                    android:layout_width="@dimen/map_icon_size"
+                    android:layout_height="@dimen/map_icon_size"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="16dp"
+                    android:orientation="vertical"
+                    android:scaleType="fitCenter">
+
+                    <ImageView
+                        android:layout_width="@dimen/map_icon_size"
+                        android:layout_height="@dimen/map_icon_size"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="1dp"
+                        android:src="@mipmap/phone_ic_layers_white_24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="图层"
+                        android:textSize="8sp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_legend"
+                    android:layout_width="@dimen/map_icon_size"
+                    android:layout_height="@dimen/map_icon_size"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    android:scaleType="fitCenter">
+
+                    <ImageView
+                        android:layout_width="@dimen/map_icon_size"
+                        android:layout_height="@dimen/map_icon_size"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="1dp"
+                        android:src="@mipmap/ic_legend" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_reset_door"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="19dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_upload_layer"
+                    android:orientation="vertical"
+                    android:elevation="1dp"
+
+                    >
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="3dp"
+                        android:src="@mipmap/pre_tag_btn" />
+                    <TextView
+
+                        android:id="@+id/tv_reset_door"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:text="门牌"
+                        android:textSize="12sp"
+                        android:textColor="@color/colorPrimary"
+                        android:visibility="visible" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_reset"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="19dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_upload_layer"
+                    android:orientation="vertical"
+                    android:elevation="1dp"
+
+                    >
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="3dp"
+                        android:src="@mipmap/pre_tag_btn" />
+                    <TextView
+
+                        android:id="@+id/tv_reset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:text="重置"
+                        android:textSize="12sp"
+                        android:textColor="@color/colorPrimary"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_add_well"
+                    android:layout_width="37dp"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="19dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:elevation="1dp">
+
+                    <ImageView
+                        android:id="@+id/btn_edit"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="1dp" />
+
+                    <ImageView
+                        android:id="@+id/btn_edit_cancel"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="1dp"
+                        android:src="@mipmap/ic_cancel_add_new_facility"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/ll_add"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    android:scaleType="fitCenter">
+
+                    <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="1dp"
+                        android:src="@mipmap/ic_add_new_facility" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_add_to_cancel"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:scaleType="fitCenter">
+
+                    <Button
+
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="16dp"
+
+                        android:background="@mipmap/ic_cancel_add_new_facility" />
+                    </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.augurit.agmobile.patrolcore.common.widget.LocationButton
+            android:id="@+id/locationButton"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="30dp"
+            android:layout_marginRight="24dp" />
+
+        <com.augurit.agmobile.mapengine.common.widget.scaleview.MapScaleView
+            android:id="@+id/scale_view"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp" />
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/ll_legend"-->
+        <!--android:layout_width="32dp"-->
+        <!--android:layout_height="32dp"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_marginRight="24dp"-->
+        <!--android:layout_marginTop="200dp"-->
+        <!--android:background="@drawable/round_bg_blue"-->
+        <!--android:backgroundTint="@color/agmobile_white"-->
+        <!--android:elevation="6dp"-->
+        <!--android:gravity="center">-->
+
+        <!--<ImageView-->
+
+        <!--android:layout_width="18dp"-->
+        <!--android:layout_height="18dp"-->
+        <!--android:src="@mipmap/ic_legend" />-->
+        <!--</LinearLayout>-->
+        <LinearLayout
+            android:id="@+id/ll_component_list"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/agmobile_white"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/map_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/agmobile_white_dark"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="190dp"
+        app:layout_behavior="@string/bottom_sheet_behavior_with_anchor">
+
+        <include layout="@layout/component_detail_layout1" />
+    </LinearLayout>
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <include
+            layout="@layout/map_bottomsheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="false"/>
+
+    </LinearLayout>-->
+
+</android.support.design.widget.CoordinatorLayout>

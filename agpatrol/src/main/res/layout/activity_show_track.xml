@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="top"
+        android:background="#1dd3de"
+        >
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_height"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="定位"
+            android:textColor="@color/agmobile_white"
+            android:textSize="@dimen/text_size_first"
+            />
+        <!--返回按钮-->
+        <LinearLayout
+            android:id="@+id/ll_back"
+            style="@style/AGMobile.Widget.Button.Container.Dark"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/top_icon_margin_horizontal"
+            android:elevation="5dp"
+            android:layout_width="@dimen/min_touchable_size"
+            android:layout_height="@dimen/min_touchable_size"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                style="@style/AGMobile.Widget.ImageButton.TopBar"
+                android:src="@mipmap/back_arrow"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.esri.android.map.MapView
+            android:id="@+id/mapview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:id="@+id/ll_trackop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:visibility="gone"
+            >
+
+            <Button
+                android:id="@+id/track_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginRight="15dp"
+                android:text="回放"
+                android:textSize="@dimen/text_size_first"
+                style="@style/AGMobile.Widget.Button.Positive"
+                android:background="@drawable/common_sel_round_btn_positive"/>
+
+            <!--<Button
+                android:id="@+id/track_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginRight="15dp"
+                android:text="暂停"
+                style="@style/AGMobile.Widget.Button.Positive"/>-->
+
+            <Button
+                android:id="@+id/track_stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:enabled="false"
+                android:text="停止"
+                android:textSize="@dimen/text_size_first"
+                android:background="@drawable/common_sel_round_btn_positive"
+                style="@style/AGMobile.Widget.Button.Positive"/>
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</LinearLayout>

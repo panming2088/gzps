@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8"/>
+    <style>
+        html,body { height:100%; width:100%; margin:0; padding:0;align:left;valign:left;}
+    </style>
+</head>
+<body>
+
+<div id="pie"
+     style="float: center; width: 100%;height:240px"></div>
+<div id="bar"
+     style="width: 100%;height:500px;margin-bottom: 20px;margin-top:-30px"></div>
+
+
+<!-- ECharts单文件引入 -->
+<script src="echarts.min.js"></script>
+<script type="text/javascript">
+
+ //声明Echarts实例
+   var myBarChart;
+   var myPieChart;
+ //声明图表配置项和数据
+ var pieOptions;
+ var barOptions;
+
+ //创建柱状图
+    function createBChart(obj){
+    barOptions = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    color:['#76c87b','#1A95F8'],
+    legend: {
+        selectedMode:false,
+        data: ['今日签到(%)', '昨日签到(%)'],
+        top:'15px'
+    },
+    grid: {
+        left: '3%',
+        right: '8%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'value',
+        max:100,
+        show: true
+    },
+    yAxis: {
+        type: 'category',
+        data: obj.times
+    },
+    series: [
+        {
+            name: '今日签到(%)',
+            type: 'bar',
+            data: obj.todaydata
+        },
+        {
+            name: '昨日签到(%)',
+            type: 'bar',
+            data: obj.yesterdaydata
+        }
+    ]
+};
+
+}
+
+   //创建饼状图
+   function createPChart(obj1,obj2){
+
+      pieOptions = {
+    color:['#76c87b','#1A95F8','#BDBDBD','#BDBDBD'],
+    legend: {
+        selectedMode:false,
+        data: obj1.legends,
+        top:'15px'
+    },
+    series : [
+        {
+            color:['#BDBDBD','#76c87b'],
+            name: '签到率',
+            type: 'pie',
+            radius : '55%',
+            label: {
+                normal: {
+                    formatter: '{b}\n',
+                    borderWidth: 1,
+                    position: 'inner',
+                    borderRadius: 4
+                    }
+
+                },
+            center : ['28%', '50%'],
+            data:obj1.values
+        },{
+            color:['#BDBDBD','#1A95F8'],
+            name: '签到率',
+            type: 'pie',
+            radius : '55%',
+            label: {
+                normal: {
+                    formatter: '{b}\n',
+                    borderWidth: 1,
+                    position: 'inner',
+                    borderRadius: 4
+                    }
+
+                },
+            center : ['72%', '50%'],
+            data:obj2.values
+        }
+    ]
+};
+   }
+
+   function createBarChart(title,barJson){
+        myBarChart = echarts.init(document.getElementById('bar'));
+
+        myBarChart.on('click', function (params) {
+
+        android.toDetailPage(params.name);
+});
+	    createBChart(barJson);
+
+	    myBarChart.setOption(barOptions);
+    }
+
+    function createPieChart(title,pieJson1,pieJson2){
+        createPChart(pieJson1,pieJson2);
+	    myPieChart = echarts.init(document.getElementById('pie'));
+	    myPieChart.setOption(pieOptions);
+    }
+</script>
+</body>

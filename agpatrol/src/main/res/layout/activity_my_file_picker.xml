@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/agmobile_background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimary">
+        <LinearLayout
+            android:id="@+id/title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:background="@drawable/cv_bg_btn_top"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:src="@drawable/cv_ic_close"/>
+            <TextView
+                android:id="@+id/txt_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textSize="16sp"
+                android:textColor="@color/agmobile_text_title_bar"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_height="28dp"
+            android:layout_width="2px"
+            android:background="@color/agmobile_divider_title_bar"
+            android:layout_toRightOf="@id/title_back"
+            android:layout_centerVertical="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/title_back"
+            android:layout_marginLeft="14dp"
+            android:layout_toLeftOf="@+id/btn_confirm">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:maxLength="12"
+                android:singleLine="true"
+                android:textColor="@color/agmobile_text_title_bar"
+                android:ellipsize="end"
+                tools:text="文件选择"/>
+
+            <TextView
+                android:id="@+id/path"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:textSize="12sp"
+                android:singleLine="true"
+                android:textColor="#eeeeee"
+                android:ellipsize="start"
+                android:visibility="gone"
+                tools:text="路径"
+                tools:visibility="visible"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="wrap_content"
+            android:minWidth="48dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:background="@drawable/cv_bg_btn_top"
+            android:textColor="@drawable/cv_bg_btn_top_text"
+            android:text="选择"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/agmobile_white_dark"
+        />
+
+    <RelativeLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimary"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/ll_dir"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/tv_dir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:text="@string/ip_all_images"
+                android:textColor="@color/agmobile_surface"
+                android:textSize="16sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_dir"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@id/tv_dir"
+                android:tint="@color/agmobile_surface"
+                android:src="@mipmap/text_indicator"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:textSize="@dimen/agmobile_text_body_sub"
+            android:textColor="@color/agmobile_text_title_bar"
+            tools:text="已选: 95.4 KB"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pb_loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/agmobile_white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true">
+
+        <RelativeLayout
+            android:id="@+id/one"
+            android:layout_width="match_parent"
+            android:layout_height="24dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    style="@style/AGMobile.Widget.ImageView.BottomToggle"
+                    android:layout_marginBottom="@dimen/bottom_toggle_margin_vertical" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="图层管理"
+                    android:textColor="@color/agmobile_blue"
+                    android:textSize="@dimen/text_size_second" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_iv_selectall"
+                android:layout_width="@dimen/min_touchable_size"
+                android:layout_height="@dimen/min_touchable_size"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/layer_title_check_box_margin_right"
+                android:background="@drawable/common_sel_btn_light"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/selectall"
+                    android:layout_width="@dimen/checkbox_size"
+                    android:layout_height="@dimen/checkbox_size"
+                    android:background="@drawable/common_sel_checkbox_black"
+                    android:button="@null"
+                    android:clickable="false"
+                    android:src="@mipmap/common_ic_selected" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_iv_unselectall"
+                android:layout_width="@dimen/min_touchable_size"
+                android:layout_height="@dimen/min_touchable_size"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/layer_title_check_box_margin_right"
+                android:background="@drawable/common_sel_btn_light"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_unSelectedAll"
+                    android:layout_width="@dimen/checkbox_size"
+                    android:layout_height="@dimen/checkbox_size"
+                    android:background="@drawable/common_sel_checkbox_black"
+                    android:button="@null"
+                    android:clickable="false"
+                    android:src="@mipmap/common_ic_unselected" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_half_check"
+                android:layout_width="@dimen/min_touchable_size"
+                android:layout_height="@dimen/min_touchable_size"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/layer_title_check_box_margin_right"
+                android:background="@drawable/common_sel_btn_light"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_half_check"
+                    android:layout_width="@dimen/checkbox_size"
+                    android:layout_height="@dimen/checkbox_size"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/common_ic_half_check" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    <!--    <LinearLayout
+            android:id="@+id/treeview_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/one"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/list_padding_horizontal"
+            android:paddingRight="@dimen/list_padding_horizontal"/>-->
+        <ScrollView
+            android:layout_below="@id/one"
+            android:layout_above="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+            <LinearLayout
+                android:id="@+id/treeview_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/list_padding_horizontal"
+                android:paddingRight="@dimen/list_padding_horizontal"
+                />
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_global"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="25dp"
+                android:background="@mipmap/common_ic_global_pressed"/>
+
+            <LinearLayout
+                android:id="@+id/ll_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"/>
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+</com.augurit.am.cmpt.widget.loadinglayout.ProgressLinearLayout>

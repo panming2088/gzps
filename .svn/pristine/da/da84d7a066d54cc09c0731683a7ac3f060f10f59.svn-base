@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/combineview_bg_cell">
+
+    <include
+        layout="@layout/view_divider_horizontal_with_margin"/>
+
+    <LinearLayout
+        android:id="@+id/ll_choose_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@drawable/weui_bg_cell"
+        android:paddingLeft="15dp">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/widget_text_key"
+            android:textSize="16sp"
+            android:layout_marginRight="6dp"
+            tools:text="上传附件"/>
+
+        <TextView
+            android:id="@+id/tv_requiredTag"
+            style="@style/WidgetRequireTagStyle"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/tv_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/agmobile_text_caption"
+            android:textSize="14sp"
+            android:layout_marginLeft="4dp"
+            tools:text="0/200"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone"
+            tools:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_error"
+            style="@style/WidgetErrorTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            tools:text="@string/multicheck_select_hint"/>
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/widget_view_margin_left"
+            android:textColor="@color/agmobile_text_caption"
+            android:textSize="12sp"
+            android:layout_gravity="center_vertical"
+            tools:text="pdf文件"/>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_content_readonly"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:ellipsize="end"-->
+                <!--android:layout_marginLeft="32dp"-->
+                <!--android:text="@string/multicheck_select_nothing"-->
+                <!--android:textColor="@color/agmobile_text_body"-->
+                <!--android:textSize="16sp"-->
+                <!--android:visibility="gone"-->
+                <!--tools:visibility="visible" />-->
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:layout_toLeftOf="@id/iv_arrow"
+                android:layout_centerVertical="true"
+                android:text="选择文件"
+                android:textColor="@color/agmobile_text_caption"
+                android:textSize="16sp"/>
+
+            <ImageView
+                android:id="@+id/iv_arrow"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/cv_ic_arrow_right"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants">
+        <com.augurit.agmobile.gzps.common.widget.FileCustomRecyclerView
+            android:id="@+id/rv_files"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:background="@color/agmobile_surface"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

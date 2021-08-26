@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: :android-database-sqlcipher-3.5.2:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/f855575b0abaa552dd02ebf0e704c26e/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/f855575b0abaa552dd02ebf0e704c26e/res" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/f855575b0abaa552dd02ebf0e704c26e/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

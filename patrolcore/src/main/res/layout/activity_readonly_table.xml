@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/activity_patrol_table"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/agmobile_white_dark"
+                >
+
+    <include layout="@layout/common_patrol_toolbar"/>
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ll_bottom"
+        android:layout_below="@id/rl">
+
+        <LinearLayout
+            android:id="@+id/mainView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/agmobile_white"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

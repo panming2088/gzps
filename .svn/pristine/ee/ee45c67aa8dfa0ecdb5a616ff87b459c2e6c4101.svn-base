@@ -1,0 +1,88 @@
+package com.augurit.agmobile.gzps.common.editmap;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+import com.augurit.agmobile.gzps.common.constant.LayerUrlConstant;
+import com.augurit.agmobile.gzps.R;
+import com.augurit.agmobile.mapengine.common.base.OnRecyclerItemClickListener;
+
+
+/**
+ * 去除掉排水管线
+ *
+ * @author 创建人 ：xuciluan
+ * @package 包名 ：com.augurit.agmobile.gzps.common.editmap
+ * @createTime 创建时间 ：17/11/6
+ * @modifyBy 修改人 ：xuciluan
+ * @modifyTime 修改时间 ：17/11/6
+ * @modifyMemo 修改备注：
+ * @version 1.0
+ */
+
+
+public class LayerAdapterWithoutPipeline extends BaseAdapter {
+
+    private int selectedIndex = 0;
+    private Context context;
+
+    private OnRecyclerItemClickListener<String> onRecyclerItemClickListener;
+
+    public LayerAdapterWithoutPipeline(Context context){
+        this.context = context;
+    }
+
+    public void notifyDataSetChanged(int selectedIndex){
+        this.selectedIndex = selectedIndex;
+        notifyDataSetChanged();
+    }
+
+    @Override
+    public int getCount() {
+        //强制去掉排水管线
+        return 7;
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return LayerUrlConstant.newComponentUrls[position];
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        if(convertView == null){
+            convertView = LayoutInflater.from(context).inflate(R.layout.layer_item, null);
+        }
+        TextView name = (TextView) convertView.findViewById(R.id.name);
+        name.setText(LayerUrlConstant.componentNames[position]);
+        if(selectedIndex == position){
+            name.setBackgroundColor(context.getResources().getColor(R.color.agmobile_blue_dark));
+        } else {
+            name.setBackgroundColor(context.getResources().getColor(R.color.agmobile_white));
+        }
+        name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedIndex = position;
+                notifyDataSetChanged();
+                if(onRecyclerItemClickListener != null){
+                    onRecyclerItemClickListener.onItemClick(v, position, LayerUrlConstant.newComponentUrls[position]);
+                }
+            }
+        });
+         return convertView;
+    }
+
+    public void setOnItemClickListener(OnRecyclerItemClickListener<String> onItemClickListener){
+        this.onRecyclerItemClickListener = onItemClickListener;
+    }
+}

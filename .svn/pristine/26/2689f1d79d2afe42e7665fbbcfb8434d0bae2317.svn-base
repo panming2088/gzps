@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_centerHorizontal="true"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+           android:layout_marginTop="60dp"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/login_test1" />
+
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:textStyle="bold"
+            android:textSize="23sp"
+            android:textColor="@color/colorPrimary"
+            android:text="广州排水设施巡检"
+          />
+
+
+    </LinearLayout>
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:paddingBottom="16dp"-->
+    <!--android:paddingTop="16dp"-->
+    <!--android:gravity="center"-->
+    <!--android:layout_marginTop="75dp"-->
+    <!--android:text="移动巡查"-->
+    <!--android:textColor="@color/agmobile_white"-->
+    <!--android:textSize="@dimen/login_title_text_size" />-->
+    <!--设置按钮-->
+    <LinearLayout
+        android:id="@+id/btn_login_setting"
+        android:layout_width="@dimen/min_touchable_size"
+        android:layout_height="@dimen/min_touchable_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/btn_setting_margin_bottom"
+        android:layout_marginRight="@dimen/btn_setting_margin_right"
+        android:background="@drawable/common_sel_btn_light"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:clickable="false"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            android:src="@mipmap/common_ic_login_setting" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:scrollbarThumbVertical="@android:color/transparent"
+        android:scrollbars="vertical"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    <RelativeLayout
+        android:layout_below="@id/ll_top"
+        android:id="@+id/rl_login_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+        <!--xcl 这里多嵌套一个relativelayout的原因是为了让弹出键盘时，整个布局上移，不被键盘遮住-->
+        <!--登录-->
+        <LinearLayout
+            android:id="@+id/ll_login_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="200dp"
+
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/agmobile_white"
+                    android:elevation="6dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp">
+
+
+
+
+                        <!--用户名输入框-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/login_et_height"
+                            android:layout_marginBottom="@dimen/login_et_margin_bottom"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:orientation="horizontal">
+
+
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/til_login_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="top"
+                                android:textSize="8sp">
+
+
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/at_login_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:background="@drawable/login_shp_edittext"
+                                    android:hint="请输入登录账号"
+                                    android:drawableLeft="@drawable/ic_mobile_flag"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="text"
+                                    android:maxLines="1"
+                                    android:paddingBottom="3dp"
+                                    android:paddingLeft="5dp"
+                                    android:singleLine="true"
+                                    android:textColor="@color/login_edt_text"
+                                    android:textColorHint="@color/login_frame_stroke"
+                                    android:textSize="@dimen/login_et_text_size" />
+                            </android.support.design.widget.TextInputLayout>
+                        </LinearLayout>
+
+                        <!--密码输入框-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/login_et_height"
+                            android:orientation="horizontal">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/til_login_password"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="top"
+                                android:textSize="8sp">
+
+                                <EditText
+                                    android:id="@+id/et_login_password"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:background="@drawable/login_shp_edittext"
+                                    android:hint=" 输入密码"
+                                    android:imeOptions="actionDone"
+                                    android:inputType="textPassword"
+                                    android:paddingBottom="3dp"
+                                    android:paddingLeft="2dp"
+                                    android:drawableLeft="@drawable/ic_password_flag"
+                                    android:textColor="@color/login_edt_text"
+                                    android:textColorHint="@color/login_frame_stroke"
+                                    android:textSize="@dimen/login_et_text_size" />
+                            </android.support.design.widget.TextInputLayout>
+                        </LinearLayout>
+
+                        <!--复选框 @dimen/login_checkbox_margin_vertical-->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/ll_cb_save_password"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/min_touchable_size"
+                                android:layout_centerVertical="true"
+                                android:background="@drawable/common_sel_btn_light"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingLeft="@dimen/login_checkbox_padding"
+                                android:paddingRight="@dimen/login_checkbox_padding">
+
+                                <CheckBox
+                                    android:id="@+id/cb_login_save_password"
+                                    style="@style/AGMobile.Widget.CheckBox.Blue"
+                                    android:layout_width="@dimen/login_checkbox_size"
+                                    android:layout_height="@dimen/login_checkbox_size"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginRight="@dimen/login_checkbox_text_spacing"
+                                    android:clickable="false" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/login_save_password"
+                                    android:textColor="@color/login_cb_text"
+                                    android:textSize="@dimen/text_size_third" />
+
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        <!--32dp 是登录图标高度的一半-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/ll_login_container"
+            android:layout_marginLeft="@dimen/login_frame_margin_horizontal"
+            android:layout_marginRight="@dimen/login_frame_margin_horizontal"
+        />
+
+        <!--<FrameLayout-->
+            <!--android:id="@+id/btn_login"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_below="@id/ll_login_container"-->
+            <!--android:layout_marginTop="12dp"-->
+            <!--android:elevation="6dp">-->
+            <!---->
+            <!--<ImageView-->
+                <!--android:layout_width="64dp"-->
+                <!--android:layout_height="64dp"-->
+                <!--android:layout_gravity="center_horizontal"-->
+        <!--</FrameLayout>-->
+        <!--<FrameLayout-->
+            <!--android:id="@+id/btn_login"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="45dp"-->
+            <!--android:layout_below="@id/ll_login_container"-->
+            <!--android:layout_marginLeft="36dp"-->
+            <!--android:layout_marginRight="36dp"-->
+            <!--android:clickable="true"-->
+            <!--android:elevation="6dp">-->
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_below="@id/ll_login_container"
+                android:text="登录"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:clickable="false"
+                android:background="@drawable/bg_btn_login_selected" />
+            <!--<ImageView-->
+            <!--android:layout_width="64dp"-->
+            <!--android:layout_height="64dp"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:src="@mipmap/common_ic_login_btn" />-->
+            <!--xcl 2017-03-14 修改imagview从30dp改成24dp，margintop从20dp改成25dp-->
+        <!--</FrameLayout>-->
+
+        <View
+            android:id="@+id/view_divider"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/btn_login"/>
+        <View
+            android:id="@+id/ll_bottm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/view_divider" />
+    </RelativeLayout>
+    </ScrollView>
+    <TextView
+        android:id="@+id/version"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorPrimary"
+       android:layout_alignParentRight="true"
+        android:text="版本1.0.8"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

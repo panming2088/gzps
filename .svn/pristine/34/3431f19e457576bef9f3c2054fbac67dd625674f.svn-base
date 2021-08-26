@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/ll_select_location_root_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       />
+
+
+    <LinearLayout
+        android:id="@+id/btn_layer"
+        android:layout_width="@dimen/map_icon_size"
+        android:layout_height="@dimen/map_icon_size"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="65dp"
+        android:orientation="vertical"
+        android:scaleType="fitCenter">
+
+        <ImageView
+            android:layout_width="@dimen/map_icon_size"
+            android:layout_height="@dimen/map_icon_size"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="1dp"
+            android:src="@mipmap/phone_ic_layers_white_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="图层"
+            android:textSize="8sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_legend"
+        android:layout_width="@dimen/map_icon_size"
+        android:layout_height="@dimen/map_icon_size"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/btn_layer"
+        android:orientation="vertical"
+        android:scaleType="fitCenter">
+
+        <ImageView
+            android:layout_width="@dimen/map_icon_size"
+            android:layout_height="@dimen/map_icon_size"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="1dp"
+            android:src="@mipmap/ic_legend" />
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_patrol_table"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:transitionName="upload"
+    android:background="@color/primary_background_color">
+
+    <!--android:background="@color/agmobile_white_dark"-->
+
+    <include layout="@layout/common_patrol_toolbar" />
+    <!--   <RelativeLayout
+           android:id="@+id/rl"
+           android:layout_width="match_parent"
+           android:layout_height="65dp"
+           android:layout_marginBottom="10dp"
+           android:background="@color/agmobile_white"
+           android:elevation="2dp"
+           android:orientation="vertical"
+           android:transitionName="@string/textview_transition_name">
+
+           &lt;!&ndash;返回按钮&ndash;&gt;
+           <LinearLayout
+               android:id="@+id/btn_back"
+               style="@style/AGMobile.Widget.Button.Container.Dark"
+               android:layout_alignParentLeft="true"
+               android:layout_centerVertical="true"
+               android:layout_gravity="center_vertical"
+               android:layout_marginLeft="@dimen/top_icon_margin_horizontal"
+               android:elevation="5dp"
+               android:orientation="horizontal">
+
+               <ImageButton
+                   style="@style/AGMobile.Widget.ImageButton.TopBar"
+                   android:src="@mipmap/common_ic_back_black"/>
+           </LinearLayout>
+
+           <TextView
+               android:id="@+id/tv_title"
+               android:layout_width="wrap_content"
+               android:layout_height="@dimen/top_bar_height"
+               android:layout_centerInParent="true"
+               android:layout_gravity="center_vertical"
+               android:layout_weight="1"
+               android:gravity="center"
+               android:text="问题上报"
+               android:textSize="@dimen/text_size_first"
+               />
+
+       </RelativeLayout>-->
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/agmobile_white"
+        android:elevation="5dp"
+        android:orientation="vertical">
+
+        <!-- <View
+             android:layout_width="match_parent"
+             android:layout_height="1dp"
+             android:background="@color/agmobile_grey_0"/>-->
+
+        <LinearLayout
+            android:id="@+id/ll_template"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/agpatrol_blue"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="作为模板"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_save_apply"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/agmobile_white"
+            android:elevation="6dp">
+
+            <LinearLayout
+                android:id="@+id/btn_save"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_save"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:src="@mipmap/common_ic_save" />
+
+                <TextView
+                    android:id="@+id/btn_save_to_server"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="保存"
+                    android:textColor="@color/agmobile_blue"
+                    android:textSize="@dimen/text_size_third" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/agmobile_grey_0" />
+
+            <LinearLayout
+                android:id="@+id/btn_apply"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_upload"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:src="@mipmap/common_ic_upload" />
+
+                <TextView
+                    android:id="@+id/btn_upload_to_server"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="提交"
+                    android:textSize="@dimen/text_size_third" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ll_bottom"
+        android:layout_below="@id/rl">
+
+        <LinearLayout
+            android:id="@+id/mainView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

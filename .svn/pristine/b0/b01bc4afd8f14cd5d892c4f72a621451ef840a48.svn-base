@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/com.augurit.am.cmpt"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/measure_tool_view_height"
+    android:orientation="horizontal">
+
+    <com.augurit.am.cmpt.widget.togglebutton.view.AMSpringSwitchButton
+        android:id="@+id/msb"
+        android:layout_width="@dimen/measure_switch_width"
+        android:layout_height="@dimen/measure_tool_view_height"
+        android:layout_marginTop="@dimen/measure_margin"
+        app:backRectColor="#2391ed"
+        app:leftText="测量距离"
+        app:rightText="测量面积"
+        app:textCheckedColor="#FFFFFF"
+        app:textSize="@dimen/measure_swtich_text_size"
+        app:textUnCheckedColor="#2391ed" />
+
+    <com.github.johnkil.print.PrintView
+        android:id="@+id/clear_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/measure_margin"
+        android:layout_marginRight="@dimen/measure_margin"
+        android:layout_marginTop="@dimen/measure_margin2"
+        app:iconColor="#2391ed"
+        app:iconFont="fonts/iconfont.ttf"
+        app:iconSize="@dimen/fonts_icon_size"
+        app:iconText="&#xe609;" />
+
+    <com.github.johnkil.print.PrintView
+        android:id="@+id/cancel_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/measure_margin"
+        android:layout_marginTop="@dimen/measure_margin2"
+        app:iconColor="#2391ed"
+        app:iconFont="fonts/iconfont.ttf"
+        app:iconSize="@dimen/fonts_icon_size"
+        app:iconText="&#xe7d5;" />
+
+    <com.github.johnkil.print.PrintView
+        android:id="@+id/close_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/measure_margin"
+        android:layout_marginTop="@dimen/measure_margin2"
+        app:iconColor="#2391ed"
+        app:iconFont="fonts/iconfont.ttf"
+        app:iconSize="@dimen/fonts_icon_size"
+        app:iconText="&#xe60f;" />
+
+
+</LinearLayout>

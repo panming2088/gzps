@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/btn_search"
+            style="@style/AGMobile.Widget.Button.Container.Dark"
+            android:layout_width="42dp"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:paddingRight="6dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_search_white_24dp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_search_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/btn_search"
+            android:background="@drawable/rectangel_bg_without_shadow"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <FrameLayout
+                android:id="@+id/lv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/iv_search"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_search_grey_24dp" />
+                <!--关键字查询字段选择-->
+                <Spinner
+                    android:id="@+id/sp_fileds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+            </FrameLayout>
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@id/lv_search"
+                android:background="@null"
+                android:hint="请输入查询关键字"
+                android:imeOptions="actionSearch"
+                android:inputType="text" />
+
+            <ImageView
+
+                android:id="@+id/iv_close"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_close_black_24dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

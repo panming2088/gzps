@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--平板通用-->
+
+    <dimen name="text_size_first">20sp</dimen><!--用于顶栏标题、功能标题（24sp）-->
+    <dimen name="text_size_second">18sp</dimen><!--用于列表项(22sp)-->
+    <dimen name="text_size_third">16sp</dimen><!--用于图层数量、搜索框字体-->
+    <dimen name="text_size_fourth">14sp</dimen><!--用于数值显示-->
+    <dimen name="text_size_button">16sp</dimen><!--用于按钮-->
+    <dimen name="list_title_height">45dp</dimen><!--用于左侧弹出框的标题栏高度(53dp)-->
+    <dimen name="list_item_height">61dp</dimen><!--列表项高度-->
+    <dimen name="list_spacing_horizontal">14dp</dimen><!--列表项与边框的水平间距，可作表项Margin，也可作容器Padding(18dp)-->
+    <dimen name="list_symbol_size">6dp</dimen><!--列表项前面点点的大小-->
+    <dimen name="list_symbol_margin_left">16dp</dimen><!--左边Margin-->
+    <dimen name="list_symbol_margin_right">8dp</dimen><!--右边Margin-->
+    <dimen name="list_enter_width">8dp</dimen><!--列表项后面”>“的宽度-->
+    <dimen name="list_enter_height">14dp</dimen><!--列表项后面”>“的高度-->
+    <dimen name="radio_btn_size">18dp</dimen><!--RadioButton大小--> <!--xcl 从10dp修改成18dp-->
+    <dimen name="radio_btn_margin_horizontal">@dimen/list_spacing_horizontal</dimen><!--RadioButton水平Margin-->
+    <dimen name="checkbox_size">16dp</dimen><!--CheckBox大小-->
+    <!--<dimen name="left_menu_bar_width">49dp</dimen>--><!--左栏宽度-->
+    <dimen name="left_menu_item_width">57dp</dimen><!--左栏菜单图标宽度-->
+    <dimen name="left_menu_item_height">75dp</dimen><!--左栏菜单图标高度-->
+    <dimen name="menu_page_container_width">300dp</dimen><!--菜单抽屉宽度(364dp)-->
+    <dimen name="menu_candidate_container_width">280dp</dimen><!--右侧候选列表菜单宽度-->
+    <dimen name="toggle_btn_width">24dp</dimen><!--菜单抽屉切换按钮宽度-->
+    <dimen name="toggle_btn_height">48dp</dimen><!--切换按钮高度-->
+    <dimen name="setting_btn_size">22dp</dimen><!--设置按钮大小-->
+    <dimen name="setting_btn_margin_vertical">10dp</dimen><!--设置按钮垂直Margin-->
+    <dimen name="top_bar_height">45dp</dimen><!--顶栏高度-->
+    <dimen name="top_icon_size">24dp</dimen><!--顶栏按钮图标大小-->
+    <dimen name="top_icon_padding">5dp</dimen><!--顶栏按钮图标Padding-->
+    <dimen name="top_icon_margin_horizontal">25dp</dimen><!--顶栏图标水平Margin-->
+    <dimen name="top_title_text_size">@dimen/text_size_first</dimen><!--顶栏标题字体大小-->
+    <dimen name="map_btn_size">38dp</dimen><!--地图按钮大小-->
+    <dimen name="map_btn_margin_horizontal">17dp</dimen><!--地图按钮到边框的水平间距-->
+    <dimen name="map_btn_spacing_vertical">30dp</dimen><!--地图按钮之间垂直间距-->
+    <dimen name="map_btn_margin_top">34dp</dimen><!--地图按钮到边框顶部的间距-->
+    <dimen name="map_btn_margin_bottom">34dp</dimen><!--地图按钮到边框底部的间距-->
+    <dimen name="search_box_height">32dp</dimen><!--搜索框高度-->
+    <dimen name="search_box_width">280dp</dimen><!--搜索框宽度（不推荐使用）-->
+    <dimen name="search_box_radius">2dp</dimen><!--搜索框圆角-->
+    <dimen name="search_box_margin_horizontal">8dp</dimen><!--搜索框水平Margin-->
+    <dimen name="search_box_margin_vertical">8dp</dimen><!--搜索框垂直Margin-->
+    <dimen name="search_box_btn_size">16dp</dimen><!--搜索框中按钮大小-->
+    <dimen name="search_box_btn_margin_horizontal">8dp</dimen><!--搜索框中按钮与搜索框水平距离-->
+    <dimen name="part_title_padding">3dp</dimen><!--分区标题Padding-->
+    <dimen name="part_title_underline_height">3dp</dimen><!--分区标题下划线厚度-->
+    <dimen name="part_title_underline_width">86dp</dimen><!--分区标题下划线宽度（目前仅用于平板的功能标题,其它都是跟随文字宽度）-->
+    <dimen name="func_btn_height">44dp</dimen><!--功能中大按钮高度-->
+    <dimen name="func_btn_margin_horizontal">10dp</dimen><!--大按钮水平Margin-->
+    <dimen name="func_btn_margin_vertical">10dp</dimen><!--大按钮垂直Margin-->
+    <dimen name="dialog_radius">9dp</dimen><!--对话框圆角-->
+    <dimen name="dialog_btn_spacing">20dp</dimen><!--对话框里面确定取消按钮的间距-->
+    <dimen name="dialog_btn_width">90dp</dimen><!--对话框按钮宽度-->
+    <dimen name="dialog_btn_height">28dp</dimen><!--对话框按钮高度-->
+    <dimen name="dialog_btn_radius">5dp</dimen><!--对话框按钮圆角-->
+    <dimen name="segment_control_view_height">36dp</dimen><!--SegmentControlView高度-->
+    <dimen name="segment_control_view_radius">3dp</dimen><!--SegmentControlView圆角-->
+    <dimen name="segment_control_view_segment_padding_vertical">5dp</dimen><!--SegmentControlView中的垂直padding-->
+
+</resources>

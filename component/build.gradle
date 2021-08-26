@@ -1,0 +1,74 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 11
+        versionName "1.0"
+
+        ndk {
+            // 设置支持的 SO 库构架，注意这里要根据你的实际情况来设置
+            abiFilters 'armeabi'//,'x86'
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    sourceSets{
+        main {
+            jniLibs.srcDir(['libs']) // 引用so文件
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:design:$rootProject.supportLibraryVersion"
+    //    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+    compile "com.android.support:design:$rootProject.supportLibraryVersion"
+    compile "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
+    compile 'com.android.support:support-compat:25.3.1'
+    compile 'com.android.support:support-fragment:25.3.1'
+    /**
+     * togglebutton所依赖的库
+     */
+    compile 'com.github.johnkil.print:print:1.2.2'
+    compile project(':framework')
+    //图表库 // 暂时用封装时的beta1版本，3.0.0正式版去除了一些类，需要再调整
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.0-beta1'
+    /
+    **
+    * RxJava和RxAndroid库
+    */
+    //RxAndroid 大小10kb
+    compile "io.reactivex:rxandroid:$rootProject.rxAndroidVersion"
+    //Rxjava 大小1MB
+    compile "io.reactivex:rxjava:$rootProject.rxJavaVersion"
+    compile "com.squareup.retrofit2:adapter-rxjava:$rootProject.retrofitAdapterVersion"
+    /**
+     * 权限申请
+     */
+    //    compile 'pub.devrel:easypermissions:1.0.1'
+    compile 'com.bartoszlipinski:viewpropertyobjectanimator:1.2.0'
+}
+
+

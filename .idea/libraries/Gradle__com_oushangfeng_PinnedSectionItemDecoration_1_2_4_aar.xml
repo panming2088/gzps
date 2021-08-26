@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.oushangfeng:PinnedSectionItemDecoration:1.2.4@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/452d970603769b481c7a35fb8fd91586/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/452d970603769b481c7a35fb8fd91586/res" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/452d970603769b481c7a35fb8fd91586/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="282dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/common_lyrl_dialog"
+        android:orientation="vertical">
+
+        <!--标题-->
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:background="@drawable/common_lyrl_dialog_title"
+            android:text="提示"
+            android:textColor="@color/agmobile_white"
+            android:textSize="@dimen/text_size_first"/>
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/agmobile_black"
+            android:textSize="@dimen/text_size_second"
+            android:text="登录失败，是否尝试离线登录？"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="18dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_positive"
+                style="@style/AGMobile.Widget.Button.Positive"
+                android:layout_width="@dimen/dialog_btn_width"
+                android:layout_height="@dimen/dialog_btn_height"
+                android:layout_marginRight="@dimen/dialog_btn_spacing"
+                android:text="确定"
+                android:textSize="@dimen/text_size_button"/>
+
+            <Button
+                android:id="@+id/btn_negative"
+                style="@style/AGMobile.Widget.Button.Negative"
+                android:layout_width="@dimen/dialog_btn_width"
+                android:layout_height="@dimen/dialog_btn_height"
+                android:text="取消"
+                android:textSize="@dimen/text_size_button"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

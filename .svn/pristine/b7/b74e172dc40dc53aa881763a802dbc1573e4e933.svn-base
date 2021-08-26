@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dnl_pop_area_max"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dnl_item_bg"
+        android:gravity="center"
+        android:text="全图"
+        android:textSize="@dimen/text_size_second" />
+
+    <TextView
+        android:id="@+id/dnl_pop_area_userarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dnl_item_bg"
+        android:gravity="center"
+        android:text="行政区域"
+        android:visibility="gone"
+        android:textSize="@dimen/text_size_second" />
+
+    <TextView
+        android:id="@+id/dnl_pop_area_custom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dnl_item_bg"
+        android:gravity="center"
+        android:text="自定义范围"
+        android:textSize="@dimen/text_size_second" />
+
+    <TextView
+        android:id="@+id/dnl_pop_area_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dnl_item_bg"
+        android:gravity="center"
+        android:text="取消"
+        android:textSize="@dimen/text_size_second" />
+
+</LinearLayout>
